@@ -64,7 +64,7 @@ export const LeaderView: React.FC<LeaderViewProps> = ({
                   : 'text-neutral-600 dark:text-neutral-300 hover:text-emerald-600'
               }`}
             >
-              {leader.name}
+              {leader.id === 'deputy-md' ? 'Khandoker Moinur Rahman' : leader.name}
             </button>
           ))}
         </div>
@@ -79,8 +79,8 @@ export const LeaderView: React.FC<LeaderViewProps> = ({
             <div className="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-inner bg-neutral-100 dark:bg-neutral-800">
               <img
                 src={displayedPhoto}
-                alt={currentLeader.name}
-                className={`w-full h-full object-cover ${currentLeader.id === 'deputy-md' ? 'object-center' : 'object-top'}`}
+                alt={currentLeader.id === 'deputy-md' ? 'Khandoker Moinur Rahman' : currentLeader.name}
+                className={`w-full h-full object-cover ${currentLeader.id === 'deputy-md' ? 'object-top sm:object-center' : 'object-top'}`}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             </div>
@@ -114,7 +114,7 @@ export const LeaderView: React.FC<LeaderViewProps> = ({
 
             <div className="space-y-1">
               <h2 className="text-xl font-extrabold font-heading text-neutral-900 dark:text-white">
-                {currentLeader.name}
+                {currentLeader.id === 'deputy-md' ? 'Khandoker Moinur Rahman' : currentLeader.name}
               </h2>
               <p className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 leading-snug">
                 {currentLeader.title}
