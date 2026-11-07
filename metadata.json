@@ -1,0 +1,6 @@
+{
+  "name": "Aasceend Group",
+  "description": "Corporate portal for Aasceend Group featuring residential townships, divisions, sister concerns, leadership profiles, and interactive investor tools.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
