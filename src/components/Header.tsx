@@ -81,16 +81,12 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-white/95 dark:bg-neutral-900/95 backdrop-blur-md shadow-md py-3 border-b border-neutral-200/80 dark:border-neutral-800' 
-          : 'bg-linear-to-b from-black/80 via-black/40 to-transparent py-4 text-white'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800 shadow-sm py-3.5`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4">
           
-          {/* Brand Logo Lockup (Normal Logo without forced white wrapper background) */}
+          {/* Brand Logo Lockup */}
           <button 
             onClick={() => handleNav({ type: 'home' })}
             className="flex items-center group text-left cursor-pointer transition-transform duration-200 hover:scale-[1.02]"
@@ -117,12 +113,10 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Home */}
             <button
               onClick={() => handleNav({ type: 'home' })}
-              className={`px-3 py-2 rounded-md transition-colors ${
+              className={`px-3 py-2 rounded-md transition-colors text-neutral-700 dark:text-neutral-200 hover:text-emerald-600 dark:hover:text-emerald-400 ${
                 currentView.type === 'home'
                   ? 'text-emerald-600 dark:text-emerald-400 font-semibold'
-                  : scrolled 
-                    ? 'text-neutral-700 dark:text-neutral-200 hover:text-emerald-600 dark:hover:text-emerald-400' 
-                    : 'text-neutral-100 hover:text-emerald-300'
+                  : ''
               }`}
             >
               Home
@@ -133,12 +127,10 @@ export const Header: React.FC<HeaderProps> = ({
               <button
                 onClick={() => setActiveDropdown(activeDropdown === 'about' ? null : 'about')}
                 onMouseEnter={() => setActiveDropdown('about')}
-                className={`flex items-center gap-1 px-3 py-2 rounded-md transition-colors ${
-                  currentView.type === 'about' || currentView.type === 'leader' || currentView.type === 'investor' || currentView.type === 'accreditations'
+                className={`flex items-center gap-1 px-3 py-2 rounded-md transition-colors text-neutral-700 dark:text-neutral-200 hover:text-emerald-600 dark:hover:text-emerald-400 ${
+                  ['about', 'leader', 'investor', 'accreditations'].includes(currentView.type)
                     ? 'text-emerald-600 dark:text-emerald-400 font-semibold'
-                    : scrolled 
-                      ? 'text-neutral-700 dark:text-neutral-200 hover:text-emerald-600 dark:hover:text-emerald-400' 
-                      : 'text-neutral-100 hover:text-emerald-300'
+                    : ''
                 }`}
               >
                 <span>About Aasceend</span>
@@ -148,7 +140,7 @@ export const Header: React.FC<HeaderProps> = ({
               {activeDropdown === 'about' && (
                 <div 
                   onMouseLeave={() => setActiveDropdown(null)}
-                  className="absolute left-0 mt-1 w-80 bg-white dark:bg-neutral-900 rounded-xl shadow-2xl border border-neutral-200 dark:border-neutral-800 py-2.5 z-50 text-neutral-800 dark:text-neutral-200 text-sm animate-in fade-in slide-in-from-top-2 duration-200"
+                  className="absolute left-0 mt-1 w-80 bg-white dark:bg-neutral-900 rounded-xl shadow-2xl border border-neutral-200 dark:border-neutral-800 py-2.5 z-50 text-neutral-800 dark:text-neutral-200 text-sm"
                 >
                   <button
                     onClick={() => handleNav({ type: 'about' })}
@@ -192,7 +184,7 @@ export const Header: React.FC<HeaderProps> = ({
                     className="w-full text-left px-4 py-2 hover:bg-emerald-50 dark:hover:bg-neutral-800/80 hover:text-emerald-600 dark:hover:text-emerald-400 flex flex-col transition-colors"
                   >
                     <span className="font-medium text-xs">Co-Founder &amp; Deputy Managing Director</span>
-                    <span className="text-[11px] text-neutral-500">Co-Founder &amp; Deputy Managing Director</span>
+                    <span className="text-[11px] text-neutral-500">Deputy Managing Director</span>
                   </button>
 
                   <div className="h-px bg-neutral-100 dark:bg-neutral-800 my-1" />
@@ -221,12 +213,10 @@ export const Header: React.FC<HeaderProps> = ({
               <button
                 onClick={() => setActiveDropdown(activeDropdown === 'divisions' ? null : 'divisions')}
                 onMouseEnter={() => setActiveDropdown('divisions')}
-                className={`flex items-center gap-1 px-3 py-2 rounded-md transition-colors ${
+                className={`flex items-center gap-1 px-3 py-2 rounded-md transition-colors text-neutral-700 dark:text-neutral-200 hover:text-emerald-600 dark:hover:text-emerald-400 ${
                   currentView.type === 'division'
                     ? 'text-emerald-600 dark:text-emerald-400 font-semibold'
-                    : scrolled 
-                      ? 'text-neutral-700 dark:text-neutral-200 hover:text-emerald-600 dark:hover:text-emerald-400' 
-                      : 'text-neutral-100 hover:text-emerald-300'
+                    : ''
                 }`}
               >
                 <span>Divisions</span>
@@ -236,7 +226,7 @@ export const Header: React.FC<HeaderProps> = ({
               {activeDropdown === 'divisions' && (
                 <div 
                   onMouseLeave={() => setActiveDropdown(null)}
-                  className="absolute left-0 mt-1 w-72 bg-white dark:bg-neutral-900 rounded-xl shadow-2xl border border-neutral-200 dark:border-neutral-800 py-2.5 z-50 text-neutral-800 dark:text-neutral-200 text-sm animate-in fade-in slide-in-from-top-2 duration-200 max-h-96 overflow-y-auto"
+                  className="absolute left-0 mt-1 w-72 bg-white dark:bg-neutral-900 rounded-xl shadow-2xl border border-neutral-200 dark:border-neutral-800 py-2.5 z-50 text-neutral-800 dark:text-neutral-200 text-sm max-h-96 overflow-y-auto"
                 >
                   {DIVISIONS.map((div) => (
                     <button
@@ -257,12 +247,10 @@ export const Header: React.FC<HeaderProps> = ({
               <button
                 onClick={() => setActiveDropdown(activeDropdown === 'projects' ? null : 'projects')}
                 onMouseEnter={() => setActiveDropdown('projects')}
-                className={`flex items-center gap-1 px-3 py-2 rounded-md transition-colors ${
+                className={`flex items-center gap-1 px-3 py-2 rounded-md transition-colors text-neutral-700 dark:text-neutral-200 hover:text-emerald-600 dark:hover:text-emerald-400 ${
                   currentView.type === 'project'
                     ? 'text-emerald-600 dark:text-emerald-400 font-semibold'
-                    : scrolled 
-                      ? 'text-neutral-700 dark:text-neutral-200 hover:text-emerald-600 dark:hover:text-emerald-400' 
-                      : 'text-neutral-100 hover:text-emerald-300'
+                    : ''
                 }`}
               >
                 <span>Projects</span>
@@ -272,12 +260,12 @@ export const Header: React.FC<HeaderProps> = ({
               {activeDropdown === 'projects' && (
                 <div 
                   onMouseLeave={() => setActiveDropdown(null)}
-                  className="absolute left-0 mt-1 w-80 bg-white dark:bg-neutral-900 rounded-xl shadow-2xl border border-neutral-200 dark:border-neutral-800 py-2.5 z-50 text-neutral-800 dark:text-neutral-200 text-sm animate-in fade-in slide-in-from-top-2 duration-200"
+                  className="absolute left-0 mt-1 w-80 bg-white dark:bg-neutral-900 rounded-xl shadow-2xl border border-neutral-200 dark:border-neutral-800 py-2.5 z-50 text-neutral-800 dark:text-neutral-200 text-sm"
                 >
                   <div className="px-4 py-1 text-[11px] font-semibold text-neutral-400 uppercase tracking-wider">
                     Mega Townships
                   </div>
-                  {PROJECTS.filter(p => p.category === 'township').map((proj) => (
+                  {PROJECTS.filter(p => p.category === 'township' && p.id !== 'aasceend-eastern-town').map((proj) => (
                     <button
                       key={proj.id}
                       onClick={() => handleNav({ type: 'project', projectId: proj.id })}
@@ -295,7 +283,7 @@ export const Header: React.FC<HeaderProps> = ({
                   <div className="px-4 py-1 text-[11px] font-semibold text-neutral-400 uppercase tracking-wider">
                     Hospitality & Resorts
                   </div>
-                  {PROJECTS.filter(p => p.category !== 'township').map((proj) => (
+                  {PROJECTS.filter(p => p.category !== 'township' && p.id !== 'aasceend-eastern-town').map((proj) => (
                     <button
                       key={proj.id}
                       onClick={() => handleNav({ type: 'project', projectId: proj.id })}
@@ -317,12 +305,10 @@ export const Header: React.FC<HeaderProps> = ({
               <button
                 onClick={() => setActiveDropdown(activeDropdown === 'media' ? null : 'media')}
                 onMouseEnter={() => setActiveDropdown('media')}
-                className={`flex items-center gap-1 px-3 py-2 rounded-md transition-colors ${
+                className={`flex items-center gap-1 px-3 py-2 rounded-md transition-colors text-neutral-700 dark:text-neutral-200 hover:text-emerald-600 dark:hover:text-emerald-400 ${
                   currentView.type === 'media'
                     ? 'text-emerald-600 dark:text-emerald-400 font-semibold'
-                    : scrolled 
-                      ? 'text-neutral-700 dark:text-neutral-200 hover:text-emerald-600 dark:hover:text-emerald-400' 
-                      : 'text-neutral-100 hover:text-emerald-300'
+                    : ''
                 }`}
               >
                 <span>Media Center</span>
@@ -332,7 +318,7 @@ export const Header: React.FC<HeaderProps> = ({
               {activeDropdown === 'media' && (
                 <div 
                   onMouseLeave={() => setActiveDropdown(null)}
-                  className="absolute left-0 mt-1 w-52 bg-white dark:bg-neutral-900 rounded-xl shadow-2xl border border-neutral-200 dark:border-neutral-800 py-2 z-50 text-neutral-800 dark:text-neutral-200 text-sm animate-in fade-in slide-in-from-top-2 duration-200"
+                  className="absolute left-0 mt-1 w-52 bg-white dark:bg-neutral-900 rounded-xl shadow-2xl border border-neutral-200 dark:border-neutral-800 py-2 z-50 text-neutral-800 dark:text-neutral-200 text-sm"
                 >
                   <button
                     onClick={() => handleNav({ type: 'media', tab: 'news' })}
@@ -361,12 +347,10 @@ export const Header: React.FC<HeaderProps> = ({
               <button
                 onClick={() => setActiveDropdown(activeDropdown === 'sustainability' ? null : 'sustainability')}
                 onMouseEnter={() => setActiveDropdown('sustainability')}
-                className={`flex items-center gap-1 px-3 py-2 rounded-md transition-colors ${
+                className={`flex items-center gap-1 px-3 py-2 rounded-md transition-colors text-neutral-700 dark:text-neutral-200 hover:text-emerald-600 dark:hover:text-emerald-400 ${
                   currentView.type === 'sustainability'
                     ? 'text-emerald-600 dark:text-emerald-400 font-semibold'
-                    : scrolled 
-                      ? 'text-neutral-700 dark:text-neutral-200 hover:text-emerald-600 dark:hover:text-emerald-400' 
-                      : 'text-neutral-100 hover:text-emerald-300'
+                    : ''
                 }`}
               >
                 <span>Sustainability</span>
@@ -376,7 +360,7 @@ export const Header: React.FC<HeaderProps> = ({
               {activeDropdown === 'sustainability' && (
                 <div 
                   onMouseLeave={() => setActiveDropdown(null)}
-                  className="absolute left-0 mt-1 w-60 bg-white dark:bg-neutral-900 rounded-xl shadow-2xl border border-neutral-200 dark:border-neutral-800 py-2 z-50 text-neutral-800 dark:text-neutral-200 text-sm animate-in fade-in slide-in-from-top-2 duration-200"
+                  className="absolute left-0 mt-1 w-60 bg-white dark:bg-neutral-900 rounded-xl shadow-2xl border border-neutral-200 dark:border-neutral-800 py-2 z-50 text-neutral-800 dark:text-neutral-200 text-sm"
                 >
                   <button
                     onClick={() => handleNav({ type: 'sustainability', tab: 'environment' })}
@@ -397,12 +381,10 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Contact */}
             <button
               onClick={() => handleNav({ type: 'contact' })}
-              className={`px-3 py-2 rounded-md transition-colors ${
+              className={`px-3 py-2 rounded-md transition-colors text-neutral-700 dark:text-neutral-200 hover:text-emerald-600 dark:hover:text-emerald-400 ${
                 currentView.type === 'contact'
                   ? 'text-emerald-600 dark:text-emerald-400 font-semibold'
-                  : scrolled 
-                    ? 'text-neutral-700 dark:text-neutral-200 hover:text-emerald-600 dark:hover:text-emerald-400' 
-                    : 'text-neutral-100 hover:text-emerald-300'
+                  : ''
               }`}
             >
               Contact
@@ -425,11 +407,7 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               onClick={onToggleTheme}
               aria-label="Toggle theme"
-              className={`p-2 rounded-full transition-colors ${
-                scrolled
-                  ? 'bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-200 hover:bg-neutral-200 dark:hover:bg-neutral-700'
-                  : 'bg-black/30 backdrop-blur-md text-white hover:bg-black/50'
-              }`}
+              className="p-2 rounded-full transition-colors bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-200 hover:bg-neutral-200 dark:hover:bg-neutral-700"
             >
               {isDark ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-emerald-600" />}
             </button>
@@ -437,11 +415,7 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Mobile Hamburger Menu Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`lg:hidden p-2 rounded-lg transition-colors ${
-                scrolled 
-                  ? 'text-neutral-800 dark:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800' 
-                  : 'text-white hover:bg-black/30'
-              }`}
+              className="lg:hidden p-2 rounded-lg transition-colors text-neutral-800 dark:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -453,8 +427,8 @@ export const Header: React.FC<HeaderProps> = ({
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800 px-4 pt-4 pb-6 space-y-3 max-h-[85vh] overflow-y-auto text-neutral-900 dark:text-neutral-100 shadow-2xl">
           <div className="flex items-center justify-between pb-3 border-b border-neutral-100 dark:border-neutral-800">
-            <div className="flex items-center">
-            
+            <div className="flex items-center font-bold text-sm text-emerald-700 dark:text-emerald-400">
+              Navigation Menu
             </div>
             <a
               href="https://wa.me/8801896006310"
@@ -501,7 +475,7 @@ export const Header: React.FC<HeaderProps> = ({
                   Md. Mahafuzur Rahaman (Vice Chairman)
                 </button>
                 <button onClick={() => handleNav({ type: 'leader', leaderId: 'deputy-md' })} className="block w-full text-left py-1.5 text-sm text-neutral-800 dark:text-neutral-200 hover:text-emerald-600">
-                  Co-Founder &amp; Deputy Managing Director
+                  Deputy Managing Director
                 </button>
                 <button onClick={() => handleNav({ type: 'investor' })} className="block w-full text-left py-1.5 text-sm text-neutral-800 dark:text-neutral-200 hover:text-emerald-600">
                   Investor Relations
@@ -548,7 +522,7 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
             {mobileAccordions.projects && (
               <div className="space-y-1 pt-1 pl-1">
-                {PROJECTS.map(proj => (
+                {PROJECTS.filter(proj => proj.id !== 'aasceend-eastern-town').map(proj => (
                   <button
                     key={proj.id}
                     onClick={() => handleNav({ type: 'project', projectId: proj.id })}
@@ -607,14 +581,12 @@ export const Header: React.FC<HeaderProps> = ({
             )}
           </div>
 
-          {/* Contact link */}
+          {/* Contact Mobile Link */}
           <button
             onClick={() => handleNav({ type: 'contact' })}
-            className={`w-full text-left py-2.5 font-bold text-sm ${
-              currentView.type === 'contact' ? 'text-emerald-700 dark:text-emerald-400' : 'text-neutral-800 dark:text-neutral-200'
-            }`}
+            className="w-full text-left py-2.5 font-bold text-sm text-neutral-800 dark:text-neutral-200 hover:text-emerald-600"
           >
-            <span>Contact</span>
+            Contact Us
           </button>
         </div>
       )}
