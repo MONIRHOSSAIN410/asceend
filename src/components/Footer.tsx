@@ -47,18 +47,24 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onRequestCall }) => 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 pb-12 border-b border-emerald-900">
           
-          {/* Brand Column */}
+          {/* Brand Column (Clean Logo without white background box) */}
           <div className="lg:col-span-4 space-y-4">
             <button 
               onClick={() => { onNavigate({ type: 'home' }); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
               className="inline-block text-left cursor-pointer group"
               aria-label="Aasceend Group Home"
             >
-              <div className="bg-white/95 px-3 py-1.5 rounded-xl inline-flex items-center group-hover:scale-105 transition-transform shadow-md">
+              <div className="flex items-center group-hover:scale-105 transition-transform">
                 <img 
                   src="/assets/images/aasceend_logo_official_green.png" 
                   alt="Aasceend Group" 
-                  className="h-10 sm:h-11 w-auto object-contain" 
+                  className="h-8 sm:h-10 w-auto object-contain bg-transparent border-0 shadow-none ring-0 outline-none block"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (target.src !== '/assets/aistudio/10._Aasceend_Group_2-01_1444aef8.png') {
+                      target.src = '/assets/aistudio/10._Aasceend_Group_2-01_1444aef8.png';
+                    }
+                  }}
                 />
               </div>
             </button>

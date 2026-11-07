@@ -51,7 +51,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onNavigate, onRequestC
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           
-          {/* Left Form (Exact fields from video) */}
+          {/* Left Form */}
           <div className="lg:col-span-6 bg-white dark:bg-neutral-900 rounded-3xl p-5 sm:p-8 border border-neutral-200 dark:border-neutral-800 shadow-sm space-y-6">
             <div>
               <h3 className="text-xl font-bold font-heading text-neutral-900 dark:text-white">
@@ -164,7 +164,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onNavigate, onRequestC
             )}
           </div>
 
-          {/* Right Direct Communication & Offices (Exact text from video) */}
+          {/* Right Direct Communication & Offices */}
           <div className="lg:col-span-6 space-y-6">
             
             {/* Direct Communication */}
@@ -249,7 +249,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onNavigate, onRequestC
         </div>
       </section>
 
-      {/* 3. Interactive Map (Baridhara DOHS, Dhaka) */}
+      {/* 3. Interactive Map (Aasceend Group Custom Coordinates Location) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white dark:bg-neutral-900 rounded-3xl p-6 sm:p-8 border border-neutral-200 dark:border-neutral-800 shadow-sm space-y-4">
           <div className="flex items-center justify-between">
@@ -258,28 +258,28 @@ export const ContactView: React.FC<ContactViewProps> = ({ onNavigate, onRequestC
                 Corporate Headquarters Location
               </h3>
               <p className="text-xs text-neutral-500">
-                Baridhara DOHS, Dhaka - 1206
+                Aasceend Group, Baridhara DOHS, Dhaka - 1206, Bangladesh
               </p>
             </div>
             <a
-              href="https://maps.google.com/?q=Baridhara+DOHS+Dhaka"
+              href="https://www.google.com/maps/search/aasceend+group/@23.8140853,90.4135564,17z"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-1.5 text-xs text-emerald-600 dark:text-emerald-400 font-semibold hover:underline"
             >
-              <span>Open in Maps</span>
+              <span>Open in Google Maps</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </a>
           </div>
 
           <div className="rounded-2xl overflow-hidden h-80 border border-neutral-200 dark:border-neutral-700">
             <iframe
-              title="Baridhara DOHS Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14603.662704285818!2d90.4137255!3d23.8216393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c659d81d22e7%3A0x6b44a30fcf216503!2sBaridhara%20DOHS%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1710000000000!5m2!1sen!2sbd"
+              title="Aasceend Group Google Maps Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.1704251703!2d90.4135564!3d23.8140853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDQ4JzUwLjciTiA5MMKwMjQnNDguOCJF!5e0!3m2!1sen!2sbd!4v1710000000000!5m2!1sen!2sbd"
               width="100%"
               height="100%"
               style={{ border: 0 }}
-              allowFullScreen
+              allowFullScreen={false}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />

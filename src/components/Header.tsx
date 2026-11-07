@@ -84,25 +84,23 @@ export const Header: React.FC<HeaderProps> = ({
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
           ? 'bg-white/95 dark:bg-neutral-900/95 backdrop-blur-md shadow-md py-3 border-b border-neutral-200/80 dark:border-neutral-800' 
-          : 'bg-gradient-to-b from-black/80 via-black/40 to-transparent py-4 text-white'
+          : 'bg-linear-to-b from-black/80 via-black/40 to-transparent py-4 text-white'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4">
           
-          {/* Brand Logo Lockup */}
+          {/* Brand Logo Lockup (Normal Logo without forced white wrapper background) */}
           <button 
             onClick={() => handleNav({ type: 'home' })}
             className="flex items-center group text-left cursor-pointer transition-transform duration-200 hover:scale-[1.02]"
             aria-label="Aasceend Group"
           >
-            <div className={`px-2.5 py-1 rounded-lg transition-colors flex items-center ${
-              scrolled && !isDark ? 'bg-transparent' : 'bg-white/95 shadow-xs border border-white/30'
-            }`}>
+            <div className="flex items-center">
               <img 
                 src="/assets/images/aasceend_logo_official_green.png" 
                 alt="Aasceend Group" 
-                className="h-8 sm:h-10 w-auto object-contain transition-opacity duration-200"
+                className="h-8 sm:h-10 w-auto object-contain"
                 onError={(e) => {
                   const target = e.currentTarget;
                   if (target.src !== '/assets/aistudio/10._Aasceend_Group_2-01_1444aef8.png') {
@@ -166,19 +164,19 @@ export const Header: React.FC<HeaderProps> = ({
                   </div>
 
                   <button
-                    onClick={() => handleNav({ type: 'leader', leaderId: 'co-chairman' })}
-                    className="w-full text-left px-4 py-2 hover:bg-emerald-50 dark:hover:bg-neutral-800/80 hover:text-emerald-600 dark:hover:text-emerald-400 flex flex-col transition-colors"
-                  >
-                    <span className="font-medium text-xs">Founder, Chief Advisor, Chairman &amp; COO</span>
-                    <span className="text-[11px] text-neutral-500">Khandoker Asadur Rahman</span>
-                  </button>
-
-                  <button
                     onClick={() => handleNav({ type: 'leader', leaderId: 'ceo' })}
                     className="w-full text-left px-4 py-2 hover:bg-emerald-50 dark:hover:bg-neutral-800/80 hover:text-emerald-600 dark:hover:text-emerald-400 flex flex-col transition-colors"
                   >
                     <span className="font-medium text-xs">Founder, Senior Chief Advisor, MD & CEO</span>
                     <span className="text-[11px] text-neutral-500">Khondokar Mohibur Rahman</span>
+                  </button>
+
+                  <button
+                    onClick={() => handleNav({ type: 'leader', leaderId: 'co-chairman' })}
+                    className="w-full text-left px-4 py-2 hover:bg-emerald-50 dark:hover:bg-neutral-800/80 hover:text-emerald-600 dark:hover:text-emerald-400 flex flex-col transition-colors"
+                  >
+                    <span className="font-medium text-xs">Founder, Chief Advisor, Chairman &amp; COO</span>
+                    <span className="text-[11px] text-neutral-500">Khandoker Asadur Rahman</span>
                   </button>
 
                   <button
@@ -413,7 +411,6 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Right Action Tools: Call button, Dark Mode Toggle & Mobile Menu */}
           <div className="flex items-center gap-2.5">
-            {/* Direct WhatsApp / Call Button (as seen in video reference) */}
             <a
               href="https://wa.me/8801896006310"
               target="_blank"
@@ -456,18 +453,8 @@ export const Header: React.FC<HeaderProps> = ({
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800 px-4 pt-4 pb-6 space-y-3 max-h-[85vh] overflow-y-auto text-neutral-900 dark:text-neutral-100 shadow-2xl">
           <div className="flex items-center justify-between pb-3 border-b border-neutral-100 dark:border-neutral-800">
-            <div className="bg-white px-2 py-1 rounded-lg border border-neutral-200 inline-flex items-center">
-              <img 
-                src="/assets/images/aasceend_logo_official_green.png" 
-                alt="Aasceend Group" 
-                className="h-8 w-auto object-contain"
-                onError={(e) => {
-                  const target = e.currentTarget;
-                  if (target.src !== '/assets/aistudio/10._Aasceend_Group_2-01_1444aef8.png') {
-                    target.src = '/assets/aistudio/10._Aasceend_Group_2-01_1444aef8.png';
-                  }
-                }}
-              />
+            <div className="flex items-center">
+            
             </div>
             <a
               href="https://wa.me/8801896006310"
@@ -526,7 +513,7 @@ export const Header: React.FC<HeaderProps> = ({
             )}
           </div>
 
-          {/* 2. Divisions Accordion (matching image_83ca77d7.png exactly) */}
+          {/* 2. Divisions Accordion */}
           <div className="border-b border-neutral-100 dark:border-neutral-800 pb-2">
             <button
               onClick={() => toggleMobileAccordion('divisions')}
@@ -620,27 +607,15 @@ export const Header: React.FC<HeaderProps> = ({
             )}
           </div>
 
-          {/* Contact Us Direct Link */}
+          {/* Contact link */}
           <button
             onClick={() => handleNav({ type: 'contact' })}
-            className={`w-full text-left py-2.5 font-bold text-sm border-b border-neutral-100 dark:border-neutral-800 flex items-center justify-between ${
+            className={`w-full text-left py-2.5 font-bold text-sm ${
               currentView.type === 'contact' ? 'text-emerald-700 dark:text-emerald-400' : 'text-neutral-800 dark:text-neutral-200'
             }`}
           >
-            <span>Contact Us</span>
+            <span>Contact</span>
           </button>
-
-          <div className="pt-3">
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onRequestCall();
-              }}
-              className="w-full bg-[#006838] hover:bg-emerald-700 text-white font-bold py-3 rounded-xl text-sm transition-colors text-center shadow-md active:scale-98"
-            >
-              Request Call Back
-            </button>
-          </div>
         </div>
       )}
     </header>
