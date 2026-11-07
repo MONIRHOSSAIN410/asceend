@@ -7,13 +7,8 @@ import {
   ChevronDown, 
   ChevronRight,
   Building2,
-  Hotel,
-  TreePine,
-  Briefcase,
-  Users,
   ShieldCheck,
   Award,
-  Sparkles,
   Phone
 } from 'lucide-react';
 import { PageView } from '../types';
