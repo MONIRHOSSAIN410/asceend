@@ -98,7 +98,7 @@ export const AccreditationsView: React.FC<AccreditationsViewProps> = ({ onNaviga
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <motion.div 
             style={{ y: heroY, scale: heroScale, opacity: heroOpacity }}
-            className="absolute -top-[25%] -left-[10%] w-[120%] h-[150%] origin-center"
+            className="absolute top-[-25%] left-[-10%] w-[120%] h-[150%] origin-center"
           >
             <img
               src="/assets/images/bd_corp_hq_1793793604296.jpg"
@@ -107,8 +107,8 @@ export const AccreditationsView: React.FC<AccreditationsViewProps> = ({ onNaviga
             />
             {/* Cinematic subtle dark overlay for crisp typography */}
             <div className="absolute inset-0 bg-neutral-950/45" />
-            <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-neutral-950/30" />
-            <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/60 via-transparent to-neutral-950/60" />
+            <div className="absolute inset-0 bg-linear-to-t from-neutral-950 via-neutral-950/50 to-neutral-950/30" />
+            <div className="absolute inset-0 bg-linear-to-r from-neutral-950/60 via-transparent to-neutral-950/60" />
           </motion.div>
         </div>
 
@@ -219,7 +219,7 @@ export const AccreditationsView: React.FC<AccreditationsViewProps> = ({ onNaviga
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <motion.div
             style={{ y: bannerY, scale: 1.15 }}
-            className="absolute -top-[35%] -left-[10%] w-[120%] h-[170%] origin-center"
+            className="absolute top-[-35%] left-[-10%] w-[120%] h-[170%] origin-center"
           >
             <img
               src="/assets/images/bd_town_infra_1793789738145.jpg"
@@ -227,8 +227,8 @@ export const AccreditationsView: React.FC<AccreditationsViewProps> = ({ onNaviga
               className="w-full h-full object-cover object-center"
             />
             <div className="absolute inset-0 bg-neutral-950/75" />
-            <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/90 via-transparent to-neutral-950/90" />
-            <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-neutral-950" />
+            <div className="absolute inset-0 left-[-10%] from-neutral-950/90 via-transparent to-neutral-950/90" />
+            <div className="absolute inset-0 bg-linear-to-t from-neutral-950 via-transparent to-neutral-950" />
           </motion.div>
         </div>
 

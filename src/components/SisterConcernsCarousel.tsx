@@ -186,10 +186,10 @@ export const SisterConcernsCarousel: React.FC<SisterConcernsCarouselProps> = ({ 
         </div>
 
         {/* Subtle status caption */}
-        <div className="flex items-center justify-center gap-2 mt-4 text-[11px] text-neutral-400">
+        {/* <div className="flex items-center justify-center gap-2 mt-4 text-[11px] text-neutral-400">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
           <span>11 Active Conglomerate Concerns · Continuous Live Showcase · Hover to pause or use arrows</span>
-        </div>
+        </div> */}
       </div>
     </section>
   );
