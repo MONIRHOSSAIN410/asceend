@@ -77,10 +77,7 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
             
             {/* Left Headline */}
             <div className="lg:col-span-6 space-y-4 text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold backdrop-blur-md border border-emerald-400/30">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>A Signature Project of {project.concernName}</span>
-              </div>
+              
 
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-white tracking-tight leading-tight">
                 {project.name}

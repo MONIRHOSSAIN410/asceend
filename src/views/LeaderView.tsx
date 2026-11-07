@@ -35,7 +35,7 @@ export const LeaderView: React.FC<LeaderViewProps> = ({
             alt="Corporate Banner"
             className="w-full h-full object-cover opacity-20"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-900/80 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-neutral-950 via-neutral-900/80 to-transparent" />
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 text-center space-y-2">
@@ -76,13 +76,13 @@ export const LeaderView: React.FC<LeaderViewProps> = ({
           
           {/* Left Column: Portrait, Title & Social Links */}
           <div className="lg:col-span-4 bg-white dark:bg-neutral-900 rounded-3xl p-6 border border-neutral-200 dark:border-neutral-800 shadow-sm sticky top-28 space-y-6">
-            <div className="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-inner bg-neutral-100 dark:bg-neutral-800">
+            <div className="relative rounded-2xl overflow-hidden aspect-4/5 shadow-inner bg-neutral-100 dark:bg-neutral-800">
               <img
                 src={displayedPhoto}
                 alt={currentLeader.id === 'deputy-md' ? 'Khandoker Moinur Rahman' : currentLeader.name}
                 className={`w-full h-full object-cover ${currentLeader.id === 'deputy-md' ? 'object-top sm:object-center' : 'object-top'}`}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
             </div>
 
             {currentLeader.id === 'deputy-md' && (
