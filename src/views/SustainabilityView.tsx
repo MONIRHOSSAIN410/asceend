@@ -26,7 +26,7 @@ export const SustainabilityView: React.FC<SustainabilityViewProps> = ({
             alt="Sustainability"
             className="w-full h-full object-cover opacity-25"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-900/80 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-neutral-950 via-neutral-900/80 to-transparent" />
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center space-y-3">
@@ -93,13 +93,13 @@ export const SustainabilityView: React.FC<SustainabilityViewProps> = ({
 
           {/* Environmental Graphic Banner (As shown in video) */}
           <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="rounded-3xl overflow-hidden aspect-[16/8] shadow-2xl relative border border-neutral-200 dark:border-neutral-800">
+            <div className="rounded-3xl overflow-hidden aspect-16/8 shadow-2xl relative border border-neutral-200 dark:border-neutral-800">
               <img
                 src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80"
                 alt="Eco-friendly Master-planned Community"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-8">
+              <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent flex items-end p-8">
                 <div className="text-white max-w-xl">
                   <span className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest">
                     Green Infrastructure

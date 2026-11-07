@@ -189,14 +189,14 @@ export const MediaView: React.FC<MediaViewProps> = ({
                 <div
                   key={idx}
                   onClick={() => setSelectedPhoto(photo.url)}
-                  className="group relative rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer shadow-sm border border-neutral-200 dark:border-neutral-800"
+                  className="group relative rounded-2xl overflow-hidden aspect-4/3 cursor-pointer shadow-sm border border-neutral-200 dark:border-neutral-800"
                 >
                   <img
                     src={photo.url}
                     alt={photo.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4 text-white">
+                  <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4 text-white">
                     <span className="text-[10px] text-emerald-300 font-bold uppercase">
                       {photo.category}
                     </span>

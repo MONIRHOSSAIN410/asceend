@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+// import { motion } from 'motion/react';
 import { 
   Building2, 
   Users, 
@@ -15,6 +15,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import { PageView } from '../types';
+
 
 interface AboutViewProps {
   onNavigate: (view: PageView) => void;
@@ -33,7 +34,7 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate, onRequestCall 
             alt="About Aasceend Group"
             className="w-full h-full object-cover opacity-25"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-900/80 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-neutral-950 via-neutral-900/80 to-transparent" />
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 text-center space-y-4">

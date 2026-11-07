@@ -255,10 +255,10 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
           
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
-              <div className="inline-flex items-center gap-2 text-xs font-bold text-[#006838] dark:text-emerald-400 uppercase tracking-widest mb-2 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80">
+              {/* <div className="inline-flex items-center gap-2 text-xs font-bold text-[#006838] dark:text-emerald-400 uppercase tracking-widest mb-2 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80">
                 <span className="w-2 h-2 rounded-full bg-[#006838]" />
                 <span>Prime Real Estate Developments · Master-Planned Communities</span>
-              </div>
+              </div> */}
               <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-[#006838] dark:text-emerald-400 tracking-tight">
                 FEATURED PROJECTS
               </h2>
@@ -349,7 +349,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
                           <img
                             src={proj.projectLogoUrl}
                             alt={proj.name}
-                            className="max-h-12 max-w-[190px] w-auto object-contain object-left transition-transform duration-300 group-hover:scale-102"
+                            className="max-h-12 max-w-47.5 w-auto object-contain object-left transition-transform duration-300 group-hover:scale-102"
                           />
                         ) : null}
                       </div>
@@ -476,7 +476,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-5 bg-gradient-to-br from-emerald-800 to-emerald-950 text-white rounded-3xl p-8 sm:p-10 flex flex-col justify-between shadow-xl border border-emerald-700/40 relative overflow-hidden"
+            className="lg:col-span-5 bg-linear-to-br from-emerald-800 to-emerald-950 text-white rounded-3xl p-8 sm:p-10 flex flex-col justify-between shadow-xl border border-emerald-700/40 relative overflow-hidden"
           >
             <div className="space-y-4 relative z-10">
               <span className="text-xs font-bold uppercase tracking-widest text-emerald-300">

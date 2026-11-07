@@ -92,7 +92,7 @@ export const AccreditationsView: React.FC<AccreditationsViewProps> = ({ onNaviga
       {/* 1. HERO BANNER WITH FLUID PARALLAX BACKGROUND */}
       <section 
         ref={heroRef}
-        className="relative min-h-[480px] sm:min-h-[540px] flex items-center justify-center bg-neutral-950 text-white overflow-hidden"
+        className="relative min-h-120 sm:min-h-135 flex items-center justify-center bg-neutral-950 text-white overflow-hidden"
       >
         {/* Parallax Image Layer */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
