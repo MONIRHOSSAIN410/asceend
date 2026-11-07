@@ -120,7 +120,7 @@ export const LeadModal: React.FC<LeadModalProps> = ({
 
               <div>
                 <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 dark:text-neutral-300 mb-1">
-                  Full Name *
+                  Full Name 
                 </label>
                 <input
                   type="text"
@@ -135,7 +135,7 @@ export const LeadModal: React.FC<LeadModalProps> = ({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 dark:text-neutral-300 mb-1">
-                    Mobile Number *
+                    Mobile Number 
                   </label>
                   <input
                     type="tel"

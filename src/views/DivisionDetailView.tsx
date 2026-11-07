@@ -134,7 +134,7 @@ export const DivisionDetailView: React.FC<DivisionDetailViewProps> = ({
                     idx % 2 === 1 ? 'lg:flex-row-reverse' : ''
                   }`}
                 >
-                  <div className="lg:col-span-5 rounded-2xl overflow-hidden aspect-[4/3] shadow-md">
+                  <div className="lg:col-span-5 rounded-2xl overflow-hidden aspect-4/3 shadow-md">
                     <img
                       src={proj.heroImage}
                       alt={proj.name}

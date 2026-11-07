@@ -85,7 +85,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onNavigate, onRequestC
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-600 dark:text-neutral-300 mb-1">
-                    Full Name *
+                    Full Name 
                   </label>
                   <input
                     type="text"
@@ -99,7 +99,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onNavigate, onRequestC
 
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-600 dark:text-neutral-300 mb-1">
-                    Email *
+                    Email 
                   </label>
                   <input
                     type="email"
@@ -113,7 +113,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onNavigate, onRequestC
 
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-600 dark:text-neutral-300 mb-1">
-                    Message *
+                    Message 
                   </label>
                   <textarea
                     rows={4}

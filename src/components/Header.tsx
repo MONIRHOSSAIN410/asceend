@@ -36,9 +36,9 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileAccordions, setMobileAccordions] = useState<Record<string, boolean>>({
-    about: false,
-    divisions: false,
-    projects: false,
+    about: true,
+    divisions: true,
+    projects: true,
     media: false,
     sustainability: false
   });
@@ -426,8 +426,9 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800 px-4 pt-3 pb-6 space-y-3 max-h-[85vh] overflow-y-auto text-neutral-900 dark:text-neutral-100 shadow-2xl">
+        <div className="lg:hidden bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800 px-4 pt-4 pb-6 space-y-3 max-h-[85vh] overflow-y-auto text-neutral-900 dark:text-neutral-100 shadow-2xl">
           <div className="flex items-center justify-between pb-3 border-b border-neutral-100 dark:border-neutral-800">
+           
             <a
               href="https://wa.me/8801896006310"
               target="_blank"

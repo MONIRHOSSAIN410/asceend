@@ -47,26 +47,19 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onRequestCall }) => 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 pb-12 border-b border-emerald-900">
           
-          {/* Brand Column (Clean Logo without white background box) */}
+          {/* Brand Column */}
           <div className="lg:col-span-4 space-y-4">
             <button 
               onClick={() => { onNavigate({ type: 'home' }); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
               className="inline-block text-left cursor-pointer group"
               aria-label="Aasceend Group Home"
             >
-              <div className="flex items-center group-hover:scale-105 transition-transform">
-                <img 
-                  src="/assets/images/aasceend_logo_official_green.png" 
-                  alt="Aasceend Group" 
-                  className="h-8 sm:h-10 w-auto object-contain bg-transparent border-0 shadow-none ring-0 outline-none block"
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    if (target.src !== '/assets/aistudio/10._Aasceend_Group_2-01_1444aef8.png') {
-                      target.src = '/assets/aistudio/10._Aasceend_Group_2-01_1444aef8.png';
-                    }
-                  }}
-                />
-              </div>
+              {/* White background container removed */}
+              <img 
+                src="/assets/images/aasceend_logo_official_green.png" 
+                alt="Aasceend Group" 
+                className="h-10 sm:h-11 w-auto object-contain group-hover:scale-105 transition-transform" 
+              />
             </button>
 
             <p className="text-emerald-100 font-serif italic text-base leading-snug">
@@ -183,7 +176,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onRequestCall }) => 
 
         {/* Bottom Legal Notice */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-emerald-300">
-          <div >
+          <div>
             © 2026 <span className="font-semibold text-white">Aasceend Group</span> | All rights reserved
           </div>
 
