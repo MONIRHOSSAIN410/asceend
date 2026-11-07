@@ -49,9 +49,7 @@ export const DivisionDetailView: React.FC<DivisionDetailViewProps> = ({
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center space-y-3">
-          <div className="inline-block px-3 py-1 rounded-full bg-emerald-600/30 text-emerald-300 text-xs font-semibold uppercase tracking-wider mb-2">
-            Aasceend Conglomerate Division
-          </div>
+         
           <h1 className="text-3xl sm:text-5xl font-extrabold font-heading text-white">
             {division.name}
           </h1>
