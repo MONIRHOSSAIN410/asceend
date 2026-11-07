@@ -36,9 +36,9 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileAccordions, setMobileAccordions] = useState<Record<string, boolean>>({
-    about: true,
-    divisions: true,
-    projects: true,
+    about: false,
+    divisions: false,
+    projects: false,
     media: false,
     sustainability: false
   });
@@ -415,6 +415,7 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Mobile Hamburger Menu Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
               className="lg:hidden p-2 rounded-lg transition-colors text-neutral-800 dark:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -425,11 +426,8 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800 px-4 pt-4 pb-6 space-y-3 max-h-[85vh] overflow-y-auto text-neutral-900 dark:text-neutral-100 shadow-2xl">
+        <div className="lg:hidden bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800 px-4 pt-3 pb-6 space-y-3 max-h-[85vh] overflow-y-auto text-neutral-900 dark:text-neutral-100 shadow-2xl">
           <div className="flex items-center justify-between pb-3 border-b border-neutral-100 dark:border-neutral-800">
-            <div className="flex items-center font-bold text-sm text-emerald-700 dark:text-emerald-400">
-              Navigation Menu
-            </div>
             <a
               href="https://wa.me/8801896006310"
               target="_blank"
@@ -526,10 +524,9 @@ export const Header: React.FC<HeaderProps> = ({
                   <button
                     key={proj.id}
                     onClick={() => handleNav({ type: 'project', projectId: proj.id })}
-                    className="block w-full text-left py-1.5 text-sm text-neutral-800 dark:text-neutral-200 hover:text-emerald-600 flex items-center justify-between"
+                    className="w-full text-left py-1.5 text-sm text-neutral-800 dark:text-neutral-200 hover:text-emerald-600 block"
                   >
                     <span>{proj.name}</span>
-                    <span className="text-[10px] text-emerald-700 dark:text-emerald-400 font-semibold">{proj.banglaName}</span>
                   </button>
                 ))}
               </div>
