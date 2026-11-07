@@ -183,7 +183,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onRequestCall }) => 
 
         {/* Bottom Legal Notice */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-emerald-300">
-          <div>
+          <div >
             © 2026 <span className="font-semibold text-white">Aasceend Group</span> | All rights reserved
           </div>
 
