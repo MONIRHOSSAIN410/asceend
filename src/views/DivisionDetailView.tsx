@@ -45,7 +45,7 @@ export const DivisionDetailView: React.FC<DivisionDetailViewProps> = ({
             alt={division.name}
             className="w-full h-full object-cover opacity-30"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-900/80 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-neutral-950 via-neutral-900/80 to-transparent" />
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center space-y-3">
@@ -63,13 +63,13 @@ export const DivisionDetailView: React.FC<DivisionDetailViewProps> = ({
 
       {/* 2. Primary Sector Overview Image & Introductory Statement */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="rounded-3xl overflow-hidden aspect-[16/8] sm:aspect-[21/9] shadow-2xl relative border border-neutral-200 dark:border-neutral-800">
+        <div className="rounded-3xl overflow-hidden aspect-16/8 sm:aspect-21/9 shadow-2xl relative border border-neutral-200 dark:border-neutral-800">
           <img
             src={division.heroImage}
             alt={division.name}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent" />
           <div className="absolute bottom-6 left-6 right-6 text-white max-w-2xl">
             <h3 className="text-xl sm:text-2xl font-bold font-heading mb-1 text-white">
               {division.concernName}

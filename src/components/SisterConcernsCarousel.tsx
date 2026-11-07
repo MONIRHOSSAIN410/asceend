@@ -107,9 +107,7 @@ export const SisterConcernsCarousel: React.FC<SisterConcernsCarouselProps> = ({ 
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 lg:pb-28 select-none">
       {/* Title Header */}
       <div className="text-center mb-8">
-        <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">
-          Corporate Conglomerate
-        </span>
+        
         <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-neutral-900 dark:text-white uppercase tracking-wider mt-1">
           SISTER CONCERNS
         </h2>
