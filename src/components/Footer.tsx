@@ -13,7 +13,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onRequestCall }) => 
       
       {/* Pre-Footer Action Banner */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-        <div className="bg-gradient-to-r from-emerald-900 via-emerald-800 to-emerald-900 rounded-2xl p-6 sm:p-8 shadow-xl border border-emerald-700/50 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="bg-linear-to-r from-emerald-900 via-emerald-800 to-emerald-900 rounded-2xl p-6 sm:p-8 shadow-xl border border-emerald-700/50 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
             <h3 className="text-xl sm:text-2xl font-bold font-heading text-white mb-1">
               Ready to Build Your Dream? Let’s Start the Conversation.

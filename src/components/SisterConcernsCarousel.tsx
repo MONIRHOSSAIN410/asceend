@@ -108,7 +108,7 @@ export const SisterConcernsCarousel: React.FC<SisterConcernsCarouselProps> = ({ 
       {/* Title Header */}
       <div className="text-center mb-8">
         
-        <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-neutral-900 dark:text-white uppercase tracking-wider mt-1">
+        <h2 className="text-2xl text-emerald-600 sm:text-3xl font-extrabold font-heading  dark:text-white uppercase tracking-wider mt-1">
           SISTER CONCERNS
         </h2>
         <div className="w-12 h-1 bg-emerald-600 mx-auto mt-2 rounded-full" />
@@ -147,7 +147,7 @@ export const SisterConcernsCarousel: React.FC<SisterConcernsCarouselProps> = ({ 
           onMouseDown={handleMouseDown}
           onMouseUp={handleMouseUp}
           onMouseMove={handleMouseMove}
-          className="overflow-x-auto overflow-y-hidden scrollbar-none flex gap-3 sm:gap-4 py-3 px-2 sm:px-3 cursor-grab active:cursor-grabbing [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          className="overflow-x-auto overflow-y-hidden scrollbar-width:none flex gap-3 sm:gap-4 py-3 px-2 sm:px-3 cursor-grab active:cursor-grabbing [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
           style={{ WebkitOverflowScrolling: 'touch' }}
         >
           {INFINITE_CONCERNS.map((concern, idx) => (
@@ -155,7 +155,7 @@ export const SisterConcernsCarousel: React.FC<SisterConcernsCarouselProps> = ({ 
               key={`${concern.id}-${idx}`}
               onClick={() => handleCardClick(concern)}
               title={`${concern.name} · ${concern.sector}`}
-              className="w-[180px] sm:w-[220px] lg:w-[240px] shrink-0 bg-white rounded-xl border border-neutral-200/90 shadow-xs hover:shadow-md hover:border-emerald-500/60 transition-all duration-300 h-28 sm:h-36 flex flex-col items-center justify-center p-2.5 sm:p-3 cursor-pointer group hover:-translate-y-1 relative"
+              className="w-45 sm:w-55 lg:w-60 shrink-0 bg-white rounded-xl border border-neutral-200/90 shadow-xs hover:shadow-md hover:border-emerald-500/60 transition-all duration-300 h-28 sm:h-36 flex flex-col items-center justify-center p-2.5 sm:p-3 cursor-pointer group hover:-translate-y-1 relative"
             >
               <div className="w-full h-full flex items-center justify-center overflow-hidden">
                 <img

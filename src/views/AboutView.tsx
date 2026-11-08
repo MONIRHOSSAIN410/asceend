@@ -38,9 +38,7 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate, onRequestCall 
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 text-center space-y-4">
-          <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">
-            About Aasceend
-          </span>
+         
           <h1 className="text-3xl sm:text-5xl font-extrabold font-heading text-white">
             About Aasceend Group
           </h1>
@@ -65,7 +63,7 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate, onRequestCall 
       {/* 3. Why Choose Aasceend? (4 Cards from video) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-neutral-900 dark:text-white">
+          <h2 className="text-2xl text-emerald-600 sm:text-3xl font-extrabold font-heading  dark:text-white">
             Why Choose Aasceend?
           </h2>
           <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 mt-2 max-w-xl mx-auto">
@@ -139,7 +137,7 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate, onRequestCall 
       <section className="bg-neutral-100/70 dark:bg-neutral-900/40 py-16 border-y border-neutral-200 dark:border-neutral-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-neutral-900 dark:text-white">
+            <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-emerald-600 dark:text-white">
               Our Core Values
             </h2>
             <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 mt-1">
@@ -216,7 +214,7 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate, onRequestCall 
       {/* 5. Mission & Vision */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
-          <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-neutral-900 dark:text-white">
+          <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-emerald-600 dark:text-white">
             Our Mission & Vision
           </h2>
           <div className="w-16 h-1 bg-emerald-600 mx-auto mt-4 rounded-full" />

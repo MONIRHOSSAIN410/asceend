@@ -114,15 +114,7 @@ export const AccreditationsView: React.FC<AccreditationsViewProps> = ({ onNaviga
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-5 py-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs font-bold uppercase tracking-widest backdrop-blur-md shadow-sm"
-          >
-            <ShieldCheck className="w-4 h-4 text-emerald-400" />
-            <span>Statutory Approvals &amp; Compliance</span>
-          </motion.div>
+         
 
           <motion.h1 
             initial={{ opacity: 0, y: 24 }}
@@ -148,14 +140,8 @@ export const AccreditationsView: React.FC<AccreditationsViewProps> = ({ onNaviga
             transition={{ duration: 0.7, delay: 0.3, ease: 'easeOut' }}
             className="pt-2 flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-neutral-300"
           >
-            <span className="flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10">
-              <BadgeCheck className="w-4 h-4 text-emerald-400" />
-              100% Freehold Title Clearance
-            </span>
-            <span className="flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10">
-              <Landmark className="w-4 h-4 text-emerald-400" />
-              BLDA Certified Developer
-            </span>
+            
+          
           </motion.div>
         </div>
       </section>
@@ -163,7 +149,7 @@ export const AccreditationsView: React.FC<AccreditationsViewProps> = ({ onNaviga
       {/* 2. ACCREDITATIONS CARDS GRID */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
-          <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-neutral-900 dark:text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-emerald-600 dark:text-white tracking-tight">
             Institutional Certifications
           </h2>
           <p className="text-sm text-neutral-600 dark:text-neutral-400">
@@ -234,10 +220,7 @@ export const AccreditationsView: React.FC<AccreditationsViewProps> = ({ onNaviga
 
         {/* Banner Content */}
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white space-y-6">
-          <div className="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 uppercase tracking-widest bg-emerald-950/60 border border-emerald-500/40 px-3.5 py-1.5 rounded-full backdrop-blur-md">
-            <Star className="w-4 h-4 text-emerald-400" />
-            <span>Excellence In Urban Planning</span>
-          </div>
+         
 
           <h2 className="text-2xl sm:text-4xl font-extrabold font-heading tracking-tight leading-snug drop-shadow-md">
             Zero Tolerance on Title Ambiguity. 100% Freehold Ownership Guaranteed.
