@@ -138,116 +138,115 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
     <div className="space-y-16 lg:space-y-24">
       
       {/* 1. HERO SECTION WITH RUNNING REAL ESTATE CAROUSEL */}
-      <section className="relative min-h-[90vh] flex items-center pt-24 pb-16 overflow-hidden">
+    
+<section className="relative min-h-[90vh] flex items-center pt-24 pb-16 overflow-hidden">
         
-        {/* Carousel Background Images with Smooth Crossfade */}
-        <div className="absolute inset-0 z-0">
-          <AnimatePresence mode="sync">
-            <motion.div
-              key={HERO_SLIDES[currentSlide].id}
-              initial={{ opacity: 0, scale: 1.06 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1.2, ease: 'easeInOut' }}
-              className="absolute inset-0"
-            >
-              <img
-                src={HERO_SLIDES[currentSlide].image}
-                alt={HERO_SLIDES[currentSlide].title}
-                className="w-full h-full object-cover object-center"
-              />
-            </motion.div>
-          </AnimatePresence>
-          {/* Subtle balanced overlay so the full real estate image is clearly visible without heavy dark shadows on the left */}
-          <div className="absolute inset-0 bg-black/35" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/25" />
+  {/* Carousel Background Images with Smooth Crossfade */}
+  <div className="absolute inset-0 z-0">
+    <AnimatePresence mode="sync">
+      <motion.div
+        key={HERO_SLIDES[currentSlide].id}
+        initial={{ opacity: 0, scale: 1.06 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1.2, ease: 'easeInOut' }}
+        className="absolute inset-0"
+      >
+        <img
+          src={HERO_SLIDES[currentSlide].image}
+          alt={HERO_SLIDES[currentSlide].title}
+          className="w-full h-full object-cover object-center opacity-100"
+        />
+      </motion.div>
+    </AnimatePresence>
+  </div>
+
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <div className="max-w-3xl space-y-6 text-white text-left">
+      <motion.div 
+        initial={{ opacity: 0, x: -30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="space-y-6"
+      >
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading tracking-tight text-white leading-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
+          Aasceend Group
+        </h1>
+
+        <div className="text-2xl sm:text-3xl font-medium font-heading text-white leading-snug drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]">
+          Your Dreams, Our Commitment.
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="max-w-3xl space-y-6 text-white text-left">
-            <motion.div 
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: 'easeOut' }}
-              className="space-y-6"
+        <div className="flex flex-wrap items-center gap-4 pt-1">
+          <button
+            onClick={() => onNavigate({ type: 'project', projectId: HERO_SLIDES[currentSlide].projectId })}
+            className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-emerald-600/30 flex items-center gap-2 transition-all hover:scale-105 active:scale-95 cursor-pointer"
+          >
+            <span>View {HERO_SLIDES[currentSlide].title}</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
+
+          <button
+            onClick={() => onNavigate({ type: 'about' })}
+            className="bg-white/10 hover:bg-white/20 text-white border border-white/25 font-semibold px-6 py-3.5 rounded-xl backdrop-blur-md transition-colors cursor-pointer"
+          >
+            About Our Vision
+          </button>
+        </div>
+
+        {/* Quick Trust Highlights */}
+        <div className="grid grid-cols-3 gap-3 sm:gap-6 pt-6 border-t border-white/15 max-w-xl">
+          {/* <div>
+            <div className="text-xl sm:text-3xl font-bold font-mono text-emerald-400">1300+</div>
+            <div className="text-[10px] sm:text-xs text-neutral-300 mt-0.5">Bigha Purbachal</div>
+          </div> */}
+          {/* <div>
+            <div className="text-xl sm:text-3xl font-bold font-mono text-emerald-400">100%</div>
+            <div className="text-[10px] sm:text-xs text-neutral-300 mt-0.5">Legal Title</div>
+          </div> */}
+          {/* <div>
+            <div className="text-xl sm:text-3xl font-bold font-mono text-emerald-400">480+</div>
+            <div className="text-[10px] sm:text-xs text-neutral-300 mt-0.5">Experts</div>
+          </div> */}
+        </div>
+
+        {/* Minimal Bottom Slide Indicators */}
+        <div className="pt-4 flex items-center justify-between max-w-xl">
+          <div className="flex items-center gap-2">
+            {HERO_SLIDES.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentSlide(idx)}
+                aria-label={`Go to slide ${idx + 1}`}
+                className={`h-1.5 rounded-full transition-all cursor-pointer ${
+                  currentSlide === idx ? 'w-8 bg-emerald-400' : 'w-2 bg-white/40 hover:bg-white/70'
+                }`}
+              />
+            ))}
+          </div>
+
+          <div className="flex items-center gap-2">
+            <button
+              onClick={handlePrevSlide}
+              aria-label="Previous Slide"
+              className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
             >
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading tracking-tight text-white leading-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
-                Aasceend Group
-              </h1>
-
-              <div className="text-2xl sm:text-3xl font-medium font-heading text-emerald-300 leading-snug drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]">
-                Your Dreams, Our Commitment.
-              </div>
-
-              <div className="flex flex-wrap items-center gap-4 pt-1">
-                <button
-                  onClick={() => onNavigate({ type: 'project', projectId: HERO_SLIDES[currentSlide].projectId })}
-                  className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-emerald-600/30 flex items-center gap-2 transition-all hover:scale-105 active:scale-95 cursor-pointer"
-                >
-                  <span>View {HERO_SLIDES[currentSlide].title}</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-
-                <button
-                  onClick={() => onNavigate({ type: 'about' })}
-                  className="bg-white/10 hover:bg-white/20 text-white border border-white/25 font-semibold px-6 py-3.5 rounded-xl backdrop-blur-md transition-colors cursor-pointer"
-                >
-                  About Our Vision
-                </button>
-              </div>
-
-              {/* Quick Trust Highlights */}
-              <div className="grid grid-cols-3 gap-3 sm:gap-6 pt-6 border-t border-white/15 max-w-xl">
-                <div>
-                  <div className="text-xl sm:text-3xl font-bold font-mono text-emerald-400">1300+</div>
-                  <div className="text-[10px] sm:text-xs text-neutral-300 mt-0.5">Bigha Purbachal</div>
-                </div>
-                <div>
-                  <div className="text-xl sm:text-3xl font-bold font-mono text-emerald-400">100%</div>
-                  <div className="text-[10px] sm:text-xs text-neutral-300 mt-0.5">Legal Title</div>
-                </div>
-                <div>
-                  <div className="text-xl sm:text-3xl font-bold font-mono text-emerald-400">480+</div>
-                  <div className="text-[10px] sm:text-xs text-neutral-300 mt-0.5">Experts</div>
-                </div>
-              </div>
-
-              {/* Minimal Bottom Slide Indicators */}
-              <div className="pt-4 flex items-center justify-between max-w-xl">
-                <div className="flex items-center gap-2">
-                  {HERO_SLIDES.map((_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setCurrentSlide(idx)}
-                      aria-label={`Go to slide ${idx + 1}`}
-                      className={`h-1.5 rounded-full transition-all cursor-pointer ${
-                        currentSlide === idx ? 'w-8 bg-emerald-400' : 'w-2 bg-white/40 hover:bg-white/70'
-                      }`}
-                    />
-                  ))}
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={handlePrevSlide}
-                    aria-label="Previous Slide"
-                    className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
-                  >
-                    <ChevronLeft className="w-4 h-4" />
-                  </button>
-                  <button
-                    onClick={handleNextSlide}
-                    aria-label="Next Slide"
-                    className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
-                  >
-                    <ChevronRight className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-            </motion.div>
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+            <button
+              onClick={handleNextSlide}
+              aria-label="Next Slide"
+              className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
           </div>
         </div>
-      </section>
+      </motion.div>
+    </div>
+  </div>
+</section>
+
 
       {/* 2. FEATURED PROJECTS SECTION */}
       <section className="bg-neutral-100/80 dark:bg-neutral-900/50 py-16 lg:py-20 border-y border-neutral-200 dark:border-neutral-800">
@@ -255,10 +254,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
           
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
-              {/* <div className="inline-flex items-center gap-2 text-xs font-bold text-[#006838] dark:text-emerald-400 uppercase tracking-widest mb-2 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80">
-                <span className="w-2 h-2 rounded-full bg-[#006838]" />
-                <span>Prime Real Estate Developments · Master-Planned Communities</span>
-              </div> */}
+             
               <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-[#006838] dark:text-emerald-400 tracking-tight">
                 FEATURED PROJECTS
               </h2>
