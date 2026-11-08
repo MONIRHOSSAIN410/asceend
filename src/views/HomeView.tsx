@@ -258,7 +258,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
     {/* Section Header */}
     <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
       <div>
-        <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-[#006838] dark:text-emerald-400 tracking-tight">
+        <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-green-800 dark:text-emerald-400 tracking-tight">
           FEATURED PROJECTS
         </h2>
 

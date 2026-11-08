@@ -147,7 +147,7 @@ export const SisterConcernsCarousel: React.FC<SisterConcernsCarouselProps> = ({ 
           onMouseDown={handleMouseDown}
           onMouseUp={handleMouseUp}
           onMouseMove={handleMouseMove}
-          className="overflow-x-auto overflow-y-hidden scrollbar-width:none flex gap-3 sm:gap-4 py-3 px-2 sm:px-3 cursor-grab active:cursor-grabbing [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          className="overflow-x-auto overflow-y-hidden scrollbar-width:none flex gap-3 sm:gap-4 py-3 px-2 sm:px-3 cursor-grab active:cursor-grabbing scrollbar-none [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
           style={{ WebkitOverflowScrolling: 'touch' }}
         >
           {INFINITE_CONCERNS.map((concern, idx) => (
