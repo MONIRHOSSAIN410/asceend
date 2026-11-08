@@ -249,123 +249,224 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
 
 
       {/* 2. FEATURED PROJECTS SECTION */}
-      <section className="bg-neutral-100/80 dark:bg-neutral-900/50 py-16 lg:py-20 border-y border-neutral-200 dark:border-neutral-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-            <div>
-             
-              <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-[#006838] dark:text-emerald-400 tracking-tight">
-                FEATURED PROJECTS
-              </h2>
-              <p className="text-sm text-emerald-950/80 dark:text-emerald-100/80 mt-2 max-w-2xl leading-relaxed">
-                Modern master-planned residential townships, scenic riverfront communities, and luxury 5-star hotel and resort destinations across prime corridors in Bangladesh.
-              </p>
-            </div>
+      
 
-            {/* Filter Tabs with Live Project Counts */}
-            <div className="flex flex-wrap items-center p-1 bg-white dark:bg-neutral-800 rounded-xl border border-emerald-200 dark:border-emerald-800 shadow-sm text-xs shrink-0 self-start md:self-auto gap-1">
-              <button
-                onClick={() => setProjectFilter('all')}
-                className={`px-4 py-2 rounded-lg font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
-                  projectFilter === 'all'
-                    ? 'bg-[#006838] text-white shadow-sm'
-                    : 'text-emerald-900 dark:text-emerald-200 hover:text-[#006838] hover:bg-emerald-50 dark:hover:bg-neutral-700'
-                }`}
-              >
-                <span>All Projects</span>
-                <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-mono font-bold ${
-                  projectFilter === 'all' ? 'bg-white/20 text-white' : 'bg-emerald-100 dark:bg-neutral-700 text-emerald-800 dark:text-emerald-300'
-                }`}>
-                  {PROJECTS.length}
-                </span>
-              </button>
-              <button
-                onClick={() => setProjectFilter('township')}
-                className={`px-4 py-2 rounded-lg font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
-                  projectFilter === 'township'
-                    ? 'bg-[#006838] text-white shadow-sm'
-                    : 'text-emerald-900 dark:text-emerald-200 hover:text-[#006838] hover:bg-emerald-50 dark:hover:bg-neutral-700'
-                }`}
-              >
-                <span>Townships</span>
-                <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-mono font-bold ${
-                  projectFilter === 'township' ? 'bg-white/20 text-white' : 'bg-emerald-100 dark:bg-neutral-700 text-emerald-800 dark:text-emerald-300'
-                }`}>
-                  {PROJECTS.filter((p) => p.category === 'township').length}
-                </span>
-              </button>
-              <button
-                onClick={() => setProjectFilter('hospitality')}
-                className={`px-4 py-2 rounded-lg font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
-                  projectFilter === 'hospitality'
-                    ? 'bg-[#006838] text-white shadow-sm'
-                    : 'text-emerald-900 dark:text-emerald-200 hover:text-[#006838] hover:bg-emerald-50 dark:hover:bg-neutral-700'
-                }`}
-              >
-                <span>Resorts & Hotels</span>
-                <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-mono font-bold ${
-                  projectFilter === 'hospitality' ? 'bg-white/20 text-white' : 'bg-emerald-100 dark:bg-neutral-700 text-emerald-800 dark:text-emerald-300'
-                }`}>
-                  {PROJECTS.filter((p) => p.category === 'resort' || p.category === 'hotel').length}
-                </span>
-              </button>
-            </div>
-          </div>
 
-          <AnimatePresence mode="wait">
-            <motion.div 
-              key={projectFilter}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -16 }}
-              transition={{ duration: 0.3, ease: 'easeOut' }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+<section className="bg-neutral-100/80 dark:bg-neutral-900/50 py-16 lg:py-20 border-y border-neutral-200 dark:border-neutral-800">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    {/* Section Header */}
+    <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+      <div>
+        <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-[#006838] dark:text-emerald-400 tracking-tight">
+          FEATURED PROJECTS
+        </h2>
+
+        <p className="text-sm text-emerald-950/80 dark:text-emerald-100/80 mt-2 max-w-2xl leading-relaxed">
+          Modern master-planned residential townships, scenic riverfront
+          communities, and luxury 5-star hotel and resort destinations
+          across prime corridors in Bangladesh.
+        </p>
+      </div>
+
+      {/* Filter Tabs */}
+      <div className="flex flex-wrap items-center p-1 bg-white dark:bg-neutral-800 rounded-xl border border-emerald-200 dark:border-emerald-800 shadow-sm text-xs shrink-0 self-start md:self-auto gap-1">
+
+        <button
+          onClick={() => setProjectFilter("all")}
+          className={`px-4 py-2 rounded-lg font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
+            projectFilter === "all"
+              ? "bg-[#006838] text-white shadow-sm"
+              : "text-emerald-900 dark:text-emerald-200 hover:text-[#006838] hover:bg-emerald-50 dark:hover:bg-neutral-700"
+          }`}
+        >
+          <span>All Projects</span>
+          <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-mono font-bold ${
+            projectFilter === "all"
+              ? "bg-white/20 text-white"
+              : "bg-emerald-100 dark:bg-neutral-700 text-emerald-800 dark:text-emerald-300"
+          }`}>
+            {PROJECTS.length}
+          </span>
+        </button>
+
+        <button
+          onClick={() => setProjectFilter("township")}
+          className={`px-4 py-2 rounded-lg font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
+            projectFilter === "township"
+              ? "bg-[#006838] text-white shadow-sm"
+              : "text-emerald-900 dark:text-emerald-200 hover:text-[#006838] hover:bg-emerald-50 dark:hover:bg-neutral-700"
+          }`}
+        >
+          <span>Townships</span>
+          <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-mono font-bold ${
+            projectFilter === "township"
+              ? "bg-white/20 text-white"
+              : "bg-emerald-100 dark:bg-neutral-700 text-emerald-800 dark:text-emerald-300"
+          }`}>
+            {PROJECTS.filter((p) => p.category === "township").length}
+          </span>
+        </button>
+
+        <button
+          onClick={() => setProjectFilter("hospitality")}
+          className={`px-4 py-2 rounded-lg font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
+            projectFilter === "hospitality"
+              ? "bg-[#006838] text-white shadow-sm"
+              : "text-emerald-900 dark:text-emerald-200 hover:text-[#006838] hover:bg-emerald-50 dark:hover:bg-neutral-700"
+          }`}
+        >
+          <span>Resorts & Hotels</span>
+          <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-mono font-bold ${
+            projectFilter === "hospitality"
+              ? "bg-white/20 text-white"
+              : "bg-emerald-100 dark:bg-neutral-700 text-emerald-800 dark:text-emerald-300"
+          }`}>
+            {
+              PROJECTS.filter(
+                (p) => p.category === "resort" || p.category === "hotel"
+              ).length
+            }
+          </span>
+        </button>
+      </div>
+    </div>
+
+    {/* Project Cards */}
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={projectFilter}
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -16 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+      >
+        {filteredProjects.map((proj) => {
+
+          const isRiverView = proj.name
+            ?.toLowerCase()
+            .includes("river view");
+
+          const isAasceendTown = proj.name
+            ?.toLowerCase()
+            .includes("aasceend town");
+
+          return (
+            <div
+              key={proj.id}
+              onClick={() =>
+                onNavigate({ type: "project", projectId: proj.id })
+              }
+              className="
+                bg-white dark:bg-neutral-900
+                rounded-2xl overflow-hidden
+                border border-emerald-600/30
+                hover:border-[#006838]
+                shadow-sm hover:shadow-xl
+                hover:shadow-emerald-950/10
+                transition-all duration-300
+                cursor-pointer group
+                flex flex-col
+                hover:-translate-y-1.5
+              "
             >
-              {filteredProjects.map((proj) => (
-                <div
-                  key={proj.id}
-                  onClick={() => onNavigate({ type: 'project', projectId: proj.id })}
-                  className="bg-white dark:bg-neutral-900 rounded-2xl overflow-hidden border-2 border-emerald-600/30 hover:border-[#006838] shadow-sm hover:shadow-xl hover:shadow-emerald-950/10 transition-all duration-300 cursor-pointer group flex flex-col justify-between hover:-translate-y-1.5"
-                >
-                  {/* Project Hero Image */}
-                  <div className="relative h-44 sm:h-48 overflow-hidden bg-neutral-100 dark:bg-neutral-800 rounded-t-2xl">
+
+              {/* Hero Image */}
+              <div className="relative h-44 sm:h-48 overflow-hidden bg-neutral-100 dark:bg-neutral-800">
+                <img
+                  src={proj.heroImage}
+                  alt={proj.name}
+                  loading="lazy"
+                  className="
+                    w-full h-full object-cover
+                    group-hover:scale-105
+                    transition-transform duration-500 ease-out
+                  "
+                />
+              </div>
+
+              {/* Logo & Project Name */}
+              <div className="
+                px-4 pt-3 pb-4
+                flex flex-col
+                items-center
+                text-center
+                bg-white dark:bg-neutral-900
+              ">
+
+                {/* Project Logo */}
+                {proj.projectLogoUrl && (
+                  <div className="
+                    w-full
+                    h-[65px]
+                    flex items-center justify-center
+                    overflow-hidden
+                  ">
                     <img
-                      src={proj.heroImage}
-                      alt={proj.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                      src={proj.projectLogoUrl}
+                      alt={`${proj.name} Logo`}
+                      loading="lazy"
+                      style={{
+                        clipPath: isRiverView
+                          ? "inset(0 0 14% 0)"
+                          : "none"
+                      }}
+                      className="
+                        block
+                        max-w-[185px]
+                        max-h-[60px]
+                        w-auto
+                        h-auto
+                        object-contain
+                        object-center
+                        transition-transform duration-300
+                        group-hover:scale-105
+                      "
                     />
                   </div>
+                )}
 
-                  {/* Project Emblem Logo & Name */}
-                  <div className="p-5 bg-white dark:bg-neutral-900 flex flex-col justify-between flex-1 min-h-[145px]">
-                    <div className="flex flex-col gap-2 mb-3">
-                      <div className="h-14 flex items-center justify-start">
-                        {proj.projectLogoUrl ? (
-                          <img
-                            src={proj.projectLogoUrl}
-                            alt={proj.name}
-                            className="max-h-12 max-w-47.5 w-auto object-contain object-left transition-transform duration-300 group-hover:scale-102"
-                          />
-                        ) : null}
-                      </div>
-                      {/* Bangla brand name in crisp, 100% readable font */}
-                      <div className="text-xs font-bold text-emerald-800 dark:text-emerald-300 tracking-wide font-sans">
-                        {proj.banglaName}
-                      </div>
-                    </div>
+                {/* English Project Name */}
+                <div className="w-full flex items-center justify-center mt-1 px-1">
 
-                    {/* English project title in unmistakable bold deep green */}
-                    <h3 className="text-base sm:text-lg font-extrabold font-heading text-[#006838] dark:text-emerald-400 tracking-tight leading-snug group-hover:text-emerald-600 dark:group-hover:text-emerald-300 transition-colors mt-auto">
-                      {proj.name}
-                    </h3>
-                  </div>
+                  <h3
+                    className={`
+                      w-full
+                      font-extrabold
+                      font-heading
+                      text-[#006838]
+                      dark:text-emerald-400
+                      tracking-tight
+                      text-center
+                      leading-snug
+                      break-words
+                      transition-colors
+                      group-hover:text-emerald-600
+                      dark:group-hover:text-emerald-300
+                      ${isAasceendTown
+                        ? "text-lg sm:text-xl"
+                        : "text-base sm:text-lg"
+                      }
+                    `}
+                  >
+                    {proj.name}
+                  </h3>
+
                 </div>
-              ))}
-            </motion.div>
-          </AnimatePresence>
-        </div>
-      </section>
+
+              </div>
+            </div>
+          );
+        })}
+      </motion.div>
+    </AnimatePresence>
+
+  </div>
+</section>
+
+
+
 
       {/* 3. BUILDING TRUST THROUGH PLANNING, TRANSPARENCY, AND VISION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
