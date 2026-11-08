@@ -373,7 +373,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-emerald-600 dark:text-white">
             Building Trust Through Planning, Transparency, And Vision
           </h2>
-          <div className="w-16 h-1 bg-emerald-600 mx-auto mt-4 rounded-full" />
+          <div className="w-16 h-1 mx-auto mt-4 rounded-full" />
         </div>
 
         <motion.div 
