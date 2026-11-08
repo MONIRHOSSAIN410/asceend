@@ -78,9 +78,9 @@ const [mobileAccordions, setMobileAccordions] = useState<
 
   return (
     <>
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800 shadow-sm py-3.5`}
-    >
+   <header 
+  className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white dark:bg-black border-b border-neutral-200 dark:border-neutral-800 shadow-sm py-3.5"
+>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4">
           
