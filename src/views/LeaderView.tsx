@@ -83,9 +83,9 @@ export const LeaderView: React.FC<LeaderViewProps> = ({
               <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
             </div>
 
-            {currentLeader.id === 'deputy-md' && (
+            {/* {currentLeader.id === 'deputy-md' && (
               <div className="flex items-center justify-center gap-1.5 p-1 bg-neutral-100 dark:bg-neutral-800 rounded-xl text-[11px] font-semibold">
-                {/* <button
+                <button
                   type="button"
                   onClick={() => setPhotoMode('original')}
                   className={`flex-1 py-1 px-2 rounded-lg transition-colors ${
@@ -106,9 +106,9 @@ export const LeaderView: React.FC<LeaderViewProps> = ({
                   }`}
                 >
                   Studio Portrait
-                </button> */}
+                </button>
               </div>
-            )}
+            )} */}
 
             <div className="space-y-1">
               <h2 className="text-xl font-extrabold font-heading text-neutral-900 dark:text-white">
