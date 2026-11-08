@@ -31,13 +31,11 @@ export const ContactView: React.FC<ContactViewProps> = ({ onNavigate, onRequestC
             alt="Contact"
             className="w-full h-full object-cover opacity-25"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-900/80 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-neutral-950 via-neutral-900/80 to-transparent" />
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center space-y-3">
-          <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">
-            Corporate Communications
-          </span>
+       
           <h1 className="text-3xl sm:text-5xl font-extrabold font-heading text-white">
             Get In Touch
           </h1>

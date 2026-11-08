@@ -82,7 +82,7 @@ export const DivisionDetailView: React.FC<DivisionDetailViewProps> = ({
       {/* 3. Approach & Capabilities (6 Cards as shown in video) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-neutral-900 dark:text-white">
+          <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-emerald-600 dark:text-white">
             {division.approachTitle}
           </h2>
           <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 mt-2 max-w-xl mx-auto">
@@ -116,7 +116,7 @@ export const DivisionDetailView: React.FC<DivisionDetailViewProps> = ({
         <section className="bg-neutral-100/70 dark:bg-neutral-900/40 py-16 border-y border-neutral-200 dark:border-neutral-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
-              <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-neutral-900 dark:text-white uppercase tracking-wider">
+              <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-emerald-600 dark:text-white uppercase tracking-wider">
                 Projects In Progress
               </h2>
               <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 mt-1">
