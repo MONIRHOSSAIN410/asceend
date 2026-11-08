@@ -83,7 +83,7 @@ export const PROJECTS: ProjectData[] = [
   {
     id: 'purbachal-aasceend-town',
     name: 'Purbachal Aasceend Town',
-    banglaName: 'পূর্বাচল এসেন্ড টাউন',
+   
     tagline: 'Where Modern Living Meets Nature’s Serenity',
     category: 'township',
     heroImage: '/assets/images/bd_purbachal_town_1793789186589.jpg',
@@ -140,7 +140,7 @@ export const PROJECTS: ProjectData[] = [
   {
     id: 'aasceend-eastern-town',
     name: 'Aasceend Eastern Town',
-    banglaName: 'এসেন্ড ইস্টার্ন টাউন',
+    
     tagline: 'A Master-Planned Oasis of Contemporary Living',
     category: 'township',
     heroImage: '/assets/images/bd_eastern_town_1793789186885.jpg',
@@ -189,7 +189,7 @@ export const PROJECTS: ProjectData[] = [
   {
     id: 'aasceend-town',
     name: 'Aasceend Town',
-    banglaName: 'এসেন্ড টাউন',
+ 
     tagline: 'A Planned Community Designed For Tomorrow’s Living',
     category: 'township',
     heroImage: '/assets/images/bd_aasceend_town_1793789219770.jpg',
@@ -238,7 +238,7 @@ export const PROJECTS: ProjectData[] = [
   {
     id: 'aasceend-green-town',
     name: 'Aasceend Green Town',
-    banglaName: 'এসেন্ড Green Town',
+    
     tagline: 'A Peaceful Address Near Dhaka-Mawa Expressway',
     category: 'township',
     heroImage: '/assets/images/bd_greentown_plots_1793789201219.jpg',
@@ -287,7 +287,7 @@ export const PROJECTS: ProjectData[] = [
   {
     id: 'aasceend-river-view-town',
     name: 'Aasceend River View Town',
-    banglaName: 'এসেন্ড রিভারভিউ টাউন',
+    
     tagline: 'Live Close To Nature, Stay Close To The City',
     category: 'township',
     heroImage: '/assets/images/bd_riverview_town_1793789203288.jpg',
@@ -336,7 +336,7 @@ export const PROJECTS: ProjectData[] = [
   {
     id: 'signature-bay-hotel',
     name: 'Signature Bay Hotel',
-    banglaName: 'সিগনেচার বে হোটেল (SBH)',
+    
     tagline: 'Experience Comfort, Elegance, And Modern Hospitality',
     category: 'hotel',
     heroImage: '/assets/images/bd_signature_bay_1793789202981.jpg',
@@ -384,7 +384,7 @@ export const PROJECTS: ProjectData[] = [
   {
     id: 'aasceend-riviera-resort',
     name: 'Aasceend Rivera Resort',
-    banglaName: 'এসেন্ড রিভেরা রিসোর্ট',
+    
     tagline: 'Own Your Share Of Riverside Tranquility',
     category: 'resort',
     heroImage: '/assets/images/bd_riviera_resort_1793789220380.jpg',
@@ -432,7 +432,7 @@ export const PROJECTS: ProjectData[] = [
   {
     id: 'eden-paradise-resort',
     name: 'EDEN Paradise Resort',
-    banglaName: 'ইডেন প্যারাডাইস রিসোর্ট',
+    
     tagline: 'Where Modern Luxury Meets Nature’s Serenity',
     category: 'resort',
     heroImage: '/assets/images/bd_eden_paradise_1793790838938.jpg',
