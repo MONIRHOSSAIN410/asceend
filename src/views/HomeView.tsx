@@ -370,7 +370,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
       {/* 3. BUILDING TRUST THROUGH PLANNING, TRANSPARENCY, AND VISION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-neutral-900 dark:text-white">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-emerald-600 dark:text-white">
             Building Trust Through Planning, Transparency, And Vision
           </h2>
           <div className="w-16 h-1 bg-emerald-600 mx-auto mt-4 rounded-full" />

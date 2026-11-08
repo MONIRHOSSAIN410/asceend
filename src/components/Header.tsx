@@ -106,7 +106,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
           </button>
 
           {/* Desktop Navigation Links */}
-          <nav ref={dropdownRef} className="hidden lg:flex items-center gap-1 font-medium text-sm">
+          <nav ref={dropdownRef} className="hidden lg:flex items-center gap-1 font-medium text-base">
             
             {/* Home */}
             <button
@@ -395,22 +395,13 @@ const [mobileAccordions, setMobileAccordions] = useState<
               href="https://wa.me/8801896006310"
               target="_blank"
               rel="noreferrer"
-              className="hidden sm:inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white px-3.5 py-1.5 rounded-lg text-xs font-semibold tracking-wide shadow-sm transition-transform active:scale-95"
+              className="hidden sm:inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg text-sm font-bold tracking-wide shadow-sm transition-transform active:scale-95"
             >
-              <Phone className="w-3.5 h-3.5" />
-              <span className="font-mono">01896-006310</span>
+              <Phone className="w-4 h-4" />
+              <span className="font-mono text-sm font-bold">01896-006310</span>
             </a>
 
-            {/* Dark / Light Theme Toggle */}
-            <button
-              onClick={onToggleTheme}
-              aria-label="Toggle theme"
-              className="p-2 rounded-full transition-colors bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-200 hover:bg-neutral-200 dark:hover:bg-neutral-700"
-            >
-              {isDark ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-emerald-600" />}
-            </button>
-
-            {/* Mobile Hamburger Menu Toggle */}
+         {/* Mobile Hamburger Menu Toggle */}
             <button
               type="button"
               onClick={() => setMobileMenuOpen(true)}
@@ -497,7 +488,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
             href="https://wa.me/8801896006310"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-lg text-sm font-semibold transition-colors"
+            className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg text-base font-bold transition-colors"
           >
             <Phone className="w-3.5 h-3.5" />
             <span>01896-006310</span>
