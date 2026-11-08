@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { 
-  Sun, 
-  Moon, 
-  Menu, 
-  X, 
-  ChevronDown, 
+import {
+  Sun,
+  Moon,
+  Menu,
+  X,
+  ChevronDown,
   ChevronRight,
   Building2,
   ShieldCheck,
@@ -30,13 +30,15 @@ export const Header: React.FC<HeaderProps> = ({
   onRequestCall
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileAccordions, setMobileAccordions] = useState<Record<string, boolean>>({
-    about: true,
-    divisions: true,
-    projects: true,
-    media: false,
-    sustainability: false
-  });
+const [mobileAccordions, setMobileAccordions] = useState<
+  Record<string, boolean>
+>({
+  about: false,
+  divisions: false,
+  projects: false,
+  media: false,
+  sustainability: false,
+});
   const [scrolled, setScrolled] = useState(false);
 
   const toggleMobileAccordion = (section: string) => {
@@ -75,6 +77,7 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   return (
+    <>
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800 shadow-sm py-3.5`}
     >
@@ -409,180 +412,298 @@ export const Header: React.FC<HeaderProps> = ({
 
             {/* Mobile Hamburger Menu Toggle */}
             <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle menu"
+              type="button"
+              onClick={() => setMobileMenuOpen(true)}
+              aria-label="Open menu"
+              aria-expanded={mobileMenuOpen}
               className="lg:hidden p-2 rounded-lg transition-colors text-neutral-800 dark:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              <Menu className="w-6 h-6" />
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800 px-4 pt-4 pb-6 space-y-3 max-h-[85vh] overflow-y-auto text-neutral-900 dark:text-neutral-100 shadow-2xl">
-          <div className="flex items-center justify-between pb-3 border-b border-neutral-100 dark:border-neutral-800">
-           
-            <a
-              href="https://wa.me/8801896006310"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex sm:hidden items-center gap-1.5 bg-emerald-600 text-white px-3 py-1.5 rounded-lg text-xs font-semibold shadow-xs"
-            >
-              <Phone className="w-3 h-3" />
-              <span>01896-006310</span>
-            </a>
-          </div>
-
-          {/* Home Link */}
-          <button
-            onClick={() => handleNav({ type: 'home' })}
-            className={`w-full text-left py-2.5 font-bold text-sm border-b border-neutral-100 dark:border-neutral-800 flex items-center justify-between ${
-              currentView.type === 'home' ? 'text-emerald-700 dark:text-emerald-400' : 'text-neutral-800 dark:text-neutral-200'
-            }`}
-          >
-            <span>Home</span>
-          </button>
-
-          {/* 1. About Aasceend Accordion */}
-          <div className="border-b border-neutral-100 dark:border-neutral-800 pb-2">
-            <button
-              onClick={() => toggleMobileAccordion('about')}
-              className="w-full flex items-center justify-between py-2 text-left font-bold text-xs uppercase tracking-wider text-emerald-700 dark:text-emerald-400"
-            >
-              <span>ABOUT AASCEEND</span>
-              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileAccordions.about ? 'rotate-180 text-emerald-700' : 'text-neutral-400'}`} />
-            </button>
-            {mobileAccordions.about && (
-              <div className="space-y-1 pt-1 pl-1">
-                <button onClick={() => handleNav({ type: 'about' })} className="block w-full text-left py-1.5 text-sm text-neutral-800 dark:text-neutral-200 hover:text-emerald-600">
-                  About Us Overview
-                </button>
-                <button onClick={() => handleNav({ type: 'leader', leaderId: 'co-chairman' })} className="block w-full text-left py-1.5 text-sm text-neutral-800 dark:text-neutral-200 hover:text-emerald-600">
-                  Khandoker Asadur Rahman (Chairman &amp; COO)
-                </button>
-                <button onClick={() => handleNav({ type: 'leader', leaderId: 'ceo' })} className="block w-full text-left py-1.5 text-sm text-neutral-800 dark:text-neutral-200 hover:text-emerald-600">
-                  Khondokar Mohibur Rahman (MD &amp; CEO)
-                </button>
-                <button onClick={() => handleNav({ type: 'leader', leaderId: 'vice-chairman' })} className="block w-full text-left py-1.5 text-sm text-neutral-800 dark:text-neutral-200 hover:text-emerald-600">
-                  Md. Mahafuzur Rahaman (Vice Chairman)
-                </button>
-                <button onClick={() => handleNav({ type: 'leader', leaderId: 'deputy-md' })} className="block w-full text-left py-1.5 text-sm text-neutral-800 dark:text-neutral-200 hover:text-emerald-600">
-                  Deputy Managing Director
-                </button>
-                <button onClick={() => handleNav({ type: 'investor' })} className="block w-full text-left py-1.5 text-sm text-neutral-800 dark:text-neutral-200 hover:text-emerald-600">
-                  Investor Relations
-                </button>
-                <button onClick={() => handleNav({ type: 'accreditations' })} className="block w-full text-left py-1.5 text-sm text-neutral-800 dark:text-neutral-200 hover:text-emerald-600">
-                  Accreditations &amp; Awards
-                </button>
-              </div>
-            )}
-          </div>
-
-          {/* 2. Divisions Accordion */}
-          <div className="border-b border-neutral-100 dark:border-neutral-800 pb-2">
-            <button
-              onClick={() => toggleMobileAccordion('divisions')}
-              className="w-full flex items-center justify-between py-2 text-left font-bold text-xs uppercase tracking-wider text-emerald-700 dark:text-emerald-400"
-            >
-              <span>DIVISIONS</span>
-              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileAccordions.divisions ? 'rotate-180 text-emerald-700' : 'text-neutral-400'}`} />
-            </button>
-            {mobileAccordions.divisions && (
-              <div className="space-y-1 pt-1 pl-1">
-                {DIVISIONS.map(div => (
-                  <button
-                    key={div.id}
-                    onClick={() => handleNav({ type: 'division', divisionId: div.id })}
-                    className="block w-full text-left py-1.5 text-sm text-neutral-800 dark:text-neutral-200 hover:text-emerald-600"
-                  >
-                    {div.name}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* 3. Projects Accordion */}
-          <div className="border-b border-neutral-100 dark:border-neutral-800 pb-2">
-            <button
-              onClick={() => toggleMobileAccordion('projects')}
-              className="w-full flex items-center justify-between py-2 text-left font-bold text-xs uppercase tracking-wider text-emerald-700 dark:text-emerald-400"
-            >
-              <span>PROJECTS</span>
-              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileAccordions.projects ? 'rotate-180 text-emerald-700' : 'text-neutral-400'}`} />
-            </button>
-            {mobileAccordions.projects && (
-              <div className="space-y-1 pt-1 pl-1">
-                {PROJECTS.filter(proj => proj.id !== 'aasceend-eastern-town').map(proj => (
-                  <button
-                    key={proj.id}
-                    onClick={() => handleNav({ type: 'project', projectId: proj.id })}
-                    className="w-full text-left py-1.5 text-sm text-neutral-800 dark:text-neutral-200 hover:text-emerald-600 block"
-                  >
-                    <span>{proj.name}</span>
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* 4. Media Center Accordion */}
-          <div className="border-b border-neutral-100 dark:border-neutral-800 pb-2">
-            <button
-              onClick={() => toggleMobileAccordion('media')}
-              className="w-full flex items-center justify-between py-2 text-left font-bold text-xs uppercase tracking-wider text-emerald-700 dark:text-emerald-400"
-            >
-              <span>MEDIA CENTER</span>
-              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileAccordions.media ? 'rotate-180 text-emerald-700' : 'text-neutral-400'}`} />
-            </button>
-            {mobileAccordions.media && (
-              <div className="space-y-1 pt-1 pl-1">
-                <button onClick={() => handleNav({ type: 'media', tab: 'news' })} className="block w-full text-left py-1.5 text-sm text-neutral-800 dark:text-neutral-200 hover:text-emerald-600">
-                  News &amp; Events
-                </button>
-                <button onClick={() => handleNav({ type: 'media', tab: 'photos' })} className="block w-full text-left py-1.5 text-sm text-neutral-800 dark:text-neutral-200 hover:text-emerald-600">
-                  Photo Gallery
-                </button>
-                <button onClick={() => handleNav({ type: 'media', tab: 'videos' })} className="block w-full text-left py-1.5 text-sm text-neutral-800 dark:text-neutral-200 hover:text-emerald-600">
-                  Video Gallery
-                </button>
-              </div>
-            )}
-          </div>
-
-          {/* 5. Sustainability Accordion */}
-          <div className="border-b border-neutral-100 dark:border-neutral-800 pb-2">
-            <button
-              onClick={() => toggleMobileAccordion('sustainability')}
-              className="w-full flex items-center justify-between py-2 text-left font-bold text-xs uppercase tracking-wider text-emerald-700 dark:text-emerald-400"
-            >
-              <span>SUSTAINABILITY</span>
-              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileAccordions.sustainability ? 'rotate-180 text-emerald-700' : 'text-neutral-400'}`} />
-            </button>
-            {mobileAccordions.sustainability && (
-              <div className="space-y-1 pt-1 pl-1">
-                <button onClick={() => handleNav({ type: 'sustainability', tab: 'environment' })} className="block w-full text-left py-1.5 text-sm text-neutral-800 dark:text-neutral-200 hover:text-emerald-600">
-                  Environment &amp; Ecology
-                </button>
-                <button onClick={() => handleNav({ type: 'sustainability', tab: 'csr' })} className="block w-full text-left py-1.5 text-sm text-neutral-800 dark:text-neutral-200 hover:text-emerald-600">
-                  Corporate Social Responsibility (CSR)
-                </button>
-              </div>
-            )}
-          </div>
-
-          {/* Contact Mobile Link */}
-          <button
-            onClick={() => handleNav({ type: 'contact' })}
-            className="w-full text-left py-2.5 font-bold text-sm text-neutral-800 dark:text-neutral-200 hover:text-emerald-600"
-          >
-            Contact Us
-          </button>
-        </div>
-      )}
     </header>
+
+      {/* Mobile Drawer Menu */}
+{mobileMenuOpen && (
+  <div className="fixed inset-0 z-[200] lg:hidden">
+
+    {/* Background Overlay */}
+    <button
+      type="button"
+      aria-label="Close menu"
+      onClick={() => setMobileMenuOpen(false)}
+      className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"
+    />
+
+    {/* Drawer */}
+    <div className="absolute top-0 right-0 h-full w-[min(100%,380px)] bg-white dark:bg-neutral-900 shadow-2xl flex flex-col overflow-hidden">
+
+      {/* Top Header */}
+      <div className="flex items-center justify-between px-5 py-4 border-b border-neutral-100 dark:border-neutral-800">
+
+        {/* Logo */}
+        <button
+          onClick={() => handleNav({ type: 'home' })}
+          aria-label="Aasceend Home"
+          className="flex items-center"
+        >
+          <img
+            src="/assets/images/aasceend_logo_official_green.png"
+            alt="Aasceend Group"
+            className="h-9 w-auto object-contain"
+            onError={(e) => {
+              e.currentTarget.src =
+                '/assets/aistudio/10._Aasceend_Group_2-01_1444aef8.png';
+            }}
+          />
+        </button>
+
+        {/* Theme and Close Buttons */}
+        <div className="flex items-center gap-3">
+
+          <button
+            onClick={onToggleTheme}
+            aria-label="Toggle theme"
+            className="w-9 h-9 rounded-full flex items-center justify-center bg-neutral-100 dark:bg-neutral-800 text-emerald-600 dark:text-amber-400"
+          >
+            {isDark ? (
+              <Sun className="w-4 h-4" />
+            ) : (
+              <Moon className="w-4 h-4" />
+            )}
+          </button>
+
+          <button
+            onClick={() => setMobileMenuOpen(false)}
+            aria-label="Close menu"
+            className="w-9 h-9 flex items-center justify-center text-neutral-800 dark:text-white hover:text-emerald-600"
+          >
+            <X className="w-6 h-6" />
+          </button>
+
+        </div>
+      </div>
+
+      {/* Menu Content */}
+      <div className="flex-1 overflow-y-auto px-5">
+
+        {/* Phone Button */}
+        <div className="py-4 border-b border-neutral-100 dark:border-neutral-800">
+
+          <a
+            href="https://wa.me/8801896006310"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-lg text-sm font-semibold transition-colors"
+          >
+            <Phone className="w-3.5 h-3.5" />
+            <span>01896-006310</span>
+          </a>
+
+        </div>
+
+        {/* Home */}
+        <button
+          onClick={() => handleNav({ type: 'home' })}
+          className={`w-full flex items-center py-4 text-left text-sm border-b border-neutral-100 dark:border-neutral-800 ${
+            currentView.type === 'home'
+              ? 'text-emerald-600 font-semibold'
+              : 'text-emerald-700 dark:text-emerald-400'
+          }`}
+        >
+          Home
+        </button>
+
+        {/* Accordion Component */}
+        {[
+          {
+            id: 'about',
+            title: 'ABOUT AASCEEND',
+            items: [
+              {
+                label: 'About Us Overview',
+                action: () => handleNav({ type: 'about' }),
+              },
+              {
+                label: 'Khondokar Mohibur Rahman (MD & CEO)',
+                action: () => handleNav({
+                  type: 'leader',
+                  leaderId: 'ceo',
+                }),
+              },
+              {
+                label: 'Khandoker Asadur Rahman (Chairman & COO)',
+                action: () => handleNav({
+                  type: 'leader',
+                  leaderId: 'co-chairman',
+                }),
+              },
+              {
+                label: 'Md. Mahafuzur Rahaman (Vice Chairman)',
+                action: () => handleNav({
+                  type: 'leader',
+                  leaderId: 'vice-chairman',
+                }),
+              },
+              {
+                label: 'Deputy Managing Director',
+                action: () => handleNav({
+                  type: 'leader',
+                  leaderId: 'deputy-md',
+                }),
+              },
+              {
+                label: 'Investor Relations',
+                action: () => handleNav({ type: 'investor' }),
+              },
+              {
+                label: 'Accreditations & Awards',
+                action: () => handleNav({ type: 'accreditations' }),
+              },
+            ],
+          },
+
+          {
+            id: 'divisions',
+            title: 'DIVISIONS',
+            items: DIVISIONS.map((div) => ({
+              label: div.name,
+              action: () => handleNav({
+                type: 'division',
+                divisionId: div.id,
+              }),
+            })),
+          },
+
+          {
+            id: 'projects',
+            title: 'PROJECTS',
+            items: PROJECTS
+              .filter(proj => proj.id !== 'aasceend-eastern-town')
+              .map(proj => ({
+                label: proj.name,
+                action: () => handleNav({
+                  type: 'project',
+                  projectId: proj.id,
+                }),
+              })),
+          },
+
+          {
+            id: 'media',
+            title: 'MEDIA CENTER',
+            items: [
+              {
+                label: 'News & Events',
+                action: () => handleNav({
+                  type: 'media',
+                  tab: 'news',
+                }),
+              },
+              {
+                label: 'Photo Gallery',
+                action: () => handleNav({
+                  type: 'media',
+                  tab: 'photos',
+                }),
+              },
+              {
+                label: 'Video Gallery',
+                action: () => handleNav({
+                  type: 'media',
+                  tab: 'videos',
+                }),
+              },
+            ],
+          },
+
+          {
+            id: 'sustainability',
+            title: 'SUSTAINABILITY',
+            items: [
+              {
+                label: 'Environment & Ecology',
+                action: () => handleNav({
+                  type: 'sustainability',
+                  tab: 'environment',
+                }),
+              },
+              {
+                label: 'Corporate Social Responsibility (CSR)',
+                action: () => handleNav({
+                  type: 'sustainability',
+                  tab: 'csr',
+                }),
+              },
+            ],
+          },
+        ].map((section) => (
+
+          <div
+            key={section.id}
+            className="border-b border-neutral-100 dark:border-neutral-800"
+          >
+
+            {/* Accordion Title */}
+            <button
+              onClick={() => toggleMobileAccordion(section.id)}
+              aria-expanded={mobileAccordions[section.id]}
+              className="w-full flex items-center justify-between py-5 text-left text-xs font-bold tracking-wide text-emerald-700 dark:text-emerald-400"
+            >
+              <span>{section.title}</span>
+
+              <ChevronDown
+                className={`w-4 h-4 text-neutral-400 transition-transform duration-300 ${
+                  mobileAccordions[section.id]
+                    ? 'rotate-180'
+                    : ''
+                }`}
+              />
+            </button>
+
+            {/* Accordion Items */}
+            <div
+              className={`grid transition-all duration-300 ${
+                mobileAccordions[section.id]
+                  ? 'grid-rows-[1fr] opacity-100 pb-3'
+                  : 'grid-rows-[0fr] opacity-0'
+              }`}
+            >
+              <div className="overflow-hidden">
+
+                {section.items.map((item, index) => (
+                  <button
+                    key={index}
+                    onClick={item.action}
+                    className="block w-full text-left py-2.5 px-2 text-sm text-neutral-700 dark:text-neutral-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+                  >
+                    {item.label}
+                  </button>
+                ))}
+
+              </div>
+            </div>
+
+          </div>
+        ))}
+
+        {/* Contact Us */}
+        <button
+          onClick={() => handleNav({ type: 'contact' })}
+          className="w-full text-left py-6 text-sm font-semibold text-neutral-800 dark:text-neutral-200 hover:text-emerald-600"
+        >
+          Contact Us
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+)}
+
+    </>
   );
 };
