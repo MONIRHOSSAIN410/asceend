@@ -471,7 +471,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
       {/* 3. BUILDING TRUST THROUGH PLANNING, TRANSPARENCY, AND VISION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-emerald-600 dark:text-white">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-green-800 dark:text-white">
             Building Trust Through Planning, Transparency, And Vision
           </h2>
           <div className="w-16 h-1 mx-auto mt-4 rounded-full" />
@@ -676,7 +676,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-10">
           
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-emerald-600  dark:text-white mt-1">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-green-800  dark:text-white mt-1">
             Our Business Divisions
           </h2>
           <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 mt-2">
