@@ -30,9 +30,7 @@ export const SustainabilityView: React.FC<SustainabilityViewProps> = ({
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center space-y-3">
-          <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">
-            ESG & Planetary Responsibility
-          </span>
+         
           <h1 className="text-3xl sm:text-5xl font-extrabold font-heading text-white">
             Sustainability & Environmental Stewardship
           </h1>
@@ -75,7 +73,7 @@ export const SustainabilityView: React.FC<SustainabilityViewProps> = ({
           <section className="max-w-4xl mx-auto px-4 sm:px-6">
             <div className="bg-white dark:bg-neutral-900 rounded-3xl p-8 sm:p-12 border border-neutral-200 dark:border-neutral-800 shadow-sm space-y-6 text-neutral-700 dark:text-neutral-300 text-sm sm:text-base leading-relaxed">
               <div className="text-center pb-2">
-                <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-neutral-900 dark:text-white">
+                <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-emerald-600 dark:text-white">
                   Our Philosophy: The Balance of Progress
                 </h2>
                 <div className="w-12 h-1 bg-emerald-600 mx-auto mt-3 rounded-full" />
@@ -115,7 +113,7 @@ export const SustainabilityView: React.FC<SustainabilityViewProps> = ({
           {/* Strategic Objectives (From Video) */}
           <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
-              <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-neutral-900 dark:text-white">
+              <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-emerald-600 dark:text-white">
                 Strategic Objectives
               </h2>
               <p className="text-xs sm:text-sm text-neutral-500 mt-1">
@@ -165,7 +163,7 @@ export const SustainabilityView: React.FC<SustainabilityViewProps> = ({
         /* CSR TAB */
         <div className="max-w-5xl mx-auto px-4 sm:px-6 space-y-12">
           <div className="bg-white dark:bg-neutral-900 rounded-3xl p-8 sm:p-12 border border-neutral-200 dark:border-neutral-800 shadow-sm space-y-6 text-neutral-700 dark:text-neutral-300 leading-relaxed">
-            <h2 className="text-2xl font-bold font-heading text-neutral-900 dark:text-white">
+            <h2 className="text-2xl font-bold font-heading text-emerald-600 dark:text-white">
               Aasceend Foundation: Impacting Lives Across Bangladesh
             </h2>
             <p>

@@ -50,9 +50,7 @@ export const MediaView: React.FC<MediaViewProps> = ({
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center space-y-3">
-          <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">
-            Aasceend Media Center
-          </span>
+         
           <h1 className="text-3xl sm:text-5xl font-extrabold font-heading text-white capitalize">
             {activeTab === 'news' ? 'News & Events' : activeTab === 'photos' ? 'Photo Gallery' : 'Video Gallery'}
           </h1>

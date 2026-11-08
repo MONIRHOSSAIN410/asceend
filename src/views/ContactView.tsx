@@ -52,7 +52,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onNavigate, onRequestC
           {/* Left Form */}
           <div className="lg:col-span-6 bg-white dark:bg-neutral-900 rounded-3xl p-5 sm:p-8 border border-neutral-200 dark:border-neutral-800 shadow-sm space-y-6">
             <div>
-              <h3 className="text-xl font-bold font-heading text-neutral-900 dark:text-white">
+              <h3 className="text-xl font-bold font-heading text-emerald-600 dark:text-white">
                 Send Us a Direct Message
               </h3>
               <p className="text-xs text-neutral-500 mt-1">
@@ -167,7 +167,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onNavigate, onRequestC
             
             {/* Direct Communication */}
             <div className="bg-white dark:bg-neutral-900 rounded-3xl p-6 sm:p-8 border border-neutral-200 dark:border-neutral-800 shadow-sm space-y-4">
-              <h3 className="text-lg font-bold font-heading text-neutral-900 dark:text-white border-b border-neutral-100 dark:border-neutral-800 pb-3">
+              <h3 className="text-lg font-bold font-heading text-emerald-600 dark:text-white border-b border-neutral-100 dark:border-neutral-800 pb-3">
                 Direct Communication
               </h3>
               

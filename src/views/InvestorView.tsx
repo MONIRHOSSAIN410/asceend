@@ -34,9 +34,7 @@ export const InvestorView: React.FC<InvestorViewProps> = ({ onNavigate, onReques
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center space-y-3">
-          <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">
-            Capital Growth & Trust
-          </span>
+       
           <h1 className="text-3xl sm:text-5xl font-extrabold font-heading text-white">
             Investment Relations
           </h1>
@@ -58,7 +56,7 @@ export const InvestorView: React.FC<InvestorViewProps> = ({ onNavigate, onReques
       {/* 3. Why Invest with Aasceend? (4 Pillars from video) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-neutral-900 dark:text-white">
+          <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-emerald-600 dark:text-white">
             Why Invest with Aasceend?
           </h2>
           <div className="w-16 h-1 bg-emerald-600 mx-auto mt-3 rounded-full" />
@@ -128,7 +126,7 @@ export const InvestorView: React.FC<InvestorViewProps> = ({ onNavigate, onReques
       {/* 4. Our Vision for the Future */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6">
         <div className="bg-neutral-100 dark:bg-neutral-800/60 rounded-3xl p-8 sm:p-10 border border-neutral-200 dark:border-neutral-700 text-center space-y-3">
-          <h3 className="text-2xl font-bold font-heading text-neutral-900 dark:text-white">
+          <h3 className="text-2xl font-bold font-heading text-emerald-600 dark:text-white">
             Our Vision for the Future
           </h3>
           <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed max-w-2xl mx-auto">

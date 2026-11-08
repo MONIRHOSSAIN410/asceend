@@ -574,10 +574,8 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
       {/* 5. DIVISIONS GRID (AS SEEN IN VIDEO) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-10">
-          <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">
-            Strategic Conglomerate
-          </span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-neutral-900 dark:text-white mt-1">
+          
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-emerald-600  dark:text-white mt-1">
             Our Business Divisions
           </h2>
           <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 mt-2">

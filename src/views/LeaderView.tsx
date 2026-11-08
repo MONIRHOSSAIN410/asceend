@@ -39,9 +39,7 @@ export const LeaderView: React.FC<LeaderViewProps> = ({
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 text-center space-y-2">
-          <div className="inline-block px-3 py-1 rounded-full bg-emerald-600/30 text-emerald-300 text-xs font-semibold uppercase tracking-wider mb-2">
-            Executive Leadership
-          </div>
+        
           <h1 className="text-2xl sm:text-4xl font-extrabold font-heading text-white">
             {currentLeader.title}
           </h1>
@@ -87,7 +85,7 @@ export const LeaderView: React.FC<LeaderViewProps> = ({
 
             {currentLeader.id === 'deputy-md' && (
               <div className="flex items-center justify-center gap-1.5 p-1 bg-neutral-100 dark:bg-neutral-800 rounded-xl text-[11px] font-semibold">
-                <button
+                {/* <button
                   type="button"
                   onClick={() => setPhotoMode('original')}
                   className={`flex-1 py-1 px-2 rounded-lg transition-colors ${
@@ -108,7 +106,7 @@ export const LeaderView: React.FC<LeaderViewProps> = ({
                   }`}
                 >
                   Studio Portrait
-                </button>
+                </button> */}
               </div>
             )}
 
