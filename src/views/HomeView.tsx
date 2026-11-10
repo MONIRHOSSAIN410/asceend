@@ -26,7 +26,7 @@ interface HomeViewProps {
 const HERO_SLIDES = [
   {
     id: 'purbachal',
-    image: '/assets/images/cover2.png',
+    image: '/assets/images/nature.jpg',
     tag: '1,300 Bigha Master Plan · Purbachal',
     title: 'Purbachal Aasceend Town',
     subtitle: 'Where Modern Living Meets Nature’s Serenity',
@@ -34,7 +34,7 @@ const HERO_SLIDES = [
   },
   {
     id: 'eastern',
-    image: '/assets/images/cover3.jpg',
+    image: '/assets/images/nature2.jpg',
     tag: '700 Bigha Residential Oasis · East Dhaka',
     title: 'Aasceend Eastern Town',
     subtitle: 'A Master-Planned Community of Contemporary Living',
@@ -42,7 +42,7 @@ const HERO_SLIDES = [
   },
   {
     id: 'green',
-    image: '/assets/images/cover4.jpg',
+    image: '/assets/images/nature3.jpg',
     tag: 'Dhaka-Mawa Padma Expressway Corridor',
     title: 'Aasceend Green Town',
     subtitle: 'Eco-Living with Expansive Landscaped Parks & Road Networks',
@@ -50,7 +50,7 @@ const HERO_SLIDES = [
   },
   {
     id: 'river-view',
-    image: '/assets/images/bd_riverview_town_1793789203288.jpg',
+    image: '/assets/images/cover2.png',
     tag: '12 Mins from National Parliament · Waterfront',
     title: 'Aasceend River View Town',
     subtitle: 'Live Close To Nature, Stay Close To The City',
