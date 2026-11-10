@@ -706,9 +706,9 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
               <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent group-hover:from-emerald-950/90 transition-colors" />
 
               <div className="absolute inset-0 p-4 flex flex-col justify-end text-white">
-                <span className="text-[10px] uppercase font-bold text-emerald-300 tracking-wider">
+                {/* <span className="text-[10px] uppercase font-bold text-emerald-300 tracking-wider">
                   Division
-                </span>
+                </span> */}
                 <h4 className="text-xs sm:text-sm font-bold font-heading text-white line-clamp-2 mt-0.5">
                   {div.name}
                 </h4>
