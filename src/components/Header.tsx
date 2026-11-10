@@ -455,7 +455,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
         {/* Theme and Close Buttons */}
         <div className="flex items-center gap-3">
 
-          {/* <button
+          <button
             onClick={onToggleTheme}
             aria-label="Toggle theme"
             className="w-9 h-9 rounded-full flex items-center justify-center bg-neutral-100 dark:bg-neutral-800 text-emerald-600 dark:text-amber-400"
@@ -465,7 +465,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
             ) : (
               <Moon className="w-4 h-4" />
             )}
-          </button> */}
+          </button>
 
           <button
             onClick={() => setMobileMenuOpen(false)}

@@ -58,7 +58,7 @@ const HERO_SLIDES = [
   },
   {
     id: 'hospitality',
-    image: '/assets/images/bd_signature_bay_1793789202981.jpg',
+    image: '/assets/images/nature5.jpeg',
     tag: '5-Star Luxury Coastal Destination',
     title: 'Signature Bay Hotel & Resorts',
     subtitle: 'Share-Based Ownership & Guaranteed Annual Dividend Growth',
@@ -225,7 +225,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
             ))}
           </div>
 
-          <div className="flex items-center gap-2">
+          {/* <div className="flex items-center gap-2">
             <button
               onClick={handlePrevSlide}
               aria-label="Previous Slide"
@@ -240,7 +240,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
             >
               <ChevronRight className="w-4 h-4" />
             </button>
-          </div>
+          </div> */}
         </div>
       </motion.div>
     </div>

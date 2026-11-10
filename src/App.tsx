@@ -92,7 +92,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 font-sans selection:bg-emerald-600 selection:text-white transition-colors duration-300">
+    <div className=" flex flex-col bg-neutral-50  text-neutral-900 dark:text-neutral-100 font-sans selection:bg-emerald-600 selection:text-white transition-colors duration-300">
       
       {/* Top Global Navigation */}
       <Header
