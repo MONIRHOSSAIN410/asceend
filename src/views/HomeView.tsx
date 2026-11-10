@@ -36,7 +36,7 @@ const HERO_SLIDES = [
     id: 'eastern',
     image: '/assets/images/nature2.jpg',
     tag: '700 Bigha Residential Oasis · East Dhaka',
-    title: 'Aasceend Eastern Town',
+    title: 'Signature Bay Hotel',
     subtitle: 'A Master-Planned Community of Contemporary Living',
     projectId: 'aasceend-eastern-town'
   },
