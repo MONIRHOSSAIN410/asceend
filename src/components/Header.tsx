@@ -453,7 +453,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
         </button>
 
         {/* Theme and Close Buttons */}
-        <div className="flex items-center gap-3">
+        {/* <div className="flex items-center gap-3">
 
           <button
             onClick={onToggleTheme}
@@ -475,7 +475,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
             <X className="w-6 h-6" />
           </button>
 
-        </div>
+        </div> */}
       </div>
 
       {/* Menu Content */}

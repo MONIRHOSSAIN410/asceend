@@ -212,7 +212,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
 
         {/* Minimal Bottom Slide Indicators */}
         <div className="pt-4 flex items-center justify-between max-w-xl">
-          <div className="flex items-center gap-2">
+          {/* <div className="flex items-center gap-2">
             {HERO_SLIDES.map((_, idx) => (
               <button
                 key={idx}
@@ -223,9 +223,9 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
                 }`}
               />
             ))}
-          </div>
+          </div> */}
 
-          {/* <div className="flex items-center gap-2">
+           <div className="flex items-center gap-2">
             <button
               onClick={handlePrevSlide}
               aria-label="Previous Slide"
@@ -240,7 +240,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
             >
               <ChevronRight className="w-4 h-4" />
             </button>
-          </div> */}
+          </div> 
         </div>
       </motion.div>
     </div>
