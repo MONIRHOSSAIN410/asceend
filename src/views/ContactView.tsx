@@ -39,7 +39,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onNavigate, onRequestC
           <h1 className="text-3xl sm:text-5xl font-extrabold font-heading text-white">
             Get In Touch
           </h1>
-          <p className="text-sm sm:text-base text-emerald-300 font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base text-white font-light max-w-2xl mx-auto leading-relaxed">
             Connecting our diverse expertise with your unique needs. Reach out to any of our concerns and let's start a conversation.
           </p>
         </div>

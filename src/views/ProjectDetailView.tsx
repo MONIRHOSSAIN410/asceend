@@ -83,11 +83,11 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
                 {project.name}
               </h1>
 
-              <p className="text-xl sm:text-2xl text-emerald-300 font-light font-heading">
+              {/* <p className="text-xl sm:text-2xl text-emerald-300 font-light font-heading">
                 {project.tagline}
-              </p>
+              </p> */}
 
-              <div className="flex flex-wrap items-center gap-3 pt-2">
+              {/* <div className="flex flex-wrap items-center gap-3 pt-2">
                 <button
                   onClick={() => onDownloadBrochure(project.name)}
                   className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-5 py-2.5 rounded-xl text-xs flex items-center gap-2 shadow-lg transition-all hover:scale-105"
@@ -102,7 +102,7 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
                 >
                   View on Map
                 </a>
-              </div>
+              </div> */}
             </div>
 
             {/* Right Specification Box (Exact Layout from Video) */}
@@ -282,7 +282,7 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
                   The project offers a variety of plot sizes to suit different residential, villa, and commercial investment requirements:
                 </p>
                 <div className="flex flex-wrap gap-2.5">
-                  {['3 Katha', '5 Katha', '8 Katha', '10 Katha', '20 Katha'].map((size) => (
+                  {['3 Katha', '5 Katha', '6 Katha','10 Katha', '12 Katha', '20 Katha'].map((size) => (
                     <div
                       key={size}
                       className="px-4 py-2 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 text-xs font-bold font-mono text-emerald-800 dark:text-emerald-300"
@@ -461,7 +461,7 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
                       >
                         <option value="3 Katha">3 Katha</option>
                         <option value="5 Katha">5 Katha</option>
-                        <option value="8 Katha">8 Katha</option>
+                        <option value="8 Katha">6 Katha</option>
                         <option value="10 Katha">10 Katha</option>
                         <option value="20 Katha">20 Katha</option>
                       </select>

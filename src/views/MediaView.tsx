@@ -54,7 +54,7 @@ export const MediaView: React.FC<MediaViewProps> = ({
           <h1 className="text-3xl sm:text-5xl font-extrabold font-heading text-white capitalize">
             {activeTab === 'news' ? 'News & Events' : activeTab === 'photos' ? 'Photo Gallery' : 'Video Gallery'}
           </h1>
-          <p className="text-sm sm:text-base text-emerald-300 font-light">
+          <p className="text-sm sm:text-base text-white font-light">
             Latest press releases, visual milestones, and corporate progress documentaries
           </p>
         </div>

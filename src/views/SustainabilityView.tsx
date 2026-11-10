@@ -34,7 +34,7 @@ export const SustainabilityView: React.FC<SustainabilityViewProps> = ({
           <h1 className="text-3xl sm:text-5xl font-extrabold font-heading text-white">
             Sustainability & Environmental Stewardship
           </h1>
-          <p className="text-sm sm:text-base text-emerald-300 font-light">
+          <p className="text-sm sm:text-base text-white font-light">
             Preserving Bangladesh’s natural waterways, fertile soil, and biodiversity for generations to come.
           </p>
         </div>

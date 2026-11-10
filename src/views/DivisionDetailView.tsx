@@ -53,7 +53,7 @@ export const DivisionDetailView: React.FC<DivisionDetailViewProps> = ({
           <h1 className="text-3xl sm:text-5xl font-extrabold font-heading text-white">
             {division.name}
           </h1>
-          <p className="text-base sm:text-lg text-emerald-300 font-light max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg  font-light max-w-xl mx-auto">
             {division.subtitle}
           </p>
         </div>

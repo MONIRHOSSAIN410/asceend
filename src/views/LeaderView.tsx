@@ -28,7 +28,7 @@ export const LeaderView: React.FC<LeaderViewProps> = ({
     <div className="pt-24 pb-16 space-y-12">
       
       {/* 1. Header Hero Banner */}
-      <section className="relative py-16 bg-neutral-900 text-white overflow-hidden">
+      <section className="relative py-18 bg-neutral-900 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80"
@@ -43,14 +43,14 @@ export const LeaderView: React.FC<LeaderViewProps> = ({
           <h1 className="text-2xl sm:text-4xl font-extrabold font-heading text-white">
             {currentLeader.title}
           </h1>
-          <p className="text-sm sm:text-base text-emerald-400 font-medium">
+          {/* <p className="text-sm sm:text-base  font-medium">
             {currentLeader.roleDescription}
-          </p>
+          </p> */}
         </div>
       </section>
 
       {/* 2. Leader Selector Tabs */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <div className="flex flex-wrap items-center justify-center gap-2 p-1.5 bg-neutral-100 dark:bg-neutral-800/80 rounded-2xl border border-neutral-200 dark:border-neutral-700">
           {LEADERS.map((leader) => (
             <button
