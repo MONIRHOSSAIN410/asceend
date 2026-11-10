@@ -182,16 +182,16 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
             onClick={() => onNavigate({ type: 'project', projectId: HERO_SLIDES[currentSlide].projectId })}
             className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-emerald-600/30 flex items-center gap-2 transition-all hover:scale-105 active:scale-95 cursor-pointer"
           >
-            <span>View {HERO_SLIDES[currentSlide].title}</span>
+            <span> {HERO_SLIDES[currentSlide].title}</span>
             <ArrowRight className="w-4 h-4" />
           </button>
 
-          <button
+         {/* <button
             onClick={() => onNavigate({ type: 'about' })}
             className="bg-white/10 hover:bg-white/20 text-white border border-white/25 font-semibold px-6 py-3.5 rounded-xl backdrop-blur-md transition-colors cursor-pointer"
           >
             About Our Vision
-          </button>
+          </button> */}
         </div>
 
         {/* Quick Trust Highlights */}

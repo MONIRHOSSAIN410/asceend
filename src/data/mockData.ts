@@ -1074,6 +1074,7 @@ export const GALLERY_PHOTOS = [
   { url: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80', title: 'Corporate Strategy Conference 2026', category: 'Corporate' },
   { url: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80', title: 'Aasceend Systems Data Center Review', category: 'Technology' },
   { url: 'https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=800&q=80', title: 'Annual Leadership Summit', category: 'Corporate' },
+  { url: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80', title: 'Global University Seminar Dhaka', category: 'Education' },
   { url: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80', title: 'Global University Seminar Dhaka', category: 'Education' }
 ];
 

@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
-  Sun,
-  Moon,
   Menu,
   X,
   ChevronDown,
@@ -17,16 +15,12 @@ import { PROJECTS, DIVISIONS } from '../data/mockData';
 interface HeaderProps {
   currentView: PageView;
   onNavigate: (view: PageView) => void;
-  isDark: boolean;
-  onToggleTheme: () => void;
   onRequestCall: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   currentView,
   onNavigate,
-  isDark,
-  onToggleTheme,
   onRequestCall
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -452,30 +446,16 @@ const [mobileAccordions, setMobileAccordions] = useState<
           />
         </button>
 
-        {/* Theme and Close Buttons */}
-        {/* <div className="flex items-center gap-3">
-
-          <button
-            onClick={onToggleTheme}
-            aria-label="Toggle theme"
-            className="w-9 h-9 rounded-full flex items-center justify-center bg-neutral-100 dark:bg-neutral-800 text-emerald-600 dark:text-amber-400"
-          >
-            {isDark ? (
-              <Sun className="w-4 h-4" />
-            ) : (
-              <Moon className="w-4 h-4" />
-            )}
-          </button>
-
+        {/* Close Button */}
+        <div className="flex items-center gap-3">
           <button
             onClick={() => setMobileMenuOpen(false)}
             aria-label="Close menu"
-            className="w-9 h-9 flex items-center justify-center text-neutral-800 dark:text-white hover:text-emerald-600"
+            className="w-9 h-9 flex items-center justify-center text-neutral-800 hover:text-emerald-600"
           >
             <X className="w-6 h-6" />
           </button>
-
-        </div> */}
+        </div> 
       </div>
 
       {/* Menu Content */}

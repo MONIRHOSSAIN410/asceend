@@ -18,33 +18,18 @@ import { ContactView } from './views/ContactView';
 
 export default function App() {
   const [currentView, setCurrentView] = useState<PageView>({ type: 'home' });
-  const [isDark, setIsDark] = useState<boolean>(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('aasceend_theme');
-      if (saved) return saved === 'dark';
-      return window.matchMedia('(prefers-color-scheme: dark)').matches;
-    }
-    return false;
-  });
 
   const [leadModalOpen, setLeadModalOpen] = useState(false);
   const [leadModalType, setLeadModalType] = useState<'callback' | 'brochure'>('callback');
   const [selectedBrochureProject, setSelectedBrochureProject] = useState<string | undefined>();
 
-  // Toggle Dark Mode
+  // Ensure Light Mode across entire app and clear any cached dark theme
   useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('aasceend_theme', 'dark');
-    } else {
+    if (typeof window !== 'undefined') {
       document.documentElement.classList.remove('dark');
-      localStorage.setItem('aasceend_theme', 'light');
+      localStorage.removeItem('aasceend_theme');
     }
-  }, [isDark]);
-
-  const handleToggleTheme = () => {
-    setIsDark((prev) => !prev);
-  };
+  }, []);
 
   const handleNavigate = (view: PageView) => {
     setCurrentView(view);
@@ -92,14 +77,12 @@ export default function App() {
   };
 
   return (
-    <div className=" flex flex-col bg-neutral-50  text-neutral-900 dark:text-neutral-100 font-sans selection:bg-emerald-600 selection:text-white transition-colors duration-300">
+    <div className=" flex flex-col bg-neutral-50 text-neutral-900 font-sans selection:bg-emerald-600 selection:text-white transition-colors duration-300">
       
       {/* Top Global Navigation */}
       <Header
         currentView={currentView}
         onNavigate={handleNavigate}
-        isDark={isDark}
-        onToggleTheme={handleToggleTheme}
         onRequestCall={handleOpenCallback}
       />
 

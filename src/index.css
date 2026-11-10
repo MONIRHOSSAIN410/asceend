@@ -3,12 +3,13 @@
 
 
 
-@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:where(.never-dark, .never-dark *));
 
 @layer base {
   :root {
+    color-scheme: light;
     --font-family: "Rajdhani", sans-serif;
-    --font-family: "Plus Jakarta Sans", sans-serif;;
+    --font-family: "Plus Jakarta Sans", sans-serif;
   }
   
   html {
