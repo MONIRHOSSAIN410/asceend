@@ -77,32 +77,13 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
             
             {/* Left Headline */}
             <div className="lg:col-span-6 space-y-4 text-left">
-              
-
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-white tracking-tight leading-tight">
                 {project.name}
               </h1>
 
-              {/* <p className="text-xl sm:text-2xl text-emerald-300 font-light font-heading">
+              <p className="text-lg sm:text-xl text-emerald-300 font-light font-heading">
                 {project.tagline}
-              </p> */}
-
-              {/* <div className="flex flex-wrap items-center gap-3 pt-2">
-                <button
-                  onClick={() => onDownloadBrochure(project.name)}
-                  className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-5 py-2.5 rounded-xl text-xs flex items-center gap-2 shadow-lg transition-all hover:scale-105"
-                >
-                  <Download className="w-4 h-4" />
-                  <span>Download Project Brochure</span>
-                </button>
-
-                <a
-                  href="#map-section"
-                  className="bg-white/10 hover:bg-white/20 text-white px-4 py-2.5 rounded-xl text-xs font-semibold backdrop-blur-md border border-white/20 transition-colors"
-                >
-                  View on Map
-                </a>
-              </div> */}
+              </p>
             </div>
 
             {/* Right Specification Box (Exact Layout from Video) */}
@@ -110,15 +91,25 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
               <div className="bg-white/95 dark:bg-neutral-900/95 backdrop-blur-md rounded-3xl p-6 sm:p-7 shadow-2xl border border-white/40 dark:border-neutral-800 text-neutral-900 dark:text-neutral-100">
                 
                 {/* Logo Header */}
-                <div className="flex items-center gap-3 pb-4 mb-4 border-b border-neutral-200 dark:border-neutral-800">
-                  <div className="w-12 h-12 rounded-2xl bg-emerald-700 text-white font-extrabold flex items-center justify-center text-xl shadow-md">
-                    A
-                  </div>
+                <div className="flex items-center gap-4 pb-4 mb-4 border-b border-neutral-200 dark:border-neutral-800">
+                  {project.projectLogoUrl ? (
+                    <div className="h-16 sm:h-20 w-32 sm:w-44 bg-white dark:bg-neutral-800 p-2 rounded-2xl border border-neutral-200/80 dark:border-neutral-700/80 flex items-center justify-center shrink-0 shadow-sm">
+                      <img
+                        src={project.projectLogoUrl}
+                        alt={`${project.name} Logo`}
+                        className="max-h-full max-w-full object-contain"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-14 h-14 rounded-2xl bg-[#006838] text-white font-extrabold flex items-center justify-center text-xl shadow-md shrink-0">
+                      A
+                    </div>
+                  )}
                   <div>
-                    <h3 className="text-lg font-extrabold font-heading text-emerald-800 dark:text-emerald-400 leading-tight">
-                      {project.logoBadgeText}
+                    <h3 className="text-base sm:text-lg font-extrabold font-heading text-[#006838] dark:text-emerald-400 leading-tight">
+                      {project.logoBadgeText || project.name}
                     </h3>
-                    <p className="text-[11px] text-neutral-500 font-medium">
+                    <p className="text-[11px] text-neutral-500 font-medium mt-0.5">
                       Official Specification Matrix
                     </p>
                   </div>

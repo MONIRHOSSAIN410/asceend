@@ -43,6 +43,7 @@ export interface ProjectData {
   verifiedTag?: string;
   roadWidthShort?: string;
   projectLogoUrl?: string;
+  galleryImages?: string[];
 }
 
 export interface DivisionData {

@@ -86,9 +86,15 @@ export const PROJECTS: ProjectData[] = [
    
     tagline: 'Where Modern Living Meets Nature’s Serenity',
     category: 'township',
-    heroImage: '/assets/images/bd_purbachal_town_1793789186589.jpg',
+    heroImage: '/assets/images/purbachal_aasceend_town_featured.jpg',
     projectLogoUrl: '/assets/projects/purbachal_logo_hd.png',
-    logoBadgeText: '',
+    logoBadgeText: 'Purbachal Aasceend Town',
+    galleryImages: [
+      '/assets/images/purbachal_aasceend_town_featured.jpg',
+      '/assets/images/town_pin_location.jpg',
+      '/assets/images/aasceend_town_featured.jpg',
+      '/assets/images/bd_purbachal_town_1793789186589.jpg'
+    ],
     location: 'Nogorpara bazar,Kayet para,Rupganj,Narayanganj',
     banglaLocation: 'নগরপাড়া বাজার, কায়েতপাড়া, রূপগঞ্জ, নারায়ণগঞ্জ',
     totalLandArea:'Nogorpara bazar,Kayet para,Rupganj,Narayanganj',
@@ -143,9 +149,14 @@ export const PROJECTS: ProjectData[] = [
     
     tagline: 'A Master-Planned Oasis of Contemporary Living',
     category: 'township',
-    heroImage: '/assets/images/bd_eastern_town_1793789186885.jpg',
+    heroImage: '/assets/images/eastern_town_featured.jpg',
     projectLogoUrl: '/assets/projects/eastern_logo_hd.png',
-    logoBadgeText: '',
+    logoBadgeText: 'Aasceend Eastern Town',
+    galleryImages: [
+      '/assets/images/eastern_town_featured.jpg',
+      '/assets/images/town_pin_location.jpg',
+      '/assets/images/bd_eastern_town_1793789186885.jpg'
+    ],
     location: 'Dhaka East Expansion Corridor, Near Baridhara DOHS Links',
     banglaLocation: 'ঢাকা ইস্টার্ন বাইপাস ও বারিধারা লিঙ্ক সংলগ্ন',
     totalLandArea: '700',
@@ -192,9 +203,14 @@ export const PROJECTS: ProjectData[] = [
  
     tagline: 'A Planned Community Designed For Tomorrow’s Living',
     category: 'township',
-    heroImage: '/assets/images/bd_aasceend_town_1793789219770.jpg',
+    heroImage: '/assets/images/aasceend_town_featured.jpg',
     projectLogoUrl: '/assets/projects/town_logo_hd.png',
-    logoBadgeText: '',
+    logoBadgeText: 'Aasceend Town',
+    galleryImages: [
+      '/assets/images/aasceend_town_featured.jpg',
+      '/assets/images/green_town_sunset.jpg',
+      '/assets/images/bd_aasceend_town_1793789219770.jpg'
+    ],
     location: 'Prime Metro Belt, Greater Dhaka',
     banglaLocation: 'প্রাইম এক্সপ্রেসওয়ে মেট্রো করিডোর, বৃহত্তর ঢাকা',
     totalLandArea: '1280',
@@ -241,9 +257,14 @@ export const PROJECTS: ProjectData[] = [
     
     tagline: 'A Peaceful Address Near Dhaka-Mawa Expressway',
     category: 'township',
-    heroImage: '/assets/images/bd_greentown_plots_1793789201219.jpg',
+    heroImage: '/assets/images/green_town_featured.jpg',
     projectLogoUrl: '/assets/projects/green_logo_hd.png',
-    logoBadgeText: '',
+    logoBadgeText: 'Aasceend Green Town',
+    galleryImages: [
+      '/assets/images/green_town_featured.jpg',
+      '/assets/images/green_town_sunset.jpg',
+      '/assets/images/bd_greentown_plots_1793789201219.jpg'
+    ],
     location: 'Imanganj Bazar, Sirajdikhan, Munshiganj',
     banglaLocation: 'ঢাকা-মাওয়া পদ্মা এক্সপ্রেসওয়ে সংলগ্ন, সিরাজদিখান',
     totalLandArea: '700',
@@ -290,9 +311,14 @@ export const PROJECTS: ProjectData[] = [
     
     tagline: 'Live Close To Nature, Stay Close To The City',
     category: 'township',
-    heroImage: '/assets/images/bd_riverview_town_1793789203288.jpg',
+    heroImage: '/assets/images/river_view_town_featured.jpg',
     projectLogoUrl: '/assets/projects/river_view_logo_hd.png',
-    logoBadgeText: '',
+    logoBadgeText: 'Aasceend River View Town',
+    galleryImages: [
+      '/assets/images/river_view_town_featured.jpg',
+      '/assets/images/town_pin_location.jpg',
+      '/assets/images/bd_riverview_town_1793789203288.jpg'
+    ],
     location: 'Rajapur, Keraniganj, Dhaka',
     banglaLocation: 'বসিলা-মোহাম্মদপুর সংলগ্ন, নদী তীরবর্তী কেরানীগঞ্জ',
     totalLandArea: '700',
@@ -339,9 +365,13 @@ export const PROJECTS: ProjectData[] = [
     
     tagline: 'Experience Comfort, Elegance, And Modern Hospitality',
     category: 'hotel',
-    heroImage: '/assets/images/bd_signature_bay_1793789202981.jpg',
+    heroImage: '/assets/images/signature_bay_hotel_featured.jpg',
     projectLogoUrl: '/assets/projects/signature_bay_logo_hd.png',
-    logoBadgeText: 'SIGNATURE BAY HOTEL',
+    logoBadgeText: 'Signature Bay Hotel',
+    galleryImages: [
+      '/assets/images/signature_bay_hotel_featured.jpg',
+      '/assets/images/bd_signature_bay_1793789202981.jpg'
+    ],
     location: 'Prime Coastal Tourism Corridor, Bangladesh',
     banglaLocation: 'প্রাইম কোস্টাল বিচ করিডোর, কক্সবাজার / কুয়াকাটা',
     totalLandArea: '5 Star Standard Plot Area',
@@ -387,9 +417,13 @@ export const PROJECTS: ProjectData[] = [
     
     tagline: 'Own Your Share Of Riverside Tranquility',
     category: 'resort',
-    heroImage: '/assets/images/bd_riviera_resort_1793789220380.jpg',
+    heroImage: '/assets/images/riviera_resort_featured.jpg',
     projectLogoUrl: '/assets/projects/rivera_logo_hd.png',
-    logoBadgeText: 'AASCEEND RIVERA RESORT',
+    logoBadgeText: 'Aasceend Rivera Resort',
+    galleryImages: [
+      '/assets/images/riviera_resort_featured.jpg',
+      '/assets/images/bd_riviera_resort_1793789220380.jpg'
+    ],
     location: 'Scenic Riverbank Retreat, Outskirts of Greater Dhaka',
     banglaLocation: 'রিভারফ্রন্ট ইকো পার্কল্যান্ড, বৃহত্তর ঢাকা',
     totalLandArea: '150 Bigha Dedicated Resort Parkland',
@@ -435,9 +469,13 @@ export const PROJECTS: ProjectData[] = [
     
     tagline: 'Where Modern Luxury Meets Nature’s Serenity',
     category: 'resort',
-    heroImage: '/assets/images/bd_eden_paradise_1793790838938.jpg',
+    heroImage: '/assets/images/eden_paradise_resort_featured.jpg',
     projectLogoUrl: '/assets/projects/eden_logo_hd.png',
-    logoBadgeText: 'EDEN PARADISE RESORT',
+    logoBadgeText: 'EDEN Paradise Resort',
+    galleryImages: [
+      '/assets/images/eden_paradise_resort_featured.jpg',
+      '/assets/images/bd_eden_paradise_1793790838938.jpg'
+    ],
     location: 'Pristine Green Hill & Valley Escapement, Sylhet/Gazipur Corridor',
     banglaLocation: 'প্রাকৃতিক গ্রিন হিল ভ্যালি করিডোর',
     totalLandArea: '108 Bigha Natural Preserve',
@@ -482,9 +520,14 @@ export const PROJECTS: ProjectData[] = [
     name: 'AG Dhaka Town',
     tagline: 'A Premium Land Project & Smart Urban Living',
     category: 'township',
-    heroImage: '/assets/images/bd_realestate_dev_1793789737606.jpg',
+    heroImage: '/assets/images/ag_dhaka_town_featured.jpg',
     projectLogoUrl: '/assets/projects/ag_dhaka_town_logo_hd.png',
     logoBadgeText: 'AG Dhaka Town',
+    galleryImages: [
+      '/assets/images/ag_dhaka_town_featured.jpg',
+      '/assets/images/town_pin_location.jpg',
+      '/assets/images/bd_realestate_dev_1793789737606.jpg'
+    ],
     location: 'Near Purbachal Express Corridor, Dhaka',
     banglaLocation: 'পূর্বাচল এক্সপ্রেস করিডোর সংলগ্ন, ঢাকা',
     totalLandArea: '800 Bigha Master Planned City',
@@ -528,12 +571,16 @@ export const PROJECTS: ProjectData[] = [
   },
   {
     id: 'chhoya-soa-resort',
-    name: 'Chhoya Soa Resort',
+    name: 'Soa Resort',
     tagline: 'Exquisite Luxury Surrounded by Pristine Nature',
     category: 'resort',
-    heroImage: '/assets/images/cover.jpg',
+    heroImage: '/assets/images/chhoya_soa_resort_featured.jpg',
     projectLogoUrl: '/assets/projects/chhoya_soa_resort_logo_hd.png',
-    logoBadgeText: 'Chhoya Soa Resort',
+    logoBadgeText: ' Soa Resort',
+    galleryImages: [
+      '/assets/images/chhoya_soa_resort_featured.jpg',
+      '/assets/images/cover.jpg'
+    ],
     location: 'Sreemangal Tea Valley / Inani Coastal Belt',
     banglaLocation: 'শ্রীমঙ্গল চা বাগান ভ্যালি / ইনানী বিচ জোন',
     totalLandArea: '75 Bigha Eco Retreat',
@@ -575,13 +622,16 @@ export const PROJECTS: ProjectData[] = [
     concernName: 'Aasceend Hotel & Resort Limited'
   },
   {
-    id: 'aasceend-commercial-tower',
-    name: 'Aasceend Commercial Tower',
+    id: 'AG Six Point Town',
+    name: 'AG Six Point Town',
     tagline: 'Iconic Architecture in Prime Corporate Corridors',
     category: 'township',
-    heroImage: '/assets/images/bd_commercial_tower_1793789738111.jpg',
+    heroImage: '/assets/images/asceend_six_point_town.jpg',
     projectLogoUrl: '/assets/projects/commercial_tower_logo_hd.png',
-    logoBadgeText: 'Commercial Tower',
+    logoBadgeText: 'Aasceend Commercial Tower',
+    galleryImages: [
+      '/assets/images/asceend_six_point_town.jpg'
+    ],
     location: 'Tejgaon Commercial Boulevard, Dhaka',
     banglaLocation: 'তেজগাঁও কমার্শিয়াল বুলেভার্ড, ঢাকা',
     totalLandArea: '45 Katha Prime Commercial Plot',
@@ -623,13 +673,17 @@ export const PROJECTS: ProjectData[] = [
     concernName: 'Aasceend Property Development Limited'
   },
   {
-    id: 'aasceend-eco-resort',
-    name: 'Aasceend Eco Resort & Spa',
+    id: 'AG Six Point Resort',
+    name: 'AG Six Point Resort',
     tagline: 'Harmony of Nature, Wellness & Sustainable Luxury',
     category: 'resort',
-    heroImage: '/assets/images/nature.jpg',
+    heroImage: '/assets/images/eco_resort_featured.jpg',
     projectLogoUrl: '/assets/projects/eco_resort_logo_hd.png',
-    logoBadgeText: 'Eco Resort & Spa',
+    logoBadgeText: 'Aasceend Eco Resort & Spa',
+    galleryImages: [
+      '/assets/images/eco_resort_featured.jpg',
+      '/assets/images/nature.jpg'
+    ],
     location: 'Srimangal Hills, Sylhet',
     banglaLocation: 'শ্রীমঙ্গল হিলস, সিলেট',
     totalLandArea: '60 Bigha Natural Valley Reserve',

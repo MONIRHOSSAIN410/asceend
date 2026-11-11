@@ -59,7 +59,7 @@ const HERO_SLIDES = [
     id: 'hospitality',
     image: '/assets/images/nature5.jpeg',
     tag: '5-Star Luxury Coastal Destination',
-    title: 'Signature Bay Hotel & Resorts',
+    title: 'Signature Bay Hotel ',
     subtitle: 'Share-Based Ownership & Guaranteed Annual Dividend Growth',
     projectId: 'signature-bay-hotel'
   }
@@ -96,9 +96,13 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
     'aasceend-green-town',
     'aasceend-river-view-town',
     'aasceend-town',
+    'ag-dhaka-town',
+    'aasceend-commercial-tower',
     'eden-paradise-resort',
     'aasceend-riviera-resort',
-    'signature-bay-hotel'
+    'signature-bay-hotel',
+    'chhoya-soa-resort',
+    'aasceend-eco-resort'
   ];
 
   const filteredProjects = PROJECTS
@@ -663,7 +667,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
         <div className="text-center max-w-2xl mx-auto mb-10">
           
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-green-800  dark:text-white mt-1">
-            Our Business Divisions
+            Our Business Sectors
           </h2>
           <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 mt-2">
             Pioneering growth across key economic growth engines in Bangladesh.
