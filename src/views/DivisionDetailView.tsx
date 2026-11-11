@@ -12,7 +12,7 @@ import {
   Globe
 } from 'lucide-react';
 import { PageView, DivisionData } from '../types';
-import { DIVISIONS, PROJECTS } from '../data/mockData';
+import { DIVISIONS, PROJECTS, SISTER_CONCERNS } from '../data/mockData';
 
 interface DivisionDetailViewProps {
   divisionId: string;
@@ -26,6 +26,7 @@ export const DivisionDetailView: React.FC<DivisionDetailViewProps> = ({
   onRequestCall
 }) => {
   const division = DIVISIONS.find((d) => d.id === divisionId) || DIVISIONS[0];
+  const matchedConcern = SISTER_CONCERNS.find((c) => c.divisionId === division.id);
 
   // Specific project filters if real-estate or hospitality
   const relatedProjects = PROJECTS.filter((p) => {
@@ -211,9 +212,19 @@ export const DivisionDetailView: React.FC<DivisionDetailViewProps> = ({
           Our Concern
         </h4>
         <div className="bg-white dark:bg-neutral-900 p-8 rounded-3xl border border-neutral-200 dark:border-neutral-800 shadow-sm flex flex-col items-center justify-center">
-          <div className="w-14 h-14 rounded-2xl bg-emerald-600 text-white font-extrabold text-2xl flex items-center justify-center mb-3 shadow-md">
-            A
-          </div>
+          {matchedConcern?.logoUrl ? (
+            <div className="h-16 w-auto max-w-[240px] flex items-center justify-center mb-3">
+              <img
+                src={matchedConcern.logoUrl}
+                alt={division.concernName}
+                className="max-h-16 w-auto object-contain"
+              />
+            </div>
+          ) : (
+            <div className="w-14 h-14 rounded-2xl bg-emerald-600 text-white font-extrabold text-2xl flex items-center justify-center mb-3 shadow-md">
+              A
+            </div>
+          )}
           <div className="text-lg font-extrabold font-heading text-neutral-900 dark:text-white tracking-wide">
             {division.concernLogoText}
           </div>

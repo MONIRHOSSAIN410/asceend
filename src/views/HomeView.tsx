@@ -608,7 +608,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
                 <Building2 className="w-6 h-6" />
               </div>
               <div className="text-4xl sm:text-5xl font-extrabold font-mono text-emerald-600 dark:text-emerald-400 mb-1">
-                11+
+                12+
               </div>
               <div className="text-xs sm:text-sm font-semibold text-neutral-800 dark:text-neutral-200">
                 Active Sister Concerns

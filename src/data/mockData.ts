@@ -1280,6 +1280,16 @@ export const SISTER_CONCERNS: SisterConcernEntry[] = [
     sector: 'Luxury Hospitality & Eco-Resorts',
     desc: '5-star destination hotels, riverside eco-retreats, and share-based hospitality ownership.',
     divisionId: 'hotel-resort'
+  },
+  {
+    id: 'asceend-limited',
+    name: 'Asceend Limited',
+    banglaName: 'আসীন লিমিটেড',
+    logoUrl: '/assets/concerns/12_asceend_limited.png',
+    originalAsset: '/assets/aistudio/12._Asceend_Limited_a1b2c3d4.jpg',
+    sector: 'Export, Import & Multi-Trading',
+    desc: 'Global trade operations, international sourcing, supply chain integration, and commercial multi-trading.',
+    divisionId: 'export-import'
   }
 ];
 
