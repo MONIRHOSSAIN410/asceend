@@ -16,7 +16,7 @@ export const SustainabilityView: React.FC<SustainabilityViewProps> = ({
   const [activeTab, setActiveTab] = useState<'environment' | 'csr'>(initialTab);
 
   return (
-    <div className="pt-24 pb-16 space-y-16">
+    <div className="pt-10 pb-16 space-y-16">
       
       {/* 1. Header Banner */}
       <section className="relative py-20 bg-neutral-900 text-white overflow-hidden">

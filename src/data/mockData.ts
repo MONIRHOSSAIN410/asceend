@@ -476,6 +476,199 @@ export const PROJECTS: ProjectData[] = [
       'Herbal Ayurvedic Spa', 'Tennis & Badminton Courts', 'Cinema Under the Stars'
     ],
     concernName: 'Aasceend Hotel & Resort Limited'
+  },
+  {
+    id: 'ag-dhaka-town',
+    name: 'AG Dhaka Town',
+    tagline: 'A Premium Land Project & Smart Urban Living',
+    category: 'township',
+    heroImage: '/assets/images/bd_realestate_dev_1793789737606.jpg',
+    projectLogoUrl: '/assets/projects/ag_dhaka_town_logo_hd.png',
+    logoBadgeText: 'AG Dhaka Town',
+    location: 'Near Purbachal Express Corridor, Dhaka',
+    banglaLocation: 'পূর্বাচল এক্সপ্রেস করিডোর সংলগ্ন, ঢাকা',
+    totalLandArea: '800 Bigha Master Planned City',
+    totalPlots: '1,500+',
+    purchaseStatus: 'Booking Open',
+    plotAreaPercent: '60% of Total Land',
+    facilitiesPercent: '40% of Total Land',
+    standardPlotSizes: '3, 5, 7.5, 10, 20 Katha',
+    banglaPlotSizes: '৩, ৫, ৭.৫, ১০ ও ২০ কাঠা প্লট',
+    roadWidth: '40, 60, 80, 100 feet Internal Wide Avenues',
+    roadWidthShort: '40 to 100 feet Internal Roads',
+    badgeTag: 'বুকিং চলছে · Booking Open',
+    verifiedTag: 'BLDA মেম্বারশিপ ও শতভাগ নিষ্কণ্টক জমি',
+    earthFilling: 'Substantially Developed & Phase Handover Scheduled',
+    handoverSchedule: 'Handover within 3 to 5 years',
+    vat: 'As per government policy',
+    approvalStatus: 'BLDA Registered, Government Approved Zone',
+    developmentStatus: 'Rapidly Progressing',
+    description: 'AG Dhaka Town is a visionary premium land project strategically developed adjacent to Dhaka’s fastest-growing communication corridor. Featuring expansive wide road networks, modern smart utility infrastructure, lush green zones, and recreational hubs, it provides families and investors with generational wealth and high-yield appreciation.',
+    locationHighlights: [
+      'Strategically located near Dhaka’s high-speed expressway network',
+      'Within 15 minutes of diplomatic zones and business centers',
+      'Peaceful pollution-free suburban environment surrounded by natural waterbodies'
+    ],
+    investmentReasons: [
+      'High capital appreciation corridor with rapid infrastructural expansion',
+      'Comprehensive master planning with institutional, educational, and commercial plots',
+      '100% legal title verification with immediate registration facilities'
+    ],
+    roadNetwork: [
+      '100-foot central grand boulevard with modern LED lighting',
+      '60-foot secondary connecting avenues with underground drainage',
+      '40-foot quiet residential lanes with tree-lined pedestrian footpaths'
+    ],
+    amenities: [
+      'Central Grand Mosque & Community Centers', 'Lakeside Jogging Tracks & Parks',
+      'Modern Healthcare Complex', 'Reputed Schools & Colleges Campus',
+      '24/7 Smart Security Surveillance', 'Underground Utility & Power Ducts'
+    ],
+    concernName: 'Aasceend Town Development Limited'
+  },
+  {
+    id: 'chhoya-soa-resort',
+    name: 'Chhoya Soa Resort',
+    tagline: 'Exquisite Luxury Surrounded by Pristine Nature',
+    category: 'resort',
+    heroImage: '/assets/images/cover.jpg',
+    projectLogoUrl: '/assets/projects/chhoya_soa_resort_logo_hd.png',
+    logoBadgeText: 'Chhoya Soa Resort',
+    location: 'Sreemangal Tea Valley / Inani Coastal Belt',
+    banglaLocation: 'শ্রীমঙ্গল চা বাগান ভ্যালি / ইনানী বিচ জোন',
+    totalLandArea: '75 Bigha Eco Retreat',
+    totalPlots: '120 Luxury Suites & Cottages',
+    purchaseStatus: 'Ownership Shares Open',
+    plotAreaPercent: '30% Built Area',
+    facilitiesPercent: '70% Eco Sanctuary & Forest Canopy',
+    standardPlotSizes: '1, 2, 3 Bed Private Pool Villas & Suites',
+    banglaPlotSizes: '১, ২ ও ৩ বেড প্রাইভেট সুইটস ও ভিলা',
+    roadWidth: 'Eco Buggy Pathways & 40 ft Access Road',
+    roadWidthShort: 'Eco Access Pathways',
+    badgeTag: 'শেয়ার বরাদ্দ চলছে · Limited Shares',
+    verifiedTag: 'Environment Cleared 5-Star Eco Resort',
+    earthFilling: 'Preserved Natural Terrain & Hill Contour Architecture',
+    handoverSchedule: 'Phase 1 Handover December 2026',
+    vat: 'Inclusive as per corporate terms',
+    approvalStatus: 'Tourism Board & Department of Environment Approved',
+    developmentStatus: 'Construction in Progress',
+    description: 'Chhoya Soa Resort is an ultra-luxury eco-hospitality landmark thoughtfully integrated within untouched natural landscapes. Offering world-class wellness facilities, infinity pools, organic dining, and private chalets, the resort delivers guaranteed annual rental yields and elite lifestyle privileges to its fractional ownership partners.',
+    locationHighlights: [
+      'Set against rolling hills, evergreen rainforest trails, and natural streams',
+      'Direct highway and private helipad accessibility',
+      'Minutes away from renowned eco-tourism and wildlife sanctuaries'
+    ],
+    investmentReasons: [
+      'Lifetime fractional ownership with deeded title deeds',
+      'Assured annual dividends and complimentary holiday night stays',
+      'Professional 5-star international standard hospitality management'
+    ],
+    roadNetwork: [
+      'Eco-friendly permeable stone paved roadways',
+      'Zero-emission battery buggy pathways throughout the resort'
+    ],
+    amenities: [
+      'Infinity Pool Overlooking Green Valley', 'Ayurvedic Wellness & Spa Retreat',
+      'Organic Farm-to-Table Fine Dining', 'Adventure Nature Trails & Zipline',
+      'Helipad & Executive Lounge', 'Family Recreation & Kids Adventure Zone'
+    ],
+    concernName: 'Aasceend Hotel & Resort Limited'
+  },
+  {
+    id: 'aasceend-commercial-tower',
+    name: 'Aasceend Commercial Tower',
+    tagline: 'Iconic Architecture in Prime Corporate Corridors',
+    category: 'township',
+    heroImage: '/assets/images/bd_commercial_tower_1793789738111.jpg',
+    projectLogoUrl: '/assets/projects/commercial_tower_logo_hd.png',
+    logoBadgeText: 'Commercial Tower',
+    location: 'Tejgaon Commercial Boulevard, Dhaka',
+    banglaLocation: 'তেজগাঁও কমার্শিয়াল বুলেভার্ড, ঢাকা',
+    totalLandArea: '45 Katha Prime Commercial Plot',
+    totalPlots: '160 Corporate Suites & Retail Spaces',
+    purchaseStatus: 'Pre-launch Allotment',
+    plotAreaPercent: '65% High-Efficiency Floorplate',
+    facilitiesPercent: '35% Green Atrium & Smart Amenities',
+    standardPlotSizes: '1,200 to 8,500 Sq Ft Office Suites',
+    banglaPlotSizes: '১,২০০ থেকে ৮,৫০০ বর্গফুট কর্পোরেট স্পেস',
+    roadWidth: '120 ft Wide Main Road Access with Dedicated Driveways',
+    roadWidthShort: '120 feet Main Road Frontage',
+    badgeTag: 'প্রাক-বরাদ্দ চলছে · Pre-Launch Booking',
+    verifiedTag: 'RAJUK বাণিজ্যিক অনুমোদনপ্রাপ্ত ও ভূমিকম্প সহনশীল',
+    earthFilling: 'Substructure & Piling Completed',
+    handoverSchedule: 'Handover within 36 months',
+    vat: 'As applicable by NBR rules',
+    approvalStatus: 'RAJUK & Fire Safety Clearance Approved',
+    developmentStatus: 'Structural Construction',
+    description: 'Aasceend Commercial Tower stands as a modern beacon of commercial brilliance in Dhaka. Designed with high-performance double-glazed glass facades, high-speed smart elevators, multi-level automated parking, and comprehensive energy efficiency, this landmark provides multinational corporations and leading Bangladeshi enterprises with an elite corporate address.',
+    locationHighlights: [
+      'Heart of Tejgaon-Gulshan commercial artery with unmatched road connectivity',
+      'Direct signal-free connectivity via elevated expressways and metro rail',
+      'Surrounded by top corporate headquarters, banks, and foreign missions'
+    ],
+    investmentReasons: [
+      'High-demand Grade-A commercial leasing hub with superior rental yields',
+      'Built to modern international energy and seismic safety certifications',
+      'Prime freehold commercial title in high-value central Dhaka'
+    ],
+    roadNetwork: [
+      'Direct four-lane dedicated entry and exit slip roads',
+      'Underground multi-level basement parking with automated guidance'
+    ],
+    amenities: [
+      'Double-Height Grand Lobby & Concierge', 'High-Speed Intelligent Elevators',
+      'Rooftop Sky Lounge & Conference Suites', 'Central HVAC & Energy Recovery Systems',
+      '100% Full Power Backup with Dual Generators', 'Integrated Fire Fighting & BMS Automation'
+    ],
+    concernName: 'Aasceend Property Development Limited'
+  },
+  {
+    id: 'aasceend-eco-resort',
+    name: 'Aasceend Eco Resort & Spa',
+    tagline: 'Harmony of Nature, Wellness & Sustainable Luxury',
+    category: 'resort',
+    heroImage: '/assets/images/nature.jpg',
+    projectLogoUrl: '/assets/projects/eco_resort_logo_hd.png',
+    logoBadgeText: 'Eco Resort & Spa',
+    location: 'Srimangal Hills, Sylhet',
+    banglaLocation: 'শ্রীমঙ্গল হিলস, সিলেট',
+    totalLandArea: '60 Bigha Natural Valley Reserve',
+    totalPlots: '90 Forest Chalets & Suites',
+    purchaseStatus: 'Booking Open',
+    plotAreaPercent: '25% Low-Density Eco Footprint',
+    facilitiesPercent: '75% Protected Forest, Natural Stream & Gardens',
+    standardPlotSizes: 'Studio, 1-Bed & 2-Bed Luxury Chalets',
+    banglaPlotSizes: 'স্টুডিও, ১-বেড ও ২-বেড লাক্সারি শ্যালেট',
+    roadWidth: 'Internal Eco Buggy Trails & Scenic Walkways',
+    roadWidthShort: 'Eco Walkways & Trails',
+    badgeTag: 'বুকিং চলছে · Investment Allotment',
+    verifiedTag: 'সবুজ ও পরিবেশবান্ধব ৫-স্টার ইকো রিসোর্ট',
+    earthFilling: 'Natural Forest Landscape Preserved',
+    handoverSchedule: 'Target Handover Q4 2027',
+    vat: 'Inclusive of VAT as per agreement',
+    approvalStatus: 'Department of Environment & Tourism Board Approved',
+    developmentStatus: 'Site Development & Landscaping Ongoing',
+    description: 'Aasceend Eco Resort & Spa is an idyllic sanctuary nestled amidst the rolling tea terraces and evergreen foliage of Sylhet. Combining traditional artisanal materials with 5-star comforts, the resort offers Ayurvedic wellness therapies, natural springs, organic farm-to-table cuisine, and an exceptional passive income stream through managed hospitality shares.',
+    locationHighlights: [
+      'Encircled by lush tea estates and natural bio-diverse forestry',
+      'Convenient travel distance from Sylhet Osmani International Airport',
+      'Clean unpolluted air and year-round pleasant micro-climate'
+    ],
+    investmentReasons: [
+      'Capital investment secured by registered property shares',
+      'Lucrative returns from thriving national and international eco-tourism',
+      'Free luxury vacation entitlement for co-owners throughout the year'
+    ],
+    roadNetwork: [
+      'Scenic tree-lined paved approach from national highway',
+      'Quiet pedestrian stone trails & golf cart paths'
+    ],
+    amenities: [
+      'Natural Springwater Swimming Lagoon', 'Holistic Wellness & Detox Center',
+      'Tea Garden View Open Bistro', 'Birdwatching Observation Decks',
+      'Campfire & Stargazing Amphitheater', 'Eco-Library & Meditation Pavilions'
+    ],
+    concernName: 'Aasceend Hotel & Resort Limited'
   }
 ];
 

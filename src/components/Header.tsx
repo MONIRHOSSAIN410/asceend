@@ -73,7 +73,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
   return (
     <>
    <header 
-  className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white dark:bg-black border-b border-neutral-200 dark:border-neutral-800 shadow-sm py-3.5"
+  className="w-full relative z-40 transition-all duration-300 bg-white dark:bg-black border-b border-neutral-200 dark:border-neutral-800 shadow-sm py-3.5"
 >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4">
@@ -257,7 +257,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
                   <div className="px-4 py-1 text-[11px] font-semibold text-neutral-400 uppercase tracking-wider">
                     Mega Townships
                   </div>
-                  {PROJECTS.filter(p => p.category === 'township' && p.id !== 'aasceend-eastern-town').map((proj) => (
+                  {PROJECTS.filter(p => p.category === 'township').map((proj) => (
                     <button
                       key={proj.id}
                       onClick={() => handleNav({ type: 'project', projectId: proj.id })}
@@ -275,7 +275,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
                   <div className="px-4 py-1 text-[11px] font-semibold text-neutral-400 uppercase tracking-wider">
                     Hospitality & Resorts
                   </div>
-                  {PROJECTS.filter(p => p.category !== 'township' && p.id !== 'aasceend-eastern-town').map((proj) => (
+                  {PROJECTS.filter(p => p.category !== 'township').map((proj) => (
                     <button
                       key={proj.id}
                       onClick={() => handleNav({ type: 'project', projectId: proj.id })}
@@ -553,7 +553,6 @@ const [mobileAccordions, setMobileAccordions] = useState<
             id: 'projects',
             title: 'PROJECTS',
             items: PROJECTS
-              .filter(proj => proj.id !== 'aasceend-eastern-town')
               .map(proj => ({
                 label: proj.name,
                 action: () => handleNav({

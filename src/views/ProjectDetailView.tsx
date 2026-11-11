@@ -57,7 +57,7 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
   };
 
   return (
-    <div className="pt-20 pb-16 space-y-12">
+    <div className="pt-6 pb-16 space-y-12">
       
       {/* 1. HERO WITH SPECIFICATION CARD (MATCHING VIDEO EXACTLY) */}
       <section className="relative min-h-[80vh] flex items-center pt-16 pb-12 overflow-hidden bg-neutral-900 text-white">

@@ -25,7 +25,7 @@ export const LeaderView: React.FC<LeaderViewProps> = ({
       : currentLeader.photoUrl;
 
   return (
-    <div className="pt-24 pb-16 space-y-12">
+    <div className="pt-10 pb-16 space-y-12">
       
       {/* 1. Header Hero Banner */}
       <section className="relative py-18 bg-neutral-900 text-white overflow-hidden">

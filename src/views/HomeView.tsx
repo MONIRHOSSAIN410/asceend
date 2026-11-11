@@ -10,7 +10,6 @@ import {
   ArrowRight, 
   ChevronLeft,
   ChevronRight, 
-  Sparkles,
   Building2,
   Hotel
 } from 'lucide-react';
@@ -71,6 +70,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
   const [currentSlide, setCurrentSlide] = useState(0);
 
   // Auto-play carousel timer (advances every 5 seconds)
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
@@ -87,6 +87,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
   };
 
   // Project Category Filter
+
   const [projectFilter, setProjectFilter] = useState<'all' | 'township' | 'hospitality'>('all');
 
   const FEATURED_PROJECT_ORDER = [
@@ -114,6 +115,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
     });
 
   // Stagger animation variants
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -142,6 +144,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
 <section className="relative min-h-[90vh] flex items-center pt-24 pb-16 overflow-hidden">
         
   {/* Carousel Background Images with Smooth Crossfade */}
+  
   <div className="absolute inset-0 z-0">
     <AnimatePresence mode="sync">
       <motion.div
