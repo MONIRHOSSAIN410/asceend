@@ -346,15 +346,6 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
       >
         {filteredProjects.map((proj) => {
-
-          const isRiverView = proj.name
-            ?.toLowerCase()
-            .includes("river view");
-
-          const isAasceendTown = proj.name
-            ?.toLowerCase()
-            .includes("aasceend town");
-
           return (
             <div
               key={proj.id}
@@ -391,7 +382,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
 
               {/* Logo & Project Name */}
               <div className="
-                px-4 pt-3 pb-4
+                px-4 pt-3.5 pb-4
                 flex flex-col
                 items-center
                 text-center
@@ -402,23 +393,18 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
                 {proj.projectLogoUrl && (
                   <div className="
                     w-full
-                    h-[65px]
+                    h-[72px] sm:h-[76px]
                     flex items-center justify-center
-                    overflow-hidden
+                    p-1
                   ">
                     <img
                       src={proj.projectLogoUrl}
                       alt={`${proj.name} Logo`}
                       loading="lazy"
-                      style={{
-                        clipPath: isRiverView
-                          ? "inset(0 0 14% 0)"
-                          : "none"
-                      }}
                       className="
                         block
-                        max-w-[185px]
-                        max-h-[60px]
+                        max-w-[195px]
+                        max-h-[68px] sm:max-h-[72px]
                         w-auto
                         h-auto
                         object-contain
@@ -431,10 +417,10 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
                 )}
 
                 {/* English Project Name */}
-                <div className="w-full flex items-center justify-center mt-1 px-1">
+                <div className="w-full flex items-center justify-center mt-2 px-1">
 
                   <h3
-                    className={`
+                    className="
                       w-full
                       font-extrabold
                       font-heading
@@ -447,11 +433,8 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
                       transition-colors
                       group-hover:text-emerald-600
                       dark:group-hover:text-emerald-300
-                      ${isAasceendTown
-                        ? "text-lg sm:text-xl"
-                        : "text-base sm:text-lg"
-                      }
-                    `}
+                      text-base sm:text-lg
+                    "
                   >
                     {proj.name}
                   </h3>
