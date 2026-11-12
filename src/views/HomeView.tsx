@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence, useInView } from 'motion/react';
 import { 
   Building, 
   ShieldCheck, 
@@ -11,7 +11,8 @@ import {
   ChevronLeft,
   ChevronRight, 
   Building2,
-  Hotel
+  Hotel,
+  LandPlot
 } from 'lucide-react';
 import { PageView } from '../types';
 import { PROJECTS, DIVISIONS } from '../data/mockData';
@@ -65,7 +66,63 @@ const HERO_SLIDES = [
   }
 ];
 
+interface StatCounterProps {
+  value: number;
+  suffix?: string;
+  padZero?: boolean;
+  duration?: number;
+  trigger?: boolean;
+}
+
+const StatCounter: React.FC<StatCounterProps> = ({ 
+  value, 
+  suffix = '', 
+  padZero = false, 
+  duration = 2,
+  trigger = true 
+}) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!trigger) return;
+
+    let startTimestamp: number | null = null;
+    let animId: number;
+
+    const animateCount = (timestamp: number) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const elapsed = (timestamp - startTimestamp) / 1000;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // Smooth deceleration: easeOutExpo
+      const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      const current = Math.round(ease * value);
+      setCount(current);
+
+      if (progress < 1) {
+        animId = requestAnimationFrame(animateCount);
+      } else {
+        setCount(value);
+      }
+    };
+
+    animId = requestAnimationFrame(animateCount);
+    return () => cancelAnimationFrame(animId);
+  }, [trigger, value, duration]);
+
+  const formatted = padZero && count < 10 ? `0${count}` : `${count}`;
+
+  return (
+    <span className="inline-block tabular-nums">
+      {formatted}{suffix}
+    </span>
+  );
+};
+
 export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall }) => {
+  const atAGlanceRef = React.useRef<HTMLDivElement>(null);
+  const isAtAGlanceInView = useInView(atAGlanceRef, { once: true, margin: '-50px' });
+
   // Real Estate Carousel State
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -556,6 +613,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
       {/* 4. AT A GLANCE BANNER SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
+          ref={atAGlanceRef}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -569,119 +627,136 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
             className="absolute inset-0 w-full h-full object-cover object-center"
           />
 
-          {/* Contrast & Vignette Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/35 to-black/65 pointer-events-none" />
+          {/* Contrast & Vignette Overlay - Lightweight so background image remains vibrant and visible */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/5 to-black/25 pointer-events-none" />
 
           {/* Banner Content Container */}
           <div className="relative z-10 w-full px-6 sm:px-10 md:px-12 lg:px-16 py-10 sm:py-12 lg:py-14">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
               
-              {/* Left Column: Title "AT A GLANCE" */}
-              <div className="lg:col-span-5 flex items-center">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-black italic uppercase tracking-wider text-[#D4F820] drop-shadow-[0_2px_16px_rgba(212,248,32,0.45)]">
+              {/* Left Column: Title "AT A GLANCE" in vibrant Yellow */}
+              <div className="lg:col-span-4 xl:col-span-4 flex items-center lg:pl-2 xl:pl-6">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-4xl font-black italic uppercase tracking-wider text-[#FFE500] drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] drop-shadow-[0_0_24px_rgba(255,229,0,0.6)]">
                   AT A GLANCE
                 </h2>
               </div>
 
-              {/* Right Column: 6 Stats Grid (2 Columns x 3 Rows) */}
-              <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-y-6 sm:gap-y-7 lg:gap-y-8 gap-x-6 sm:gap-x-8 lg:gap-x-12">
-                
-                {/* 1. Active Concerns */}
-                <div className="flex items-start gap-3 sm:gap-3.5">
-                  <div className="w-8 sm:w-9 h-8 sm:h-9 shrink-0 flex items-center justify-center pt-0.5">
-                    <img 
-                      src="/assets/images/icon_active_concerns_clean.png" 
-                      alt="" 
-                      className="w-7 h-7 sm:w-8 sm:h-8 object-contain"
-                    />
-                  </div>
-                  <div>
-                    <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-none mb-1">
-                      12+
+              {/* Right Column: 6 Stats Grid (2 Columns x 3 Rows) - Shifted further right */}
+              <div className="lg:col-span-8 xl:col-span-8 flex justify-end lg:pl-8 xl:pl-16">
+                <div className="w-full max-w-md sm:max-w-lg lg:max-w-lg lg:ml-auto lg:translate-x-3 xl:translate-x-6 grid grid-cols-1 sm:grid-cols-2 gap-y-6 sm:gap-y-7 lg:gap-y-8 gap-x-6 sm:gap-x-8 lg:gap-x-12">
+                  
+                  {/* 1. Active Concerns */}
+                  <div className="flex items-start gap-3 sm:gap-3.5">
+                    <div className="w-8 sm:w-9 h-8 sm:h-9 shrink-0 flex items-center justify-center pt-0.5">
+                      <img 
+                        src="/assets/images/icon_active_concerns_clean.png" 
+                        alt="" 
+                        className="w-7 h-7 sm:w-8 sm:h-8 object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]"
+                      />
                     </div>
-                    <div className="text-[11px] sm:text-xs font-bold text-neutral-200 tracking-wider uppercase">
-                      ACTIVE CONCERNS
+                    <div>
+                      <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-none mb-1 drop-shadow-[0_2px_5px_rgba(0,0,0,0.85)]">
+                        <StatCounter value={12} suffix="+" trigger={isAtAGlanceInView} duration={1.8} />
+                      </div>
+                      <div className="text-[11px] sm:text-xs font-bold text-white tracking-wider uppercase drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
+                        ACTIVE CONCERNS
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* 2. Employees */}
-                <div className="flex items-start gap-3 sm:gap-3.5">
-                  <div className="w-8 sm:w-9 h-8 sm:h-9 shrink-0 flex items-center justify-center pt-0.5">
-                    <img 
-                      src="/assets/images/icon_employees_clean.png" 
-                      alt="" 
-                      className="w-7 h-7 sm:w-8 sm:h-8 object-contain"
-                    />
-                  </div>
-                  <div>
-                    <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-none mb-1">
-                      1000+
+                  {/* 2. Employees */}
+                  <div className="flex items-start gap-3 sm:gap-3.5">
+                    <div className="w-8 sm:w-9 h-8 sm:h-9 shrink-0 flex items-center justify-center pt-0.5">
+                      <img 
+                        src="/assets/images/icon_employees_clean.png" 
+                        alt="" 
+                        className="w-7 h-7 sm:w-8 sm:h-8 object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]"
+                      />
                     </div>
-                    <div className="text-[11px] sm:text-xs font-bold text-neutral-200 tracking-wider uppercase">
-                      EMPLOYEES
+                    <div>
+                      <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-none mb-1 drop-shadow-[0_2px_5px_rgba(0,0,0,0.85)]">
+                        <StatCounter value={1000} suffix="+" trigger={isAtAGlanceInView} duration={2.2} />
+                      </div>
+                      <div className="text-[11px] sm:text-xs font-bold text-white tracking-wider uppercase drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
+                        EMPLOYEES
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* 3. Sectors */}
-                <div className="flex items-start gap-3 sm:gap-3.5">
-                  <div className="w-8 sm:w-9 h-8 sm:h-9 shrink-0 flex items-center justify-center pt-0.5">
-                    <img 
-                      src="/assets/images/icon_sectors_clean.png" 
-                      alt="" 
-                      className="w-7 h-7 sm:w-8 sm:h-8 object-contain"
-                    />
-                  </div>
-                  <div>
-                    <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-none mb-1">
-                      08+
+                  {/* 3. Sectors */}
+                  <div className="flex items-start gap-3 sm:gap-3.5">
+                    <div className="w-8 sm:w-9 h-8 sm:h-9 shrink-0 flex items-center justify-center pt-0.5">
+                      <img 
+                        src="/assets/images/icon_sectors_clean.png" 
+                        alt="" 
+                        className="w-7 h-7 sm:w-8 sm:h-8 object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]"
+                      />
                     </div>
-                    <div className="text-[11px] sm:text-xs font-bold text-neutral-200 tracking-wider uppercase">
-                      SECTORS
+                    <div>
+                      <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-none mb-1 drop-shadow-[0_2px_5px_rgba(0,0,0,0.85)]">
+                        <StatCounter value={8} suffix="+" padZero={true} trigger={isAtAGlanceInView} duration={1.8} />
+                      </div>
+                      <div className="text-[11px] sm:text-xs font-bold text-white tracking-wider uppercase drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
+                        SECTORS
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* 4. Land Projects */}
-                <div className="flex items-start gap-3 sm:gap-3.5">
-                  <div className="w-8 sm:w-9 h-8 sm:h-9 shrink-0" aria-hidden="true" />
-                  <div>
-                    <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-none mb-1">
-                      08
+                  {/* 4. Land Projects */}
+                  <div className="flex items-start gap-3 sm:gap-3.5">
+                    <div className="w-8 sm:w-9 h-8 sm:h-9 shrink-0 flex items-center justify-center pt-0.5 text-[#FFE500]">
+                      <LandPlot 
+                        className="w-7 h-7 sm:w-8 sm:h-8 object-contain drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)] drop-shadow-[0_0_10px_rgba(255,229,0,0.45)]" 
+                        strokeWidth={2.2} 
+                      />
                     </div>
-                    <div className="text-[11px] sm:text-xs font-bold text-neutral-200 tracking-wider uppercase">
-                      LAND PROJECTS
-                    </div>
-                  </div>
-                </div>
-
-                {/* 5. Resort & Hotel Projects */}
-                <div className="flex items-start gap-3 sm:gap-3.5">
-                  <div className="w-8 sm:w-9 h-8 sm:h-9 shrink-0" aria-hidden="true" />
-                  <div>
-                    <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-none mb-1">
-                      04
-                    </div>
-                    <div className="text-[11px] sm:text-xs font-bold text-neutral-200 tracking-wider uppercase">
-                      RESORT & HOTEL PROJECTS
+                    <div>
+                      <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-none mb-1 drop-shadow-[0_2px_5px_rgba(0,0,0,0.85)]">
+                        <StatCounter value={8} padZero={true} trigger={isAtAGlanceInView} duration={1.8} />
+                      </div>
+                      <div className="text-[11px] sm:text-xs font-bold text-white tracking-wider uppercase drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
+                        LAND PROJECTS
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* 6. Apartment Projects */}
-                <div className="flex items-start gap-3 sm:gap-3.5">
-                  <div className="w-8 sm:w-9 h-8 sm:h-9 shrink-0" aria-hidden="true" />
-                  <div>
-                    <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-none mb-1">
-                      34+
+                  {/* 5. Resort & Hotel Projects */}
+                  <div className="flex items-start gap-3 sm:gap-3.5">
+                    <div className="w-8 sm:w-9 h-8 sm:h-9 shrink-0 flex items-center justify-center pt-0.5 text-[#FFE500]">
+                      <Hotel 
+                        className="w-7 h-7 sm:w-8 sm:h-8 object-contain drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)] drop-shadow-[0_0_10px_rgba(255,229,0,0.45)]" 
+                        strokeWidth={2.2} 
+                      />
                     </div>
-                    <div className="text-[11px] sm:text-xs font-bold text-neutral-200 tracking-wider uppercase">
-                      APARTMENT PROJECTS
+                    <div>
+                      <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-none mb-1 drop-shadow-[0_2px_5px_rgba(0,0,0,0.85)]">
+                        <StatCounter value={5} padZero={true} trigger={isAtAGlanceInView} duration={1.8} />
+                      </div>
+                      <div className="text-[11px] sm:text-xs font-bold text-white tracking-wider uppercase drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
+                        RESORT & HOTEL PROJECTS
+                      </div>
                     </div>
                   </div>
-                </div>
 
+                  {/* 6. Apartment Projects */}
+                  <div className="flex items-start gap-3 sm:gap-3.5">
+                    <div className="w-8 sm:w-9 h-8 sm:h-9 shrink-0 flex items-center justify-center pt-0.5 text-[#FFE500]">
+                      <Building2 
+                        className="w-7 h-7 sm:w-8 sm:h-8 object-contain drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)] drop-shadow-[0_0_10px_rgba(255,229,0,0.45)]" 
+                        strokeWidth={2.2} 
+                      />
+                    </div>
+                    <div>
+                      <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-none mb-1 drop-shadow-[0_2px_5px_rgba(0,0,0,0.85)]">
+                        <StatCounter value={34} suffix="+" trigger={isAtAGlanceInView} duration={2.0} />
+                      </div>
+                      <div className="text-[11px] sm:text-xs font-bold text-white tracking-wider uppercase drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
+                        APARTMENT PROJECTS
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
               </div>
 
             </div>
