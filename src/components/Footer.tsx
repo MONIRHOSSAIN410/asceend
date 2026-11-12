@@ -25,7 +25,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onRequestCall }) => 
           <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
             <a
               href="tel:+8801896006310"
-              className="flex items-center gap-2 bg-emerald-700/80 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-xl text-sm font-semibold border border-emerald-500/40 transition-colors"
+              className="flex items-center gap-2 bg-green-700/80 hover:bg-green-700 text-white px-4 py-2.5 rounded-xl text-sm font-semibold border border-green-500/40 transition-colors"
             >
               <Phone className="w-4 h-4 text-emerald-300" />
               <span className="font-mono">+880 1896-006310</span>
@@ -68,7 +68,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onRequestCall }) => 
               Building Structures, Creating Ecosystems."
             </p>
 
-            <p className="text-xs text-emerald-300/80 leading-relaxed max-w-sm">
+            <p className="text-xs text-green-300/80 leading-relaxed max-w-sm">
               A forward-looking conglomerate driving sustainable urban development, technology infrastructure, academic consultancy, and high-impact industrial ventures across Bangladesh.
             </p>
 
@@ -78,7 +78,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onRequestCall }) => 
                 href="https://facebook.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-8 h-8 rounded-lg bg-emerald-900/80 hover:bg-green-600 flex items-center justify-center text-emerald-200 hover:text-white transition-colors text-xs font-bold"
+                className="w-8 h-8 rounded-lg bg-green-900/80 hover:bg-green-600 flex items-center justify-center text-green-200 hover:text-white transition-colors text-xs font-bold"
                 aria-label="Facebook"
               >
                 f
@@ -87,7 +87,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onRequestCall }) => 
                 href="https://x.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-8 h-8 rounded-lg bg-green-900/80 hover:bg-grenn-600 flex items-center justify-center text-emerald-200 hover:text-white transition-colors text-xs font-bold"
+                className="w-8 h-8 rounded-lg bg-green-900/80 hover:bg-green-600 flex items-center justify-center text-green-200 hover:text-white transition-colors text-xs font-bold"
                 aria-label="X / Twitter"
               >
                 X
