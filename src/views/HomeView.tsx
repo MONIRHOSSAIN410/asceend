@@ -62,7 +62,7 @@ const HERO_SLIDES = [
     id: 'hospitality',
     image: '/assets/images/nature5.jpeg',
     tag: '5-Star Luxury Coastal Destination',
-    title: 'Signature Bay Hotel ',
+    title: 'Soa Resort ',
     subtitle: 'Share-Based Ownership & Guaranteed Annual Dividend Growth',
     projectId: 'signature-bay-hotel'
   }
