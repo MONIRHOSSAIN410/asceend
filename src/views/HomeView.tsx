@@ -12,7 +12,9 @@ import {
   ChevronRight, 
   Building2,
   Hotel,
-  LandPlot
+  LandPlot,
+  Briefcase,
+  PieChart
 } from 'lucide-react';
 import { PageView } from '../types';
 import { PROJECTS, DIVISIONS } from '../data/mockData';
@@ -647,11 +649,10 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
                   
                   {/* 1. Active Concerns */}
                   <div className="flex items-start gap-3 sm:gap-3.5">
-                    <div className="w-8 sm:w-9 h-8 sm:h-9 shrink-0 flex items-center justify-center pt-0.5">
-                      <img 
-                        src="/assets/images/icon_active_concerns_clean.png" 
-                        alt="" 
-                        className="w-7 h-7 sm:w-8 sm:h-8 object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]"
+                    <div className="w-8 sm:w-9 h-8 sm:h-9 shrink-0 flex items-center justify-center pt-0.5 text-[#FFE500]">
+                      <Briefcase 
+                        className="w-7 h-7 sm:w-8 sm:h-8 object-contain drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)] drop-shadow-[0_0_10px_rgba(255,229,0,0.45)]" 
+                        strokeWidth={2.2} 
                       />
                     </div>
                     <div>
@@ -666,11 +667,10 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
 
                   {/* 2. Employees */}
                   <div className="flex items-start gap-3 sm:gap-3.5">
-                    <div className="w-8 sm:w-9 h-8 sm:h-9 shrink-0 flex items-center justify-center pt-0.5">
-                      <img 
-                        src="/assets/images/icon_employees_clean.png" 
-                        alt="" 
-                        className="w-7 h-7 sm:w-8 sm:h-8 object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]"
+                    <div className="w-8 sm:w-9 h-8 sm:h-9 shrink-0 flex items-center justify-center pt-0.5 text-[#FFE500]">
+                      <Users 
+                        className="w-7 h-7 sm:w-8 sm:h-8 object-contain drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)] drop-shadow-[0_0_10px_rgba(255,229,0,0.45)]" 
+                        strokeWidth={2.2} 
                       />
                     </div>
                     <div>
@@ -685,11 +685,10 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
 
                   {/* 3. Sectors */}
                   <div className="flex items-start gap-3 sm:gap-3.5">
-                    <div className="w-8 sm:w-9 h-8 sm:h-9 shrink-0 flex items-center justify-center pt-0.5">
-                      <img 
-                        src="/assets/images/icon_sectors_clean.png" 
-                        alt="" 
-                        className="w-7 h-7 sm:w-8 sm:h-8 object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]"
+                    <div className="w-8 sm:w-9 h-8 sm:h-9 shrink-0 flex items-center justify-center pt-0.5 text-[#FFE500]">
+                      <PieChart 
+                        className="w-7 h-7 sm:w-8 sm:h-8 object-contain drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)] drop-shadow-[0_0_10px_rgba(255,229,0,0.45)]" 
+                        strokeWidth={2.2} 
                       />
                     </div>
                     <div>
