@@ -553,112 +553,140 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
         </motion.div> */}
       {/* </section>  */}
 
-      {/* 4. AT A GLANCE STATS SECTION */}
+      {/* 4. AT A GLANCE BANNER SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          
-          {/* Left Feature Card (Deep Green Banner as in Video) */}
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="lg:col-span-5 bg-linear-to-br from-emerald-800 to-emerald-950 text-white rounded-3xl p-8 sm:p-10 flex flex-col justify-between shadow-xl border border-emerald-700/40 relative overflow-hidden"
-          >
-            <div className="space-y-4 relative z-10">
-              <span className="text-xs font-bold uppercase tracking-widest text-emerald-300">
-                Executive Summary
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-white">
-                AT A GLANCE
-              </h2>
-              <p className="text-sm text-emerald-100/90 leading-relaxed pt-2">
-                Our goal is to create well-organized developments that combine modern living, leisure experiences, and sustainable growth opportunities. Every project is approached with careful planning, transparency, and a commitment to building lasting value for customers and investors.
-              </p>
-              <p className="text-xs text-emerald-200/80 leading-relaxed">
-                As a multi-sector development group, Aasceend Group is working toward shaping future destinations through responsible development practices and professional management.
-              </p>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="relative rounded-3xl overflow-hidden shadow-2xl border border-emerald-900/60 min-h-[380px] md:min-h-[420px] lg:min-h-[450px] flex items-center"
+        >
+          {/* Background Image (Clean Cinematic Banner) */}
+          <img 
+            src="/assets/images/at_a_glance_bg.jpg" 
+            alt="Aasceend Group At A Glance" 
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+
+          {/* Contrast & Vignette Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/35 to-black/65 pointer-events-none" />
+
+          {/* Banner Content Container */}
+          <div className="relative z-10 w-full px-6 sm:px-10 md:px-12 lg:px-16 py-10 sm:py-12 lg:py-14">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
+              
+              {/* Left Column: Title "AT A GLANCE" */}
+              <div className="lg:col-span-5 flex items-center">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-black italic uppercase tracking-wider text-[#D4F820] drop-shadow-[0_2px_16px_rgba(212,248,32,0.45)]">
+                  AT A GLANCE
+                </h2>
+              </div>
+
+              {/* Right Column: 6 Stats Grid (2 Columns x 3 Rows) */}
+              <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-y-6 sm:gap-y-7 lg:gap-y-8 gap-x-6 sm:gap-x-8 lg:gap-x-12">
+                
+                {/* 1. Active Concerns */}
+                <div className="flex items-start gap-3 sm:gap-3.5">
+                  <div className="w-8 sm:w-9 h-8 sm:h-9 shrink-0 flex items-center justify-center pt-0.5">
+                    <img 
+                      src="/assets/images/icon_active_concerns_clean.png" 
+                      alt="" 
+                      className="w-7 h-7 sm:w-8 sm:h-8 object-contain"
+                    />
+                  </div>
+                  <div>
+                    <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-none mb-1">
+                      12+
+                    </div>
+                    <div className="text-[11px] sm:text-xs font-bold text-neutral-200 tracking-wider uppercase">
+                      ACTIVE CONCERNS
+                    </div>
+                  </div>
+                </div>
+
+                {/* 2. Employees */}
+                <div className="flex items-start gap-3 sm:gap-3.5">
+                  <div className="w-8 sm:w-9 h-8 sm:h-9 shrink-0 flex items-center justify-center pt-0.5">
+                    <img 
+                      src="/assets/images/icon_employees_clean.png" 
+                      alt="" 
+                      className="w-7 h-7 sm:w-8 sm:h-8 object-contain"
+                    />
+                  </div>
+                  <div>
+                    <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-none mb-1">
+                      1000+
+                    </div>
+                    <div className="text-[11px] sm:text-xs font-bold text-neutral-200 tracking-wider uppercase">
+                      EMPLOYEES
+                    </div>
+                  </div>
+                </div>
+
+                {/* 3. Sectors */}
+                <div className="flex items-start gap-3 sm:gap-3.5">
+                  <div className="w-8 sm:w-9 h-8 sm:h-9 shrink-0 flex items-center justify-center pt-0.5">
+                    <img 
+                      src="/assets/images/icon_sectors_clean.png" 
+                      alt="" 
+                      className="w-7 h-7 sm:w-8 sm:h-8 object-contain"
+                    />
+                  </div>
+                  <div>
+                    <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-none mb-1">
+                      08+
+                    </div>
+                    <div className="text-[11px] sm:text-xs font-bold text-neutral-200 tracking-wider uppercase">
+                      SECTORS
+                    </div>
+                  </div>
+                </div>
+
+                {/* 4. Land Projects */}
+                <div className="flex items-start gap-3 sm:gap-3.5">
+                  <div className="w-8 sm:w-9 h-8 sm:h-9 shrink-0" aria-hidden="true" />
+                  <div>
+                    <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-none mb-1">
+                      08
+                    </div>
+                    <div className="text-[11px] sm:text-xs font-bold text-neutral-200 tracking-wider uppercase">
+                      LAND PROJECTS
+                    </div>
+                  </div>
+                </div>
+
+                {/* 5. Resort & Hotel Projects */}
+                <div className="flex items-start gap-3 sm:gap-3.5">
+                  <div className="w-8 sm:w-9 h-8 sm:h-9 shrink-0" aria-hidden="true" />
+                  <div>
+                    <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-none mb-1">
+                      04
+                    </div>
+                    <div className="text-[11px] sm:text-xs font-bold text-neutral-200 tracking-wider uppercase">
+                      RESORT & HOTEL PROJECTS
+                    </div>
+                  </div>
+                </div>
+
+                {/* 6. Apartment Projects */}
+                <div className="flex items-start gap-3 sm:gap-3.5">
+                  <div className="w-8 sm:w-9 h-8 sm:h-9 shrink-0" aria-hidden="true" />
+                  <div>
+                    <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-none mb-1">
+                      34+
+                    </div>
+                    <div className="text-[11px] sm:text-xs font-bold text-neutral-200 tracking-wider uppercase">
+                      APARTMENT PROJECTS
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
             </div>
-
-            <div className="pt-6 relative z-10">
-              <button
-                onClick={() => onNavigate({ type: 'about' })}
-                className="inline-flex items-center gap-2 bg-white text-emerald-950 font-bold px-5 py-2.5 rounded-xl text-xs hover:bg-emerald-50 transition-all hover:scale-105 active:scale-95 shadow-md"
-              >
-                <span>Learn More About Us</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-
-            {/* Subtle background graphic */}
-            <div className="absolute -right-8 -bottom-8 w-48 h-48 bg-emerald-600/10 rounded-full blur-2xl pointer-events-none" />
-          </motion.div>
-
-          {/* Right Stats Grid */}
-          <motion.div 
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="lg:col-span-7 grid grid-cols-2 gap-4 sm:gap-6"
-          >
-            {/* Stat 1 */}
-            <motion.div variants={itemVariants} className="bg-white dark:bg-neutral-900 rounded-3xl p-6 sm:p-8 border border-neutral-200 dark:border-neutral-800 shadow-sm flex flex-col justify-center items-center text-center group hover:border-emerald-500/50 transition-colors">
-              <div className="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 flex items-center justify-center mb-3">
-                <Building2 className="w-6 h-6" />
-              </div>
-              <div className="text-4xl sm:text-5xl font-extrabold font-mono text-emerald-600 dark:text-emerald-400 mb-1">
-                12+
-              </div>
-              <div className="text-xs sm:text-sm font-semibold text-neutral-800 dark:text-neutral-200">
-                Active Sister Concerns
-              </div>
-              <div className="text-[11px] text-neutral-500 mt-1">Multi-industry operations across Bangladesh</div>
-            </motion.div>
-
-            {/* Stat 2 */}
-            <motion.div variants={itemVariants} className="bg-white dark:bg-neutral-900 rounded-3xl p-6 sm:p-8 border border-neutral-200 dark:border-neutral-800 shadow-sm flex flex-col justify-center items-center text-center group hover:border-emerald-500/50 transition-colors">
-              <div className="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 flex items-center justify-center mb-3">
-                <Users className="w-6 h-6" />
-              </div>
-              <div className="text-4xl sm:text-5xl font-extrabold font-mono text-emerald-600 dark:text-emerald-400 mb-1">
-                480+
-              </div>
-              <div className="text-xs sm:text-sm font-semibold text-neutral-800 dark:text-neutral-200">
-                Employees
-              </div>
-              <div className="text-[11px] text-neutral-500 mt-1">Skilled workforce & engineers</div>
-            </motion.div>
-
-            {/* Stat 3 */}
-            <motion.div variants={itemVariants} className="bg-white dark:bg-neutral-900 rounded-3xl p-6 sm:p-8 border border-neutral-200 dark:border-neutral-800 shadow-sm flex flex-col justify-center items-center text-center group hover:border-emerald-500/50 transition-colors">
-              <div className="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 flex items-center justify-center mb-3">
-                <Trees className="w-6 h-6" />
-              </div>
-              <div className="text-4xl sm:text-5xl font-extrabold font-mono text-emerald-600 dark:text-emerald-400 mb-1">
-                3+
-              </div>
-              <div className="text-xs sm:text-sm font-semibold text-neutral-800 dark:text-neutral-200">
-                Land, Duplex & Condominium Projects
-              </div>
-              <div className="text-[11px] text-neutral-500 mt-1">Prime locations in Dhaka</div>
-            </motion.div>
-
-            {/* Stat 4 */}
-            <motion.div variants={itemVariants} className="bg-white dark:bg-neutral-900 rounded-3xl p-6 sm:p-8 border border-neutral-200 dark:border-neutral-800 shadow-sm flex flex-col justify-center items-center text-center group hover:border-emerald-500/50 transition-colors">
-              <div className="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 flex items-center justify-center mb-3">
-                <Hotel className="w-6 h-6" />
-              </div>
-              <div className="text-4xl sm:text-5xl font-extrabold font-mono text-emerald-600 dark:text-emerald-400 mb-1">
-                14+
-              </div>
-              <div className="text-xs sm:text-sm font-semibold text-neutral-800 dark:text-neutral-200">
-                Apartment & Resort Projects
-              </div>
-              <div className="text-[11px] text-neutral-500 mt-1">Ongoing & upcoming phases</div>
-            </motion.div>
-
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </section>
 
       {/* 5. DIVISIONS GRID (AS SEEN IN VIDEO) */}

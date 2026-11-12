@@ -92,7 +92,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onRequestCall }) => 
               >
                 X
               </a>
-              <a
+              {/* <a
                 href="https://wa.me/8801896006310"
                 target="_blank"
                 rel="noreferrer"
@@ -100,7 +100,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onRequestCall }) => 
                 aria-label="WhatsApp"
               >
                 WA
-              </a>
+              </a> */}
               <a
                 href="https://linkedin.com"
                 target="_blank"
