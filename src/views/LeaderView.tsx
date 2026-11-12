@@ -47,6 +47,7 @@ export const LeaderView: React.FC<LeaderViewProps> = ({
             {currentLeader.roleDescription}
           </p> */}
         </div>
+        
       </section>
 
       {/* 2. Leader Selector Tabs */}

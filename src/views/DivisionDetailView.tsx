@@ -213,7 +213,7 @@ export const DivisionDetailView: React.FC<DivisionDetailViewProps> = ({
         </h4>
         <div className="bg-white dark:bg-neutral-900 p-8 rounded-3xl border border-neutral-200 dark:border-neutral-800 shadow-sm flex flex-col items-center justify-center">
           {matchedConcern?.logoUrl ? (
-            <div className="h-16 w-auto max-w-[240px] flex items-center justify-center mb-3">
+            <div className="h-16 w-auto max-w-60 flex items-center justify-center mb-3">
               <img
                 src={matchedConcern.logoUrl}
                 alt={division.concernName}

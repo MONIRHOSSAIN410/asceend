@@ -101,7 +101,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
     'eden-paradise-resort',
     'aasceend-riviera-resort',
     'signature-bay-hotel',
-    'chhoya-soa-resort',
+    'soa-resort',
     'aasceend-eco-resort'
   ];
 
@@ -145,7 +145,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
       
       {/* 1. HERO SECTION WITH RUNNING REAL ESTATE CAROUSEL */}
     
-<section className="relative min-h-[90vh] flex items-center pt-24 pb-16 overflow-hidden">
+<section id="hero-section" className="relative min-h-[90vh] flex items-center pt-24 pb-16 overflow-hidden">
         
   {/* Carousel Background Images with Smooth Crossfade */}
   
@@ -389,6 +389,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
                 px-4 pt-3.5 pb-4
                 flex flex-col
                 items-center
+                justify-center
                 text-center
                 bg-white dark:bg-neutral-900
               ">
@@ -397,22 +398,20 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
                 {proj.projectLogoUrl && (
                   <div className="
                     w-full
-                    h-[72px] sm:h-[76px]
+                    h-20
                     flex items-center justify-center
-                    p-1
+                    px-2
                   ">
                     <img
                       src={proj.projectLogoUrl}
                       alt={`${proj.name} Logo`}
                       loading="lazy"
                       className="
-                        block
-                        max-w-[195px]
-                        max-h-[68px] sm:max-h-[72px]
+                        max-h-16
+                        max-w-50
                         w-auto
                         h-auto
                         object-contain
-                        object-center
                         transition-transform duration-300
                         group-hover:scale-105
                       "
@@ -421,7 +420,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
                 )}
 
                 {/* English Project Name */}
-                <div className="w-full flex items-center justify-center mt-2 px-1">
+                <div className="w-full flex items-center justify-center mt-2.5 px-1">
 
                   <h3
                     className="
@@ -433,7 +432,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
                       tracking-tight
                       text-center
                       leading-snug
-                      break-words
+                      wrap-break-word
                       transition-colors
                       group-hover:text-emerald-600
                       dark:group-hover:text-emerald-300

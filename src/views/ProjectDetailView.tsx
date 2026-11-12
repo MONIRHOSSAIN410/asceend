@@ -81,9 +81,9 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
                 {project.name}
               </h1>
 
-              <p className="text-lg sm:text-xl text-emerald-300 font-light font-heading">
+              {/* <p className="text-lg sm:text-xl text-emerald-300 font-light font-heading">
                 {project.tagline}
-              </p>
+              </p> */}
             </div>
 
             {/* Right Specification Box (Exact Layout from Video) */}
@@ -93,13 +93,11 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
                 {/* Logo Header */}
                 <div className="flex items-center gap-4 pb-4 mb-4 border-b border-neutral-200 dark:border-neutral-800">
                   {project.projectLogoUrl ? (
-                    <div className="h-16 sm:h-20 w-32 sm:w-44 bg-white dark:bg-neutral-800 p-2 rounded-2xl border border-neutral-200/80 dark:border-neutral-700/80 flex items-center justify-center shrink-0 shadow-sm">
-                      <img
-                        src={project.projectLogoUrl}
-                        alt={`${project.name} Logo`}
-                        className="max-h-full max-w-full object-contain"
-                      />
-                    </div>
+                    <img
+                      src={project.projectLogoUrl}
+                      alt={`${project.name} Logo`}
+                      className="h-14 sm:h-18 w-auto object-contain shrink-0"
+                    />
                   ) : (
                     <div className="w-14 h-14 rounded-2xl bg-[#006838] text-white font-extrabold flex items-center justify-center text-xl shadow-md shrink-0">
                       A

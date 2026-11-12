@@ -1,189 +1,289 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { PageView } from '../types';
 import { SISTER_CONCERNS, SisterConcernEntry } from '../data/mockData';
 
-// Tripled list for completely seamless infinite non-stop marquee loop
-const INFINITE_CONCERNS: SisterConcernEntry[] = [
-  ...SISTER_CONCERNS,
-  ...SISTER_CONCERNS,
-  ...SISTER_CONCERNS
+const PREFERRED_ORDER = [
+  'systems',
+  'foundation',
+  'global-education',
+  'holdings',
+  'asceend-limited',
+  'hotels-resorts',
+  'agro-fisheries',
+  'logistics',
+  'media',
+  'garments',
+  'property-development',
+  'town-development'
 ];
+
+const ORDERED_CONCERNS = [...SISTER_CONCERNS].sort((a, b) => {
+  const indexA = PREFERRED_ORDER.indexOf(a.id);
+  const indexB = PREFERRED_ORDER.indexOf(b.id);
+
+  return (
+    (indexA === -1 ? PREFERRED_ORDER.length : indexA) -
+    (indexB === -1 ? PREFERRED_ORDER.length : indexB)
+  );
+});
+
+const TOTAL = ORDERED_CONCERNS.length;
+const MIDDLE_START = TOTAL * 2;
+const INFINITE_ITEMS = Array.from({ length: 5 }, () => ORDERED_CONCERNS).flat();
+const SLIDE_TRANSITION = 'transform 550ms cubic-bezier(0.25, 1, 0.5, 1)';
 
 interface SisterConcernsCarouselProps {
   onNavigate?: (view: PageView) => void;
 }
 
-export const SisterConcernsCarousel: React.FC<SisterConcernsCarouselProps> = ({ onNavigate }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
+interface DragGesture {
+  pointerId: number;
+  startX: number;
+  moved: boolean;
+}
+
+export const SisterConcernsCarousel: React.FC<SisterConcernsCarouselProps> = ({
+  onNavigate
+}) => {
+  const [visibleCount, setVisibleCount] = useState(5);
+  const [currentIndex, setCurrentIndex] = useState(MIDDLE_START);
+  const [withTransition, setWithTransition] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
-  const isDraggingRef = useRef(false);
-  const startXRef = useRef(0);
-  const scrollLeftRef = useRef(0);
+  const [isPointerDown, setIsPointerDown] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragOffset, setDragOffset] = useState(0);
 
-  // Non-stop continuous marquee scroll loop
+  const trackRef = useRef<HTMLDivElement>(null);
+  const dragRef = useRef<DragGesture | null>(null);
+  const suppressClickRef = useRef(false);
+
   useEffect(() => {
-    let animationFrameId: number;
-    const speed = 0.85; // Continuous smooth crawling speed
-
-    const step = () => {
-      const el = containerRef.current;
-      if (el && !isHovered && !isDraggingRef.current) {
-        const singleSetWidth = el.scrollWidth / 3;
-
-        // Loop continuously without jumping
-        if (el.scrollLeft >= singleSetWidth * 2) {
-          el.scrollLeft -= singleSetWidth;
-        } else if (el.scrollLeft <= 5) {
-          el.scrollLeft += singleSetWidth;
-        }
-
-        el.scrollLeft += speed;
-      }
-      animationFrameId = requestAnimationFrame(step);
+    const updateVisibleCount = () => {
+      const width = window.innerWidth;
+      setVisibleCount(width < 640 ? 2 : width < 1024 ? 3 : 5);
     };
 
-    // Initialize position at center set so user can scroll left or right infinitely
-    if (containerRef.current) {
-      const el = containerRef.current;
-      const singleSetWidth = el.scrollWidth / 3;
-      el.scrollLeft = singleSetWidth;
-    }
+    updateVisibleCount();
+    window.addEventListener('resize', updateVisibleCount);
 
-    animationFrameId = requestAnimationFrame(step);
+    return () => window.removeEventListener('resize', updateVisibleCount);
+  }, []);
 
-    return () => cancelAnimationFrame(animationFrameId);
-  }, [isHovered]);
+  const moveBy = useCallback((cards: number) => {
+    if (dragRef.current || TOTAL === 0) return;
 
-  const handleNext = () => {
-    if (containerRef.current) {
-      const cardWidth = 240;
-      containerRef.current.scrollBy({ left: cardWidth, behavior: 'smooth' });
-    }
-  };
+    setWithTransition(true);
+    setCurrentIndex(index =>
+      Math.max(0, Math.min(INFINITE_ITEMS.length - visibleCount, index + cards))
+    );
+  }, [visibleCount]);
+
+  const handleNext = useCallback(() => {
+    moveBy(visibleCount);
+  }, [moveBy, visibleCount]);
 
   const handlePrev = () => {
-    if (containerRef.current) {
-      const cardWidth = 240;
-      containerRef.current.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+    moveBy(-visibleCount);
+  };
+
+  useEffect(() => {
+    if (isHovered || isPointerDown || TOTAL === 0) return;
+
+    const timer = window.setInterval(handleNext, 3500);
+    return () => window.clearInterval(timer);
+  }, [isHovered, isPointerDown, handleNext]);
+
+  const handleTransitionEnd = (event: React.TransitionEvent<HTMLDivElement>) => {
+    if (
+      event.target !== event.currentTarget ||
+      event.propertyName !== 'transform' ||
+      dragRef.current ||
+      TOTAL === 0
+    ) {
+      return;
+    }
+
+    const normalizedIndex =
+      MIDDLE_START + ((currentIndex - MIDDLE_START) % TOTAL + TOTAL) % TOTAL;
+
+    if (normalizedIndex !== currentIndex) {
+      setWithTransition(false);
+      setCurrentIndex(normalizedIndex);
     }
   };
 
-  // Mouse drag support for smooth manual scrubbing
-  const handleMouseDown = (e: React.MouseEvent) => {
-    if (!containerRef.current) return;
-    isDraggingRef.current = true;
-    startXRef.current = e.pageX - containerRef.current.offsetLeft;
-    scrollLeftRef.current = containerRef.current.scrollLeft;
+  const handlePointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (!event.isPrimary || event.button !== 0 || dragRef.current) return;
+
+    suppressClickRef.current = false;
+    dragRef.current = {
+      pointerId: event.pointerId,
+      startX: event.clientX,
+      moved: false
+    };
+
+    setIsPointerDown(true);
   };
 
-  const handleMouseLeave = () => {
-    isDraggingRef.current = false;
-    setIsHovered(false);
+  const handlePointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
+    const drag = dragRef.current;
+    const trackWidth = trackRef.current?.clientWidth ?? 0;
+    if (!drag || drag.pointerId !== event.pointerId || !trackWidth) return;
+
+    const distance = event.clientX - drag.startX;
+    if (!drag.moved && Math.abs(distance) < 6) return;
+
+    if (!drag.moved) {
+      drag.moved = true;
+      event.currentTarget.setPointerCapture(event.pointerId);
+      setIsDragging(true);
+    }
+
+    const cardWidth = trackWidth / visibleCount;
+    const maxLeft = Math.min(
+      trackWidth,
+      Math.max(0, INFINITE_ITEMS.length - visibleCount - currentIndex) * cardWidth
+    );
+    const maxRight = Math.min(trackWidth, currentIndex * cardWidth);
+
+    setDragOffset(Math.max(-maxLeft, Math.min(maxRight, distance)));
   };
 
-  const handleMouseUp = () => {
-    isDraggingRef.current = false;
-  };
+  const finishDrag = (event: React.PointerEvent<HTMLDivElement>) => {
+    const drag = dragRef.current;
+    if (!drag || drag.pointerId !== event.pointerId) return;
 
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDraggingRef.current || !containerRef.current) return;
-    e.preventDefault();
-    const x = e.pageX - containerRef.current.offsetLeft;
-    const walk = (x - startXRef.current) * 1.5;
-    containerRef.current.scrollLeft = scrollLeftRef.current - walk;
+    dragRef.current = null;
+    suppressClickRef.current = drag.moved;
+
+    if (drag.moved && event.type === 'pointerup') {
+      const trackWidth = trackRef.current?.clientWidth ?? 0;
+
+      if (trackWidth > 0) {
+        const cardWidth = trackWidth / visibleCount;
+        const distance = event.clientX - drag.startX;
+        const cards = Math.min(
+          visibleCount,
+          Math.round(Math.abs(distance) / cardWidth)
+        );
+
+        moveBy(-Math.sign(distance) * cards);
+      }
+    }
+
+    if (drag.moved) setWithTransition(true);
+
+    setDragOffset(0);
+    setIsDragging(false);
+    setIsPointerDown(false);
   };
 
   const handleCardClick = (concern: SisterConcernEntry) => {
-    if (!onNavigate) return;
     if (concern.divisionId) {
-      onNavigate({ type: 'division', divisionId: concern.divisionId });
+      onNavigate?.({ type: 'division', divisionId: concern.divisionId });
     } else {
-      onNavigate({ type: 'about' });
+      onNavigate?.({ type: 'about' });
     }
+  };
+
+  const stepPercent = 100 / visibleCount;
+  const transformStyle: React.CSSProperties = {
+    transform: `translateX(calc(${-currentIndex * stepPercent}% + ${dragOffset}px))`,
+    transition: withTransition && !isDragging ? SLIDE_TRANSITION : 'none'
   };
 
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 lg:pb-28 select-none">
-      {/* Title Header */}
       <div className="text-center mb-8">
-        
-        <h2 className="text-2xl text-green-800 sm:text-3xl font-extrabold font-heading  dark:text-white uppercase tracking-wider mt-1">
+        <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#006838] uppercase tracking-wider">
           SISTER CONCERNS
         </h2>
-        <div className="w-12 h-1 mx-auto mt-2 rounded-full" />
-        <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 mt-2 max-w-xl mx-auto">
+        <div className="w-12 h-1 bg-[#006838]/30 mx-auto mt-2 rounded-full" />
+        <p className="text-xs sm:text-sm text-neutral-600 mt-2 max-w-xl mx-auto">
           Driving diversified industrial, real estate, technological, and agricultural innovation across Bangladesh.
         </p>
       </div>
 
-      {/* Non-stop Interactive Carousel Slider Container */}
-      <div 
+      <div
         className="relative group/carousel py-2 px-1"
         onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={handleMouseLeave}
+        onMouseLeave={() => setIsHovered(false)}
       >
-        {/* Left Arrow Button (Pinned matching video style) */}
         <button
+          type="button"
           onClick={handlePrev}
-          aria-label="Scroll left"
-          className="absolute -left-1 sm:-left-3 top-1/2 -translate-y-1/2 z-30 w-7 sm:w-8 h-10 sm:h-14 bg-emerald-800 hover:bg-emerald-700 text-white rounded-md flex items-center justify-center shadow-lg transition-transform active:scale-95 cursor-pointer border border-emerald-900/30"
+          aria-label="Previous slide"
+          className="absolute -left-1 sm:-left-3 top-1/2 -translate-y-1/2 z-30 w-7 sm:w-8 h-10 sm:h-12 bg-[#006838] hover:bg-emerald-700 text-white rounded-md flex items-center justify-center shadow-lg transition-transform active:scale-90 cursor-pointer"
         >
-          <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6" strokeWidth={2.5} />
+          <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" strokeWidth={2.5} />
         </button>
 
-        {/* Right Arrow Button (Pinned matching video style) */}
         <button
+          type="button"
           onClick={handleNext}
-          aria-label="Scroll right"
-          className="absolute -right-1 sm:-right-3 top-1/2 -translate-y-1/2 z-30 w-7 sm:w-8 h-10 sm:h-14 bg-emerald-800 hover:bg-emerald-700 text-white rounded-md flex items-center justify-center shadow-lg transition-transform active:scale-95 cursor-pointer border border-emerald-900/30"
+          aria-label="Next slide"
+          className="absolute -right-1 sm:-right-3 top-1/2 -translate-y-1/2 z-30 w-7 sm:w-8 h-10 sm:h-12 bg-[#006838] hover:bg-emerald-700 text-white rounded-md flex items-center justify-center shadow-lg transition-transform active:scale-90 cursor-pointer"
         >
-          <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6" strokeWidth={2.5} />
+          <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" strokeWidth={2.5} />
         </button>
 
-        {/* Non-stop continuous horizontally scrollable track */}
         <div
-          ref={containerRef}
-          onMouseDown={handleMouseDown}
-          onMouseUp={handleMouseUp}
-          onMouseMove={handleMouseMove}
-          className="overflow-x-auto overflow-y-hidden scrollbar-width:none flex gap-3 sm:gap-4 py-3 px-2 sm:px-3 cursor-grab active:cursor-grabbing scrollbar-none [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-          style={{ WebkitOverflowScrolling: 'touch' }}
-        >
-          {INFINITE_CONCERNS.map((concern, idx) => (
-            <div
-              key={`${concern.id}-${idx}`}
-              onClick={() => handleCardClick(concern)}
-              title={`${concern.name} · ${concern.sector}`}
-              className="w-45 sm:w-55 lg:w-60 shrink-0 bg-white rounded-xl border border-neutral-200/90 shadow-xs hover:shadow-md hover:border-emerald-500/60 transition-all duration-300 h-28 sm:h-36 flex flex-col items-center justify-center p-2.5 sm:p-3 cursor-pointer group hover:-translate-y-1 relative"
-            >
-              <div className="w-full h-full flex items-center justify-center overflow-hidden">
-                <img
-                  src={concern.logoUrl}
-                  alt={concern.name}
-                  className="max-h-24 sm:max-h-28 max-w-[92%] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                  loading="lazy"
-                  onError={(e) => {
-                    // Fallback to original asset if needed
-                    const target = e.currentTarget;
-                    if (target.src !== concern.originalAsset) {
-                      target.src = concern.originalAsset;
-                    }
-                  }}
-                />
-              </div>
+          className={`overflow-hidden py-3 px-1 ${
+            isDragging ? 'cursor-grabbing' : 'cursor-grab'
+          }`}
+          style={{ touchAction: 'pan-y' }}
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={finishDrag}
+          onPointerCancel={finishDrag}
+          onLostPointerCapture={finishDrag}
+          onPointerLeave={event => {
+            if (!dragRef.current?.moved) finishDrag(event);
+          }}
+          onClickCapture={event => {
+            if (!suppressClickRef.current) return;
 
-              {/* Subtle hover badge */}
-              <div className="absolute bottom-1 right-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                <div className="w-5 h-5 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center">
-                  <ExternalLink className="w-2.5 h-2.5" />
+            suppressClickRef.current = false;
+            event.preventDefault();
+            event.stopPropagation();
+          }}
+        >
+          <div
+            ref={trackRef}
+            className="flex items-center"
+            style={transformStyle}
+            onTransitionEnd={handleTransitionEnd}
+          >
+            {INFINITE_ITEMS.map((concern, index) => (
+              <div
+                key={`${concern.id}-${index}`}
+                className="shrink-0 px-2 sm:px-2.5"
+                style={{ width: `${stepPercent}%` }}
+              >
+                <div
+                  onClick={() => handleCardClick(concern)}
+                  title={`${concern.name} · ${concern.sector}`}
+                  className="bg-white rounded-xl border border-neutral-200/90 shadow-xs hover:shadow-md hover:border-emerald-500/60 transition-all duration-300 h-28 sm:h-34 flex items-center justify-center p-3 sm:p-4 group hover:-translate-y-1 relative"
+                >
+                  <img
+                    src={concern.logoUrl}
+                    alt={concern.name}
+                    className="max-h-20 sm:max-h-24 max-w-[85%] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                    draggable={false}
+                    onError={event => {
+                      const image = event.currentTarget;
+                      if (image.getAttribute('src') !== concern.originalAsset) {
+                        image.src = concern.originalAsset;
+                      }
+                    }}
+                  />
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-
-     
       </div>
     </section>
   );
