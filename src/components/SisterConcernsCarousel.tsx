@@ -264,21 +264,23 @@ export const SisterConcernsCarousel: React.FC<SisterConcernsCarouselProps> = ({
                 <div
                   onClick={() => handleCardClick(concern)}
                   title={`${concern.name} · ${concern.sector}`}
-                  className="bg-white rounded-xl border border-neutral-200/90 shadow-xs hover:shadow-md hover:border-emerald-500/60 transition-all duration-300 h-28 sm:h-34 flex items-center justify-center p-3 sm:p-4 group hover:-translate-y-1 relative"
+                  className="bg-white rounded-2xl border border-neutral-200/90 shadow-xs hover:shadow-md hover:border-emerald-500/60 transition-all duration-300 h-28 sm:h-32 flex items-center justify-center px-4 py-3 sm:px-5 sm:py-3.5 group hover:-translate-y-1 relative cursor-pointer"
                 >
-                  <img
-                    src={concern.logoUrl}
-                    alt={concern.name}
-                    className="max-h-20 sm:max-h-24 max-w-[85%] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                    loading="lazy"
-                    draggable={false}
-                    onError={event => {
-                      const image = event.currentTarget;
-                      if (image.getAttribute('src') !== concern.originalAsset) {
-                        image.src = concern.originalAsset;
-                      }
-                    }}
-                  />
+                  <div className="w-full h-full flex items-center justify-center">
+                    <img
+                      src={concern.logoUrl}
+                      alt={concern.name}
+                      className="w-full h-full max-h-16 sm:max-h-20 object-contain transition-transform duration-300 group-hover:scale-105"
+                      loading="lazy"
+                      draggable={false}
+                      onError={event => {
+                        const image = event.currentTarget;
+                        if (image.getAttribute('src') !== concern.originalAsset) {
+                          image.src = concern.originalAsset;
+                        }
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
             ))}

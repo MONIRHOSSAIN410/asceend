@@ -91,19 +91,21 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
               <div className="bg-white/95 dark:bg-neutral-900/95 backdrop-blur-md rounded-3xl p-6 sm:p-7 shadow-2xl border border-white/40 dark:border-neutral-800 text-neutral-900 dark:text-neutral-100">
                 
                 {/* Logo Header */}
-                <div className="flex items-center gap-4 pb-4 mb-4 border-b border-neutral-200 dark:border-neutral-800">
+                <div className="flex items-center gap-3.5 sm:gap-4 pb-4 mb-4 border-b border-neutral-200 dark:border-neutral-800">
                   {project.projectLogoUrl ? (
-                    <img
-                      src={project.projectLogoUrl}
-                      alt={`${project.name} Logo`}
-                      className="h-14 sm:h-18 w-auto object-contain shrink-0"
-                    />
+                    <div className="h-14 sm:h-18 max-w-[140px] sm:max-w-[180px] flex items-center justify-center shrink-0">
+                      <img
+                        src={project.projectLogoUrl}
+                        alt={`${project.name} Logo`}
+                        className="max-h-14 sm:max-h-18 max-w-full w-auto object-contain object-left shrink-0"
+                      />
+                    </div>
                   ) : (
                     <div className="w-14 h-14 rounded-2xl bg-[#006838] text-white font-extrabold flex items-center justify-center text-xl shadow-md shrink-0">
                       A
                     </div>
                   )}
-                  <div>
+                  <div className="min-w-0">
                     <h3 className="text-base sm:text-lg font-extrabold font-heading text-[#006838] dark:text-emerald-400 leading-tight">
                       {project.logoBadgeText || project.name}
                     </h3>

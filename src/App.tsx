@@ -33,7 +33,7 @@ export default function App() {
 
   const handleNavigate = (view: PageView) => {
     setCurrentView(view);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
   };
 
   const handleOpenCallback = () => {
@@ -86,15 +86,15 @@ export default function App() {
         onRequestCall={handleOpenCallback}
       />
 
-      {/* Main View Container with Sequential Transitions */}
+      {/* Main View Container with Smooth Transitions */}
       <main className="flex-1">
-        <AnimatePresence mode="wait">
+        <AnimatePresence>
           <motion.div
             key={getViewKey(currentView)}
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.35, ease: 'easeOut' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
           >
             {currentView.type === 'home' && (
               <HomeView

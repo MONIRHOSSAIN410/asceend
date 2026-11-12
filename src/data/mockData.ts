@@ -59,12 +59,12 @@ export const LEADERS: LeaderData[] = [
   },
   {
     id: 'deputy-md',
-    name: 'Co-Founder & Deputy Managing Director',
-    title: 'Co-Founder & Deputy Managing Director',
+    name: 'Founder & Deputy Managing Director',
+    title: 'Founder & Deputy Managing Director',
     roleDescription: 'Aasceend Group',
     photoUrl: '/assets/images/deputy_md_original_snap.jpg',
     bioParagraphs: [
-      'Serving as the Co-Founder & Deputy Managing Director of Aasceend Group, he plays an indispensable role in formulating corporate vision, driving operational execution, and expanding key business verticals across Bangladesh’s dynamic economy.',
+      'Serving as the Founder & Deputy Managing Director of Aasceend Group, he plays an indispensable role in formulating corporate vision, driving operational execution, and expanding key business verticals across Bangladesh’s dynamic economy.',
       'Working hand-in-hand with the Chairman, Managing Director, and Vice Chairman, he spearheads strategic portfolio management, high-impact investments, technological advancement, and organizational synergy across all Group concerns—including residential townships, commercial infrastructure, luxury resorts, IT systems, garments, and global education.',
       'With a forward-thinking mindset and deep commitment to sustainable development, he emphasizes transparent business governance, strict project timelines, and high-standard customer satisfaction. Under his active stewardship, Aasceend Group continues to pioneer contemporary master-planned communities that deliver unmatched long-term value to clients and stakeholders.',
       'Beyond executive administration, he champions workforce empowerment, vocational training, and philanthropic initiatives through the Aasceend Foundation, ensuring the Group’s corporate growth remains fundamentally aligned with community upliftment and the economic advancement of Bangladesh.'
@@ -83,7 +83,7 @@ export const PROJECTS: ProjectData[] = [
   {
     id: 'purbachal-aasceend-town',
     name: 'Purbachal Aasceend Town',
-   
+    banglaName: 'পূর্বাচল এসেন্ড টাউন',
     tagline: 'Where Modern Living Meets Nature’s Serenity',
     category: 'township',
     heroImage: '/assets/images/purbachal_aasceend_town_featured.jpg',
@@ -146,7 +146,7 @@ export const PROJECTS: ProjectData[] = [
   {
     id: 'aasceend-eastern-town',
     name: 'Aasceend Eastern Town',
-    
+    banglaName: 'এসেন্ড ইস্টার্ন টাউন',
     tagline: 'A Master-Planned Oasis of Contemporary Living',
     category: 'township',
     heroImage: '/assets/images/eastern_town_featured.jpg',
@@ -200,7 +200,7 @@ export const PROJECTS: ProjectData[] = [
   {
     id: 'aasceend-town',
     name: 'Aasceend Town',
- 
+    banglaName: 'এসেন্ড টাউন',
     tagline: 'A Planned Community Designed For Tomorrow’s Living',
     category: 'township',
     heroImage: '/assets/images/aasceend_town_featured.jpg',
@@ -254,7 +254,7 @@ export const PROJECTS: ProjectData[] = [
   {
     id: 'aasceend-green-town',
     name: 'Aasceend Green Town',
-    
+    banglaName: 'এসেন্ড Green Town',
     tagline: 'A Peaceful Address Near Dhaka-Mawa Expressway',
     category: 'township',
     heroImage: '/assets/images/green_town_featured.jpg',
@@ -308,7 +308,7 @@ export const PROJECTS: ProjectData[] = [
   {
     id: 'aasceend-river-view-town',
     name: 'Aasceend River View Town',
-    
+    banglaName: 'এসেন্ড রিভারভিউ টাউন',
     tagline: 'Live Close To Nature, Stay Close To The City',
     category: 'township',
     heroImage: '/assets/images/river_view_town_featured.jpg',
@@ -362,7 +362,7 @@ export const PROJECTS: ProjectData[] = [
   {
     id: 'signature-bay-hotel',
     name: 'Signature Bay Hotel',
-    
+    banglaName: 'সিগনেচার বে হোটেল (SBH)',
     tagline: 'Experience Comfort, Elegance, And Modern Hospitality',
     category: 'hotel',
     heroImage: '/assets/images/signature_bay_hotel_featured.jpg',
@@ -414,7 +414,7 @@ export const PROJECTS: ProjectData[] = [
   {
     id: 'aasceend-riviera-resort',
     name: 'Aasceend Rivera Resort',
-    
+    banglaName: 'এসেন্ড রিভেরা রিসোর্ট',
     tagline: 'Own Your Share Of Riverside Tranquility',
     category: 'resort',
     heroImage: '/assets/images/riviera_resort_featured.jpg',
@@ -466,7 +466,7 @@ export const PROJECTS: ProjectData[] = [
   {
     id: 'eden-paradise-resort',
     name: 'EDEN Paradise Resort',
-    
+    banglaName: 'ইডেন প্যারাডাইস রিসোর্ট',
     tagline: 'Where Modern Luxury Meets Nature’s Serenity',
     category: 'resort',
     heroImage: '/assets/images/eden_paradise_resort_featured.jpg',
@@ -518,6 +518,7 @@ export const PROJECTS: ProjectData[] = [
   {
     id: 'ag-dhaka-town',
     name: 'AG Dhaka Town',
+    banglaName: 'এজি ঢাকা টাউন',
     tagline: 'A Premium Land Project & Smart Urban Living',
     category: 'township',
     heroImage: '/assets/images/ag_dhaka_town_featured.jpg',
@@ -572,6 +573,7 @@ export const PROJECTS: ProjectData[] = [
   {
     id: 'chhoya-soa-resort',
     name: 'Soa Resort',
+    banglaName: 'ছায়া সোয়া রিসোর্ট',
     tagline: 'Exquisite Luxury Surrounded by Pristine Nature',
     category: 'resort',
     heroImage: '/assets/images/chhoya_soa_resort_featured.jpg',
@@ -624,6 +626,7 @@ export const PROJECTS: ProjectData[] = [
   {
     id: 'AG Six Point Town',
     name: 'AG Six Point Town',
+    banglaName: 'এজি সিক্স পয়েন্ট টাউন',
     tagline: 'Iconic Architecture in Prime Corporate Corridors',
     category: 'township',
     heroImage: '/assets/images/asceend_six_point_town.jpg',
@@ -675,6 +678,7 @@ export const PROJECTS: ProjectData[] = [
   {
     id: 'AG Six Point Resort',
     name: 'AG Six Point Resort',
+    banglaName: 'এজি সিক্স পয়েন্ট রিসোর্ট',
     tagline: 'Harmony of Nature, Wellness & Sustainable Luxury',
     category: 'resort',
     heroImage: '/assets/images/eco_resort_featured.jpg',
