@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, ArrowLeft, Building2 } from 'lucide-react';
+import { Mail, Phone, ArrowLeft, Building2, Facebook } from 'lucide-react';
 import { PageView, LeaderData } from '../types';
 import { LEADERS } from '../data/mockData';
 
@@ -126,13 +126,14 @@ export const LeaderView: React.FC<LeaderViewProps> = ({
             {/* Social / Connect icons */}
             <div className="flex items-center gap-2 pt-2 border-t border-neutral-100 dark:border-neutral-800">
               <a
-                href="https://facebook.com"
+                href={currentLeader.socialLinks?.facebook && currentLeader.socialLinks.facebook !== '#' ? currentLeader.socialLinks.facebook : "https://www.facebook.com/AasceendGroup/"}
                 target="_blank"
-                rel="noreferrer"
-                className="w-8 h-8 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-emerald-600 hover:text-white flex items-center justify-center text-neutral-600 dark:text-neutral-300 text-xs font-bold transition-colors"
-                aria-label="Facebook"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-[#1877F2] hover:text-white flex items-center justify-center text-neutral-600 dark:text-neutral-300 transition-colors"
+                aria-label="Aasceend Group on Facebook"
+                title="Aasceend Group on Facebook"
               >
-                f
+                <Facebook className="w-4 h-4 fill-current" />
               </a>
               <a
                 href="https://x.com"

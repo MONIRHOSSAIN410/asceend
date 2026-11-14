@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Send, CheckCircle2, MessageSquare, ExternalLink } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, CheckCircle2, MessageSquare, ExternalLink, Facebook } from 'lucide-react';
 import { PageView } from '../types';
 
 interface ContactViewProps {
@@ -200,6 +200,18 @@ export const ContactView: React.FC<ContactViewProps> = ({ onNavigate, onRequestC
                     <Mail className="w-4 h-4" />
                   </div>
                   <span>info@aasceend.com</span>
+                </a>
+
+                <a 
+                  href="https://www.facebook.com/AasceendGroup/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-neutral-700 dark:text-neutral-300 hover:text-[#1877F2] transition-colors"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-[#1877F2]/10 text-[#1877F2] flex items-center justify-center shrink-0">
+                    <Facebook className="w-4 h-4 fill-current" />
+                  </div>
+                  <span className="font-semibold text-[#1877F2]">facebook.com/AasceendGroup</span>
                 </a>
               </div>
             </div>

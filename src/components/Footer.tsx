@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowRight, Facebook } from 'lucide-react';
 import { PageView } from '../types';
 
 interface FooterProps {
@@ -77,11 +77,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onRequestCall }) => 
               <a
                 href="https://www.facebook.com/AasceendGroup/"
                 target="_blank"
-                rel="noreferrer"
-                className="w-8 h-8 rounded-lg bg-green-900/80 hover:bg-green-600 flex items-center justify-center text-green-200 hover:text-white transition-colors text-xs font-bold"
-                aria-label="Facebook"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-lg bg-green-900/80 hover:bg-[#1877F2] flex items-center justify-center text-green-200 hover:text-white transition-colors"
+                aria-label="Aasceend Group on Facebook"
+                title="Aasceend Group on Facebook"
               >
-                f
+                <Facebook className="w-4 h-4 fill-current" />
               </a>
               {/* <a
                 href="https://x.com"

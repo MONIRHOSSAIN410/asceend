@@ -13,7 +13,7 @@ export const LEADERS: LeaderData[] = [
       'Beyond his entrepreneurial achievements, Khandoker Asadur Rahman is admired for his disciplined work ethic, charismatic leadership style, and unwavering focus on achieving perfection in every initiative. He constantly encourages innovation, values strong business ethics, and ensures that every project undertaken is built with transparency and professionalism.'
     ],
     socialLinks: {
-      facebook: '#',
+      facebook: 'https://www.facebook.com/AasceendGroup/',
       whatsapp: 'https://wa.me/8801896006310',
       linkedin: '#',
       email: 'info@aasceend.com'
@@ -32,7 +32,7 @@ export const LEADERS: LeaderData[] = [
       'A hallmark of Mr. Rahman’s leadership is his exceptional ability to conceptualize large-scale projects and oversee their flawless implementation. His strategic foresight, strong decision-making, and dedication to building trusted teams have transformed Aasceend Group into a symbol of reliability and modern entrepreneurship.'
     ],
     socialLinks: {
-      facebook: '#',
+      facebook: 'https://www.facebook.com/AasceendGroup/',
       x: '#',
       whatsapp: 'https://wa.me/8801896006310',
       linkedin: '#',
@@ -51,7 +51,7 @@ export const LEADERS: LeaderData[] = [
       'Beyond the boardroom, Md. Mahafuzur Rahaman is deeply committed to social responsibility and humanitarian development. Through Aasceend Foundation, he supports initiatives in education, community upliftment, poverty alleviation, and youth empowerment. His journey reflects a powerful blend of leadership excellence, strategic depth, and a heartfelt dedication to contributing to Bangladesh’s social and economic advancement.'
     ],
     socialLinks: {
-      facebook: '#',
+      facebook: 'https://www.facebook.com/AasceendGroup/',
       whatsapp: 'https://wa.me/8801896006310',
       linkedin: '#',
       email: 'info@aasceend.com'
@@ -70,7 +70,7 @@ export const LEADERS: LeaderData[] = [
       'Beyond executive administration, he champions workforce empowerment, vocational training, and philanthropic initiatives through the Aasceend Foundation, ensuring the Group’s corporate growth remains fundamentally aligned with community upliftment and the economic advancement of Bangladesh.'
     ],
     socialLinks: {
-      facebook: '#',
+      facebook: 'https://www.facebook.com/AasceendGroup/',
       x: '#',
       whatsapp: 'https://wa.me/8801896006310',
       linkedin: '#',
