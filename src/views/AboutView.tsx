@@ -24,7 +24,7 @@ interface AboutViewProps {
 
 export const AboutView: React.FC<AboutViewProps> = ({ onNavigate, onRequestCall }) => {
   return (
-    <div className="pt-10 pb-16 space-y-16">
+    <div className="pb-16 space-y-16">
       
       {/* 1. Header Banner */}
       <section className="relative py-20 bg-neutral-900 text-white overflow-hidden">

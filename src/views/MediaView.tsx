@@ -36,7 +36,7 @@ export const MediaView: React.FC<MediaViewProps> = ({
   });
 
   return (
-    <div className="pt-10 pb-16 space-y-12">
+    <div className="pb-16 space-y-12">
       
       {/* 1. Header Hero Banner */}
       <section className="relative py-20 bg-neutral-900 text-white overflow-hidden">

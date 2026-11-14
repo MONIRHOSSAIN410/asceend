@@ -87,7 +87,7 @@ export const AccreditationsView: React.FC<AccreditationsViewProps> = ({ onNaviga
   ];
 
   return (
-    <div className="pt-10 pb-20 space-y-16 lg:space-y-24">
+    <div className="pb-20 space-y-16 lg:space-y-24">
       
       {/* 1. HERO BANNER WITH FLUID PARALLAX BACKGROUND */}
       <section 
