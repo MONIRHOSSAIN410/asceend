@@ -199,7 +199,7 @@ export const SisterConcernsCarousel: React.FC<SisterConcernsCarouselProps> = ({
         <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#006838] uppercase tracking-wider">
           SISTER CONCERNS
         </h2>
-        <div className="w-12 h-1 bg-[#006838]/30 mx-auto mt-2 rounded-full" />
+        <div className="w-12 h-1 bg-[#fdfdfd] mx-auto mt-2 rounded-full" />
         <p className="text-xs sm:text-sm text-neutral-600 mt-2 max-w-xl mx-auto">
           Driving diversified industrial, real estate, technological, and agricultural innovation across Bangladesh.
         </p>
