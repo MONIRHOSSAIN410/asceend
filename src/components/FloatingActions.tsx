@@ -40,7 +40,7 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({ onRequestCall 
         href="https://wa.me/8801896006310"
         target="_blank"
         rel="noreferrer"
-        className="w-11 h-11 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center shadow-xl transition-transform hover:scale-110 active:scale-95"
+        className="w-11 h-11 rounded-full bg-[#138b3f] hover:bg-[#07973e] text-white flex items-center justify-center shadow-xl transition-transform hover:scale-110 active:scale-95"
         title="Chat with Aasceend Group on WhatsApp"
         aria-label="WhatsApp Hotline"
       >
@@ -50,7 +50,7 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({ onRequestCall 
       {/* Floating Call Back Request button */}
       <button
         onClick={onRequestCall}
-        className="w-11 h-11 rounded-full bg-emerald-700 hover:bg-emerald-800 text-white flex items-center justify-center shadow-xl transition-transform hover:scale-110 active:scale-95"
+        className="w-11 h-11 rounded-full bg-green-700 hover:bg-green-800 text-white flex items-center justify-center shadow-xl transition-transform hover:scale-110 active:scale-95"
         title="Request Call Back"
         aria-label="Request Call Back"
       >

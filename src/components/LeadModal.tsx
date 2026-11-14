@@ -51,7 +51,7 @@ export const LeadModal: React.FC<LeadModalProps> = ({
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="bg-emerald-800 text-white px-6 py-4 flex items-center justify-between">
+        <div className="bg-green-800 text-white px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img 
               src="/assets/images/aasceend_logo_white.png" 

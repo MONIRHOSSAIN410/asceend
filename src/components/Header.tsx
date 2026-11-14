@@ -750,7 +750,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
         {/* Contact Us */}
         <button
           onClick={() => handleNav({ type: 'contact' })}
-          className="w-full text-left py-6 text-sm font-semibold text-neutral-700 hover:text-emerald-600"
+          className="w-full text-left py-6 text-sm font-semibold text-neutral-700 hover:text-green-600"
         >
           Contact Us
         </button>

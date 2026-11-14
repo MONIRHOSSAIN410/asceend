@@ -68,6 +68,73 @@ const HERO_SLIDES = [
   }
 ];
 
+const BUSINESS_SECTORS = [
+  {
+    id: 'real-estate',
+    divisionId: 'real-estate',
+    name: 'Real Estate & Infrastructure',
+    titleLines: ['REAL ESTATE &', 'INFRASTRUCTURE'],
+    concernName: 'AASCEEND PROPERTY DEVELOPMENT LIMITED',
+    image: '/assets/sectors/real_estate.jpg'
+  },
+  {
+    id: 'it-technology',
+    divisionId: 'it-technology',
+    name: 'Technology & IT Solutions',
+    titleLines: ['TECHNOLOGY & IT', 'SOLUTIONS'],
+    concernName: 'AASCEEND SYSTEMS LIMITED',
+    image: '/assets/sectors/it_solutions.jpg'
+  },
+  {
+    id: 'education',
+    divisionId: 'education',
+    name: 'Education & Consultancy',
+    titleLines: ['EDUCATION &', 'CONSULTANCY'],
+    concernName: 'AASCEEND GLOBAL EDUCATION & CONSULTANCY LIMITED',
+    image: '/assets/sectors/education.jpg'
+  },
+  {
+    id: 'agro-fisheries',
+    divisionId: 'agro-fisheries',
+    name: 'Agro & Fisheries',
+    titleLines: ['AGRO & FISHERIES'],
+    concernName: 'AASCEEND AGRO & FISHERIES LIMITED',
+    image: '/assets/sectors/agro_fisheries.jpg'
+  },
+  {
+    id: 'garments',
+    divisionId: 'garments',
+    name: 'Garments & Textiles',
+    titleLines: ['GARMENTS &', 'TEXTILES'],
+    concernName: 'AASCEEND GARMENTS LIMITED',
+    image: '/assets/sectors/garments.jpg'
+  },
+  {
+    id: 'logistics',
+    divisionId: 'logistics',
+    name: 'Logistics & Supply Chain',
+    titleLines: ['LOGISTICS & SUPPLY', 'CHAIN'],
+    concernName: 'AASCEEND LOGISTICS LIMITED',
+    image: '/assets/sectors/logistics.jpg'
+  },
+  {
+    id: 'media',
+    divisionId: 'media',
+    name: 'Media & Communications',
+    titleLines: ['MEDIA &', 'COMMUNICATIONS'],
+    concernName: 'AASCEEND MEDIA LIMITED',
+    image: '/assets/sectors/media.jpg'
+  },
+  {
+    id: 'foundation',
+    divisionId: 'foundation',
+    name: 'Social Impact (CSR) - Aasceend Group',
+    titleLines: ['SOCIAL IMPACT', '(CSR) - AASCEEND', 'GROUP'],
+    concernName: 'AASCEEND FOUNDATION',
+    image: '/assets/sectors/social_impact.jpg'
+  }
+];
+
 interface StatCounterProps {
   value: number;
   suffix?: string;
@@ -763,54 +830,64 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
         </motion.div>
       </section>
 
-      {/* 5. DIVISIONS GRID (AS SEEN IN VIDEO) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-green-800  dark:text-white mt-1">
+      {/* 5. OUR BUSINESS SECTORS (EXACTLY AS SEEN IN VIDEO) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
+        {/* Section Header Matching Other Sections */}
+        <div className="text-center mb-8 sm:mb-10">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-[#006838] dark:text-emerald-400 uppercase tracking-wider">
             Our Business Sectors
           </h2>
-          <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 mt-2">
-            Pioneering growth across key economic growth engines in Bangladesh.
-          </p>
+          <div className="w-12 h-1 bg-[#006838] mx-auto mt-2.5 rounded-full" />
         </div>
 
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5"
-        >
-          {DIVISIONS.map((div) => (
-            <motion.div
-              key={div.id}
-              variants={itemVariants}
-              onClick={() => onNavigate({ type: 'division', divisionId: div.id })}
-              className="group relative h-48 sm:h-56 rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300"
+        {/* 8-Card Flush Grid (2 rows x 4 columns) */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-[2px] bg-neutral-200/80 dark:bg-neutral-800 rounded-2xl overflow-hidden shadow-xl border border-neutral-200 dark:border-neutral-800">
+          {BUSINESS_SECTORS.map((sector) => (
+            <div
+              key={sector.id}
+              onClick={() => onNavigate({ type: 'division', divisionId: sector.divisionId })}
+              className="group relative h-80 sm:h-96 md:h-[420px] lg:h-[450px] overflow-hidden cursor-pointer select-none"
             >
+              {/* Background Image */}
               <img
-                src={div.heroImage}
-                alt={div.name}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                src={sector.image}
+                alt={sector.name}
+                loading="lazy"
+                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent group-hover:from-emerald-950/90 transition-colors" />
 
-              <div className="absolute inset-0 p-4 flex flex-col justify-end text-white">
-                {/* <span className="text-[10px] uppercase font-bold text-emerald-300 tracking-wider">
-                  Division
-                </span> */}
-                <h4 className="text-xs sm:text-sm font-bold font-heading text-white line-clamp-2 mt-0.5">
-                  {div.name}
-                </h4>
-                <div className="flex items-center gap-1 text-[10px] text-emerald-200 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span>Explore Division</span>
-                  <ChevronRight className="w-3 h-3" />
-                </div>
+              {/* Base Top Dark Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/25 to-black/40 pointer-events-none" />
+
+              {/* Hover Green Overlay */}
+              <div className="absolute inset-0 bg-[#006838]/70 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-400 pointer-events-none" />
+
+              {/* Card Content at Top */}
+              <div className="absolute inset-x-0 top-0 p-4 sm:p-5 lg:p-6 flex flex-col items-start z-10 text-left">
+                {/* Sector Title */}
+                <h3 className="text-xs sm:text-sm lg:text-[14px] xl:text-[15px] font-bold font-heading text-white uppercase leading-tight tracking-wide drop-shadow-md">
+                  {sector.titleLines.map((line, idx) => (
+                    <React.Fragment key={idx}>
+                      {line}
+                      {idx < sector.titleLines.length - 1 && <br />}
+                    </React.Fragment>
+                  ))}
+                </h3>
+
+                {/* Animated Divider Line (expands from left to right) */}
+                <div className="w-16 sm:w-20 h-[2.5px] bg-white rounded-full my-2.5 sm:my-3 origin-left transform scale-x-0 group-hover:scale-x-100 group-active:scale-x-100 transition-transform duration-500 ease-out" />
+
+                {/* Animated Subsidiary / Concern Name */}
+                <p className="text-[10px] sm:text-[11px] lg:text-xs font-semibold uppercase text-white leading-snug tracking-wide opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 group-active:opacity-100 group-active:translate-y-0 transition-all duration-500 ease-out delay-150 drop-shadow">
+                  {sector.concernName}
+                </p>
               </div>
-            </motion.div>
+
+              {/* Bottom Card Border: Animates from left to right */}
+              <div className="absolute bottom-0 inset-x-0 h-1 bg-white origin-left transform scale-x-0 group-hover:scale-x-100 group-active:scale-x-100 transition-transform duration-500 ease-out z-20" />
+            </div>
           ))}
-        </motion.div>
+        </div>
       </section>
 
 

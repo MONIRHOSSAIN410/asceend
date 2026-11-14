@@ -737,7 +737,7 @@ export const DIVISIONS: DivisionData[] = [
     subtitle: 'Planned communities and land development projects designed for future growth and modern living.',
     concernName: 'Aasceend Property Development Ltd & Aasceend Town Development Ltd',
     concernLogoText: 'AASCEEND PROPERTY & TOWN DEVELOPMENT',
-    heroImage: '/assets/images/bd_realestate_dev_1793789737606.jpg',
+    heroImage: '/assets/sectors/real_estate.jpg',
     approachTitle: 'Our Approach To Real Estate Development',
     approachDescription: 'A structured development philosophy focused on planning, accessibility, and long-term community growth.',
     capabilities: [
@@ -780,7 +780,7 @@ export const DIVISIONS: DivisionData[] = [
     subtitle: 'Empowering digital transformation through innovative technology and reliable solutions.',
     concernName: 'Aasceend Systems Limited',
     concernLogoText: 'AASCEEND SYSTEMS LIMITED',
-    heroImage: '/assets/images/bd_corp_hq_1793793604296.jpg',
+    heroImage: '/assets/sectors/it_solutions.jpg',
     approachTitle: 'Our Technology Focus',
     approachDescription: 'Delivering reliable digital solutions that support innovation, connectivity, and business growth.',
     capabilities: [
@@ -823,7 +823,7 @@ export const DIVISIONS: DivisionData[] = [
     subtitle: 'Guiding students toward global education opportunities and academic success.',
     concernName: 'Aasceend Global Education & Consultancy Limited',
     concernLogoText: 'AASCEEND GLOBAL EDUCATION & CONSULTANCY',
-    heroImage: '/assets/images/bd_town_infra_1793789738145.jpg',
+    heroImage: '/assets/sectors/education.jpg',
     approachTitle: 'Our Education & Consultancy Approach',
     approachDescription: 'Structured advice, university admissions matching, and dedicated student support.',
     capabilities: [
@@ -866,7 +866,7 @@ export const DIVISIONS: DivisionData[] = [
     subtitle: 'Supporting modern apparel manufacturing and textile solutions for global markets.',
     concernName: 'Aasceend Garments Limited',
     concernLogoText: 'AASCEEND GARMENTS LIMITED',
-    heroImage: '/assets/images/bd_eastern_town_1793789186885.jpg',
+    heroImage: '/assets/sectors/garments.jpg',
     approachTitle: 'Our Garments & Textile Capabilities',
     approachDescription: 'Supporting the apparel industry with structured production processes and quality-focused manufacturing.',
     capabilities: [
@@ -909,7 +909,7 @@ export const DIVISIONS: DivisionData[] = [
     subtitle: 'Creative media solutions and digital communication platforms designed to support modern storytelling and brand engagement.',
     concernName: 'Aasceend Media Limited',
     concernLogoText: 'AASCEEND MEDIA LIMITED',
-    heroImage: '/assets/images/bd_corp_hq_1793793604296.jpg',
+    heroImage: '/assets/sectors/media.jpg',
     approachTitle: 'Our Media & Communication Focus',
     approachDescription: 'Combining creativity, technology, and strategic storytelling to deliver impactful media experiences.',
     capabilities: [
@@ -952,7 +952,7 @@ export const DIVISIONS: DivisionData[] = [
     subtitle: 'Efficient logistics solutions designed to support modern supply chains and business connectivity.',
     concernName: 'Aasceend Logistics Limited',
     concernLogoText: 'AASCEEND LOGISTICS LIMITED',
-    heroImage: '/assets/images/bd_town_infra_1793789738145.jpg',
+    heroImage: '/assets/sectors/logistics.jpg',
     approachTitle: 'Our Logistics & Supply Chain Focus',
     approachDescription: 'Building reliable logistics systems that support efficient transportation and organized distribution networks.',
     capabilities: [
@@ -995,7 +995,7 @@ export const DIVISIONS: DivisionData[] = [
     subtitle: 'Developing hospitality destinations designed for future tourism and investment opportunities.',
     concernName: 'Aasceend Hotel & Resort Limited',
     concernLogoText: 'AASCEEND HOTEL & RESORT LIMITED',
-    heroImage: '/assets/images/bd_signature_bay_1793789202981.jpg',
+    heroImage: '/assets/sectors/hospitality.jpg',
     approachTitle: 'Our Hospitality Development Focus',
     approachDescription: 'Designing hospitality destinations that combine comfort, nature, and modern tourism infrastructure.',
     capabilities: [
@@ -1038,7 +1038,7 @@ export const DIVISIONS: DivisionData[] = [
     subtitle: 'Advancing social responsibility through community support, education initiatives, and sustainable development programs.',
     concernName: 'Aasceend Foundation',
     concernLogoText: 'AASCEEND FOUNDATION',
-    heroImage: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1600&q=80',
+    heroImage: '/assets/sectors/social_impact.jpg',
     approachTitle: 'Our Social Impact Focus',
     approachDescription: 'Supporting programs that contribute to community well-being, poverty reduction, and social progress.',
     capabilities: [
@@ -1081,7 +1081,7 @@ export const DIVISIONS: DivisionData[] = [
     subtitle: 'Facilitating trade, sourcing, and distribution through reliable and structured trading operations.',
     concernName: 'Aasceend Limited',
     concernLogoText: 'AASCEEND LIMITED',
-    heroImage: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1600&q=80',
+    heroImage: '/assets/sectors/investment.jpg',
     approachTitle: 'Our Trading & Commerce Focus',
     approachDescription: 'Supporting efficient trade operations, sourcing, and market connectivity across borders.',
     capabilities: [
@@ -1124,7 +1124,7 @@ export const DIVISIONS: DivisionData[] = [
     subtitle: 'Promoting modern agricultural practices, sustainable fisheries, and food security.',
     concernName: 'Aasceend Agro & Fisheries',
     concernLogoText: 'AASCEEND AGRO & FISHERIES',
-    heroImage: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1600&q=80',
+    heroImage: '/assets/sectors/agro_fisheries.jpg',
     approachTitle: 'Our Agro & Fisheries Focus',
     approachDescription: 'Harnessing sustainable farming techniques, organic aquaculture, and cold-chain storage.',
     capabilities: [
