@@ -517,23 +517,23 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
 
 
       {/* 3. BUILDING TRUST THROUGH PLANNING, TRANSPARENCY, AND VISION */}
-       {/* <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> */}
-        {/* <div className="text-center max-w-3xl mx-auto mb-12">
+       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-green-800 dark:text-white">
             Building Trust Through Planning, Transparency, And Vision
           </h2>
           <div className="w-16 h-1 mx-auto mt-4 rounded-full" />
-        </div> */}
+        </div> 
 
-        {/* <motion.div 
+        <motion.div 
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        > */}
+        > 
           {/* Card 1 */}
-          {/* <motion.div variants={itemVariants} className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow group">
+          <motion.div variants={itemVariants} className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow group">
             <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
               <Layers className="w-6 h-6" />
             </div>
@@ -543,10 +543,10 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
             <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
               Every project is carefully designed with structured planning and long-term development vision to ensure generational longevity.
             </p>
-          </motion.div> */}
+          </motion.div> 
 
           {/* Card 2 */}
-          {/* <motion.div variants={itemVariants} className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow group">
+          <motion.div variants={itemVariants} className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow group">
             <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
               <ShieldCheck className="w-6 h-6" />
             </div>
@@ -556,10 +556,10 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
             <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
               We emphasize clarity, verified documentation, and responsible development practices at every stage of plot demarcation.
             </p>
-          </motion.div> */}
+          </motion.div>
 
           {/* Card 3 */}
-          {/* <motion.div variants={itemVariants} className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow group">
+         <motion.div variants={itemVariants} className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow group">
             <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
               <Trees className="w-6 h-6" />
             </div>
@@ -569,10 +569,10 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
             <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
               Our developments are planned to support modern living, open breathing landscapes, hospitality, and sustainable lifestyle growth.
             </p>
-          </motion.div> */}
+          </motion.div> 
 
           {/* Card 4 */}
-          {/* <motion.div variants={itemVariants} className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow group">
+          <motion.div variants={itemVariants} className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow group">
             <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
               <Users className="w-6 h-6" />
             </div>
@@ -582,10 +582,10 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
             <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
               We prioritize trust, transparent communication, and long-term relationships with our valued buyers and strategic investors.
             </p>
-          </motion.div> */}
+          </motion.div> 
 
           {/* Card 5 */}
-          {/* <motion.div variants={itemVariants} className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow group">
+          <motion.div variants={itemVariants} className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow group">
             <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
               <Building className="w-6 h-6" />
             </div>
@@ -595,10 +595,10 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
             <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
               Operating across real estate, resort, IT, media, textiles, and hospitality sectors under a unified corporate roadmap.
             </p>
-          </motion.div> */}
+          </motion.div>
 
           {/* Card 6 */}
-          {/* <motion.div variants={itemVariants} className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow group">
+          <motion.div variants={itemVariants} className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow group">
             <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
               <TrendingUp className="w-6 h-6" />
             </div>
@@ -609,8 +609,8 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
               A diversified collection of residential townships, resort retreats, and commercial hospitality shaping future destinations.
             </p>
           </motion.div>
-        </motion.div> */}
-      {/* </section>  */}
+        </motion.div> 
+       </section>  
 
       {/* 4. AT A GLANCE BANNER SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -630,7 +630,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
           />
 
           {/* Contrast & Vignette Overlay - Lightweight so background image remains vibrant and visible */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/5 to-black/25 pointer-events-none" />
+          <div className="absolute inset-0 bg-linear-to-r from-black/20 via-black/5 to-black/25 pointer-events-none" />
 
           {/* Banner Content Container */}
           <div className="relative z-10 w-full px-6 sm:px-10 md:px-12 lg:px-16 py-10 sm:py-12 lg:py-14">
