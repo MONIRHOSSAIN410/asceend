@@ -7,8 +7,7 @@ import {
   Building2,
   ShieldCheck,
   Award,
-  Phone,
-  Facebook
+  Phone
 } from 'lucide-react';
 import { PageView } from '../types';
 import { PROJECTS, DIVISIONS } from '../data/mockData';
@@ -471,19 +470,8 @@ const [mobileAccordions, setMobileAccordions] = useState<
             </button>
           </nav>
 
-          {/* Right Action Tools: Facebook, Call button & Mobile Menu */}
-          <div className="flex items-center gap-2 sm:gap-2.5">
-            <a
-              href="https://www.facebook.com/AasceendGroup/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-white/10 hover:bg-[#1877F2] text-white transition-colors"
-              title="Aasceend Group on Facebook"
-              aria-label="Facebook Page"
-            >
-              <Facebook className="w-4 h-4 fill-white" />
-            </a>
-
+          {/* Right Action Tools: Call button & Mobile Menu */}
+          <div className="flex items-center gap-2.5">
             <a
               href="https://wa.me/8801896006310"
               target="_blank"
@@ -560,25 +548,14 @@ const [mobileAccordions, setMobileAccordions] = useState<
       {/* Menu Content */}
       <div className="flex-1 overflow-y-auto px-5">
 
-        {/* Quick Action Buttons (Facebook & WhatsApp/Call) */}
-        <div className="py-4 border-b border-neutral-100 flex flex-wrap items-center gap-2.5">
-
-          <a
-            href="https://www.facebook.com/AasceendGroup/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#1877F2] hover:bg-[#166fe5] text-white px-3.5 py-2 rounded-lg text-sm font-bold transition-colors shadow-sm"
-            title="Aasceend Group on Facebook"
-          >
-            <Facebook className="w-4 h-4 fill-white" />
-            <span>Facebook</span>
-          </a>
+        {/* Phone Button */}
+        <div className="py-4 border-b border-neutral-100">
 
           <a
             href="https://wa.me/8801896006310"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-900 text-white px-3.5 py-2 rounded-lg text-sm font-bold transition-colors shadow-sm"
+            className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-900 text-white px-4 py-2 rounded-lg text-base font-bold transition-colors"
           >
             <Phone className="w-3.5 h-3.5" />
             <span>01896-006310</span>
