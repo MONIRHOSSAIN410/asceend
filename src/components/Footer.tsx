@@ -75,7 +75,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onRequestCall }) => 
             {/* Social Icons */}
             <div className="flex items-center gap-3 pt-2">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/AasceendGroup/"
                 target="_blank"
                 rel="noreferrer"
                 className="w-8 h-8 rounded-lg bg-green-900/80 hover:bg-green-600 flex items-center justify-center text-green-200 hover:text-white transition-colors text-xs font-bold"
@@ -83,7 +83,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onRequestCall }) => 
               >
                 f
               </a>
-              <a
+              {/* <a
                 href="https://x.com"
                 target="_blank"
                 rel="noreferrer"
@@ -91,7 +91,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onRequestCall }) => 
                 aria-label="X / Twitter"
               >
                 X
-              </a>
+              </a> */}
               {/* <a
                 href="https://wa.me/8801896006310"
                 target="_blank"

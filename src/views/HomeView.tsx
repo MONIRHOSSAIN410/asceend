@@ -246,7 +246,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
         <div className="flex flex-wrap items-center gap-4 pt-1">
           <button
             onClick={() => onNavigate({ type: 'project', projectId: HERO_SLIDES[currentSlide].projectId })}
-            className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-emerald-600/30 flex items-center gap-2 transition-all hover:scale-105 active:scale-95 cursor-pointer"
+            className="bg-green-700 hover:bg-green-700 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-emerald-600/30 flex items-center gap-2 transition-all hover:scale-105 active:scale-95 cursor-pointer"
           >
             <span> {HERO_SLIDES[currentSlide].title}</span>
             <ArrowRight className="w-4 h-4" />
@@ -261,7 +261,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
         </div>
 
         {/* Quick Trust Highlights */}
-        <div className="grid grid-cols-3 gap-3 sm:gap-6 pt-6 border-t border-white/15 max-w-xl">
+        <div className="grid grid-cols-3 gap-3 sm:gap-6 pt-6 border-t border-white/10 max-w-sm">
           {/* <div>
             <div className="text-xl sm:text-3xl font-bold font-mono text-emerald-400">1300+</div>
             <div className="text-[10px] sm:text-xs text-neutral-300 mt-0.5">Bigha Purbachal</div>
@@ -324,7 +324,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
     {/* Section Header */}
     <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
       <div>
-        <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-green-800 dark:text-emerald-400 tracking-tight">
+        <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-green-800 dark:text-green-400 tracking-tight">
           FEATURED PROJECTS
         </h2>
 
@@ -336,21 +336,21 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
       </div>
 
       {/* Filter Tabs */}
-      <div className="flex flex-wrap items-center p-1 bg-white dark:bg-neutral-800 rounded-xl border border-emerald-200 dark:border-emerald-800 shadow-sm text-xs shrink-0 self-start md:self-auto gap-1">
+      <div className="flex flex-wrap items-center p-1 bg-white dark:bg-neutral-800 rounded-xl border border-emerald-200 dark:border-green-800 shadow-sm text-xs shrink-0 self-start md:self-auto gap-1">
 
         <button
           onClick={() => setProjectFilter("all")}
           className={`px-4 py-2 rounded-lg font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
             projectFilter === "all"
               ? "bg-[#006838] text-white shadow-sm"
-              : "text-emerald-900 dark:text-emerald-200 hover:text-[#006838] hover:bg-emerald-50 dark:hover:bg-neutral-700"
+              : "text-green-900 dark:text-green-200 hover:text-[#006838] hover:bg-emerald-50 dark:hover:bg-neutral-700"
           }`}
         >
           <span>All Projects</span>
           <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-mono font-bold ${
             projectFilter === "all"
               ? "bg-white/20 text-white"
-              : "bg-emerald-100 dark:bg-neutral-700 text-emerald-800 dark:text-emerald-300"
+              : "bg-emerald-100 dark:bg-neutral-700 text-green-800 dark:text-green-300"
           }`}>
             {PROJECTS.length}
           </span>
@@ -361,14 +361,14 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
           className={`px-4 py-2 rounded-lg font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
             projectFilter === "township"
               ? "bg-[#006838] text-white shadow-sm"
-              : "text-emerald-900 dark:text-emerald-200 hover:text-[#006838] hover:bg-emerald-50 dark:hover:bg-neutral-700"
+              : "text-emerald-900 dark:text-green-200 hover:text-[#006838] hover:bg-emerald-50 dark:hover:bg-neutral-700"
           }`}
         >
           <span>Townships</span>
           <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-mono font-bold ${
             projectFilter === "township"
               ? "bg-white/20 text-white"
-              : "bg-emerald-100 dark:bg-neutral-700 text-emerald-800 dark:text-emerald-300"
+              : "bg-emerald-100 dark:bg-neutral-700 text-green-800 dark:text-green-300"
           }`}>
             {PROJECTS.filter((p) => p.category === "township").length}
           </span>
@@ -379,14 +379,14 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
           className={`px-4 py-2 rounded-lg font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
             projectFilter === "hospitality"
               ? "bg-[#006838] text-white shadow-sm"
-              : "text-emerald-900 dark:text-emerald-200 hover:text-[#006838] hover:bg-emerald-50 dark:hover:bg-neutral-700"
+              : "text-green-900 dark:text-green-200 hover:text-[#006838] hover:bg-emerald-50 dark:hover:bg-neutral-700"
           }`}
         >
           <span>Resorts & Hotels</span>
           <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-mono font-bold ${
             projectFilter === "hospitality"
               ? "bg-white/20 text-white"
-              : "bg-emerald-100 dark:bg-neutral-700 text-emerald-800 dark:text-emerald-300"
+              : "bg-emerald-100 dark:bg-neutral-700 text-green-800 dark:text-green-300"
           }`}>
             {
               PROJECTS.filter(
@@ -418,7 +418,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
               className="
                 bg-white dark:bg-neutral-900
                 rounded-2xl overflow-hidden
-                border border-emerald-600/30
+                border border-green-600/30
                 hover:border-[#006838]
                 shadow-sm hover:shadow-xl
                 hover:shadow-emerald-950/10
@@ -487,14 +487,14 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
                       font-extrabold
                       font-heading
                       text-[#006838]
-                      dark:text-emerald-400
+                      dark:text-green-400
                       tracking-tight
                       text-center
                       leading-snug
                       wrap-break-word
                       transition-colors
-                      group-hover:text-emerald-600
-                      dark:group-hover:text-emerald-300
+                      group-hover:text-green-600
+                      dark:group-hover:text-green-300
                       text-base sm:text-lg
                     "
                   >

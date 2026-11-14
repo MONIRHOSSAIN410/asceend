@@ -194,8 +194,8 @@ const [mobileAccordions, setMobileAccordions] = useState<
               onClick={() => handleNav({ type: 'home' })}
               className={`px-3 py-2 rounded-md transition-colors ${
                 currentView.type === 'home'
-                  ? 'text-yellow-400 font-bold'
-                  : 'text-neutral-200 hover:text-yellow-400 font-medium'
+                  ? 'text-green-700 font-bold'
+                  : 'text-neutral-200 hover:text-green-700 font-medium'
               }`}
             >
               Home
@@ -208,8 +208,8 @@ const [mobileAccordions, setMobileAccordions] = useState<
                 onMouseEnter={() => setActiveDropdown('about')}
                 className={`flex items-center gap-1 px-3 py-2 rounded-md transition-colors ${
                   ['about', 'leader', 'investor', 'accreditations'].includes(currentView.type)
-                    ? 'text-yellow-400 font-bold'
-                    : 'text-neutral-200 hover:text-yellow-400 font-medium'
+                    ? 'text-green-400 font-bold'
+                    : 'text-neutral-200 hover:text-green-400 font-medium'
                 }`}
               >
                 <span>About Aasceend</span>
@@ -223,9 +223,9 @@ const [mobileAccordions, setMobileAccordions] = useState<
                 >
                   <button
                     onClick={() => handleNav({ type: 'about' })}
-                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-yellow-400 flex items-center gap-2.5 transition-colors text-neutral-800"
+                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex items-center gap-2.5 transition-colors text-neutral-800"
                   >
-                    <Building2 className="w-4 h-4 text-yellow-400" />
+                    <Building2 className="w-4 h-4 text-green-700" />
                     <span>About Us</span>
                   </button>
                   <div className="h-px bg-neutral-200 my-1" />
@@ -236,7 +236,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
 
                   <button
                     onClick={() => handleNav({ type: 'leader', leaderId: 'ceo' })}
-                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-yellow-400 flex flex-col transition-colors"
+                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex flex-col transition-colors"
                   >
                     <span className="font-medium text-xs text-neutral-800">Founder, Senior Chief Advisor, MD & CEO</span>
                     <span className="text-[11px] text-neutral-600">Khondokar Mohibur Rahman</span>
@@ -244,7 +244,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
 
                   <button
                     onClick={() => handleNav({ type: 'leader', leaderId: 'co-chairman' })}
-                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-yellow-400 flex flex-col transition-colors"
+                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex flex-col transition-colors"
                   >
                     <span className="font-medium text-xs text-neutral-800">Founder, Chief Advisor, Chairman &amp; COO</span>
                     <span className="text-[11px] text-neutral-600">Khandoker Asadur Rahman</span>
@@ -252,7 +252,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
 
                   <button
                     onClick={() => handleNav({ type: 'leader', leaderId: 'vice-chairman' })}
-                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-yellow-400 flex flex-col transition-colors"
+                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex flex-col transition-colors"
                   >
                     <span className="font-medium text-xs text-neutral-800">Founder, Vice Chief Advisor, Vice Chairman</span>
                     <span className="text-[11px] text-neutral-600">Md. Mahafuzur Rahaman</span>
@@ -260,7 +260,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
 
                   <button
                     onClick={() => handleNav({ type: 'leader', leaderId: 'deputy-md' })}
-                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-yellow-400 flex flex-col transition-colors"
+                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex flex-col transition-colors"
                   >
                     <span className="font-medium text-xs text-neutral-800">Co-Founder &amp; Deputy Managing Director</span>
                     <span className="text-[11px] text-neutral-600">Deputy Managing Director</span>
@@ -270,17 +270,17 @@ const [mobileAccordions, setMobileAccordions] = useState<
 
                   <button
                     onClick={() => handleNav({ type: 'investor' })}
-                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-yellow-400 flex items-center gap-2.5 transition-colors text-neutral-800"
+                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex items-center gap-2.5 transition-colors text-neutral-800"
                   >
-                    <ShieldCheck className="w-4 h-4 text-yellow-400" />
+                    <ShieldCheck className="w-4 h-4 text-emerald-700" />
                     <span>Investor Relations</span>
                   </button>
 
                   <button
                     onClick={() => handleNav({ type: 'accreditations' })}
-                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-yellow-400 flex items-center gap-2.5 transition-colors text-neutral-800"
+                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex items-center gap-2.5 transition-colors text-neutral-800"
                   >
-                    <Award className="w-4 h-4 text-emerald-700" />
+                    <Award className="w-4 h-4 text-green-700" />
                     <span>Accreditations & Awards</span>
                   </button>
                 </div>
@@ -294,8 +294,8 @@ const [mobileAccordions, setMobileAccordions] = useState<
                 onMouseEnter={() => setActiveDropdown('divisions')}
                 className={`flex items-center gap-1 px-3 py-2 rounded-md transition-colors ${
                   currentView.type === 'division'
-                    ? 'text-yellow-400 font-bold'
-                    : 'text-neutral-200 hover:text-yellow-400 font-medium'
+                    ? 'text-green-400 font-bold'
+                    : 'text-neutral-200 hover:text-green-400 font-medium'
                 }`}
               >
                 <span>Divisions</span>
@@ -311,7 +311,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
                     <button
                       key={div.id}
                       onClick={() => handleNav({ type: 'division', divisionId: div.id })}
-                      className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-yellow-700 flex items-center justify-between transition-colors text-neutral-800"
+                      className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex items-center justify-between transition-colors text-neutral-800"
                     >
                       <span className="font-medium text-xs">{div.name}</span>
                       <ChevronRight className="w-3 h-3 text-neutral-500" />
@@ -328,8 +328,8 @@ const [mobileAccordions, setMobileAccordions] = useState<
                 onMouseEnter={() => setActiveDropdown('projects')}
                 className={`flex items-center gap-1 px-3 py-2 rounded-md transition-colors ${
                   currentView.type === 'project'
-                    ? 'text-yellow-400 font-bold'
-                    : 'text-neutral-200 hover:text-yellow-400 font-medium'
+                    ? 'text-emerald-400 font-bold'
+                    : 'text-neutral-200 hover:text-green-400 font-medium'
                 }`}
               >
                 <span>Projects</span>
@@ -348,7 +348,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
                     <button
                       key={proj.id}
                       onClick={() => handleNav({ type: 'project', projectId: proj.id })}
-                      className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-yellow-400 flex items-center justify-between transition-colors text-neutral-800"
+                      className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex items-center justify-between transition-colors text-neutral-800"
                     >
                       <div>
                         <div className="font-medium text-xs text-neutral-800">{proj.name}</div>
@@ -366,7 +366,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
                     <button
                       key={proj.id}
                       onClick={() => handleNav({ type: 'project', projectId: proj.id })}
-                      className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-yellow-400 flex items-center justify-between transition-colors text-neutral-800"
+                      className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex items-center justify-between transition-colors text-neutral-800"
                     >
                       <div>
                         <div className="font-medium text-xs text-neutral-800">{proj.name}</div>
@@ -386,8 +386,8 @@ const [mobileAccordions, setMobileAccordions] = useState<
                 onMouseEnter={() => setActiveDropdown('media')}
                 className={`flex items-center gap-1 px-3 py-2 rounded-md transition-colors ${
                   currentView.type === 'media'
-                    ? 'text-yellow-400 font-bold'
-                    : 'text-neutral-200 hover:text-yellow-400 font-medium'
+                    ? 'text-green-400 font-bold'
+                    : 'text-neutral-200 hover:text-green-400 font-medium'
                 }`}
               >
                 <span>Media Center</span>
@@ -401,19 +401,19 @@ const [mobileAccordions, setMobileAccordions] = useState<
                 >
                   <button
                     onClick={() => handleNav({ type: 'media', tab: 'news' })}
-                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-yellow-400 transition-colors text-neutral-800"
+                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 transition-colors text-neutral-800"
                   >
                     News & Events
                   </button>
                   <button
                     onClick={() => handleNav({ type: 'media', tab: 'photos' })}
-                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-yellow-400 transition-colors text-neutral-800"
+                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 transition-colors text-neutral-800"
                   >
                     Photo Gallery
                   </button>
                   <button
                     onClick={() => handleNav({ type: 'media', tab: 'videos' })}
-                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-yellow-400 transition-colors text-neutral-800"
+                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 transition-colors text-neutral-800"
                   >
                     Video Gallery
                   </button>
@@ -428,8 +428,8 @@ const [mobileAccordions, setMobileAccordions] = useState<
                 onMouseEnter={() => setActiveDropdown('sustainability')}
                 className={`flex items-center gap-1 px-3 py-2 rounded-md transition-colors ${
                   currentView.type === 'sustainability'
-                    ? 'text-yellow-400 font-bold'
-                    : 'text-neutral-200 hover:text-yellow-400 font-medium'
+                    ? 'text-green-500 font-bold'
+                    : 'text-neutral-200 hover:text-green-500 font-medium'
                 }`}
               >
                 <span>Sustainability</span>
@@ -443,13 +443,13 @@ const [mobileAccordions, setMobileAccordions] = useState<
                 >
                   <button
                     onClick={() => handleNav({ type: 'sustainability', tab: 'environment' })}
-                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-yellow-700 transition-colors text-neutral-800"
+                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 transition-colors text-neutral-800"
                   >
                     Environment & Ecology
                   </button>
                   <button
                     onClick={() => handleNav({ type: 'sustainability', tab: 'csr' })}
-                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-yellow-400 transition-colors text-neutral-800"
+                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 transition-colors text-neutral-800"
                   >
                     Corporate Social Responsibility (CSR)
                   </button>
@@ -462,8 +462,8 @@ const [mobileAccordions, setMobileAccordions] = useState<
               onClick={() => handleNav({ type: 'contact' })}
               className={`px-3 py-2 rounded-md transition-colors ${
                 currentView.type === 'contact'
-                  ? 'text-yellow-400 font-bold'
-                  : 'text-neutral-200 hover:text-yellow-400 font-medium'
+                  ? 'text-green-400 font-bold'
+                  : 'text-neutral-200 hover:text-green-400 font-medium'
               }`}
             >
               Contact
@@ -555,7 +555,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
             href="https://wa.me/8801896006310"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-base font-bold transition-colors"
+            className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-900 text-white px-4 py-2 rounded-lg text-base font-bold transition-colors"
           >
             <Phone className="w-3.5 h-3.5" />
             <span>01896-006310</span>
@@ -568,8 +568,8 @@ const [mobileAccordions, setMobileAccordions] = useState<
           onClick={() => handleNav({ type: 'home' })}
           className={`w-full flex items-center py-4 text-left text-sm border-b border-neutral-100 ${
             currentView.type === 'home'
-              ? 'text-yellow-400 font-bold'
-              : 'text-neutral-700 hover:text-yellow-400'
+              ? 'text-green-600 font-bold'
+              : 'text-neutral-700 hover:text-green-600'
           }`}
         >
           Home
@@ -708,7 +708,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
             <button
               onClick={() => toggleMobileAccordion(section.id)}
               aria-expanded={mobileAccordions[section.id]}
-              className="w-full flex items-center justify-between py-5 text-left text-xs font-bold tracking-wide text-yellow-400"
+              className="w-full flex items-center justify-between py-5 text-left text-xs font-bold tracking-wide text-emerald-700"
             >
               <span>{section.title}</span>
 
@@ -735,7 +735,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
                   <button
                     key={index}
                     onClick={item.action}
-                    className="block w-full text-left py-2.5 px-2 text-sm text-neutral-600 hover:text-yellow-400 transition-colors"
+                    className="block w-full text-left py-2.5 px-2 text-sm text-neutral-600 hover:text-emerald-600 transition-colors"
                   >
                     {item.label}
                   </button>
@@ -750,7 +750,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
         {/* Contact Us */}
         <button
           onClick={() => handleNav({ type: 'contact' })}
-          className="w-full text-left py-6 text-sm font-semibold text-neutral-700 hover:text-yellow-400"
+          className="w-full text-left py-6 text-sm font-semibold text-neutral-700 hover:text-emerald-600"
         >
           Contact Us
         </button>
