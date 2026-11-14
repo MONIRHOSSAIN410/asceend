@@ -837,7 +837,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-[#006838] dark:text-emerald-400 uppercase tracking-wider">
             Our Business Sectors
           </h2>
-          <div className="w-12 h-1 bg-[#006838] mx-auto mt-2.5 rounded-full" />
+          <div className="w-12 h-1 bg-[#ffffff] mx-auto mt-2.5 rounded-full" />
         </div>
 
         {/* 8-Card Flush Grid (2 rows x 4 columns) */}
