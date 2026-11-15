@@ -47,8 +47,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onRequestCall }) => 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 pb-12 border-b border-green-900">
           {/* Brand Column */}
           <div className="lg:col-span-4 space-y-4">
-            <button
-              onClick={() => {
+            <a
+              href="#home"
+              onClick={(e) => {
+                e.preventDefault();
                 onNavigate({ type: 'home' });
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
@@ -61,7 +63,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onRequestCall }) => 
                 alt="Aasceend Group"
                 className="h-10 sm:h-11 w-auto object-contain group-hover:scale-105 transition-transform"
               />
-            </button>
+            </a>
 
             <p className="text-emerald-100 font-serif italic text-base leading-snug">
               "Your Dreams, Our Commitment.<br />
@@ -186,24 +188,39 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onRequestCall }) => 
           </div>
 
           <div className="flex items-center gap-6">
-            <button
-              onClick={() => onNavigate({ type: 'about' })}
-              className="hover:text-white transition-colors"
+            <a
+              href="#about"
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigate({ type: 'about' });
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="hover:text-white transition-colors cursor-pointer"
             >
               About Us
-            </button>
-            <button
-              onClick={() => onNavigate({ type: 'investor' })}
-              className="hover:text-white transition-colors"
+            </a>
+            <a
+              href="#investor"
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigate({ type: 'investor' });
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="hover:text-white transition-colors cursor-pointer"
             >
               Privacy Policy
-            </button>
-            <button
-              onClick={() => onNavigate({ type: 'contact' })}
-              className="hover:text-white transition-colors"
+            </a>
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigate({ type: 'contact' });
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="hover:text-white transition-colors cursor-pointer"
             >
               Contact Us
-            </button>
+            </a>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { PageView } from './types';
+import { hashToView, viewToHash } from './utils/navigation';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { LeadModal } from './components/LeadModal';
@@ -17,7 +18,13 @@ import { SustainabilityView } from './views/SustainabilityView';
 import { ContactView } from './views/ContactView';
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<PageView>({ type: 'home' });
+  const [currentView, setCurrentView] = useState<PageView>(() => {
+    if (typeof window !== 'undefined' && window.location.hash) {
+      const parsed = hashToView(window.location.hash);
+      if (parsed) return parsed;
+    }
+    return { type: 'home' };
+  });
 
   const [leadModalOpen, setLeadModalOpen] = useState(false);
   const [leadModalType, setLeadModalType] = useState<'callback' | 'brochure'>('callback');
@@ -31,8 +38,24 @@ export default function App() {
     }
   }, []);
 
+  // Listen for browser back/forward and hash changes
+  useEffect(() => {
+    const handleHashChange = () => {
+      const parsed = hashToView(window.location.hash);
+      if (parsed) {
+        setCurrentView(parsed);
+      }
+    };
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
   const handleNavigate = (view: PageView) => {
     setCurrentView(view);
+    const hash = viewToHash(view);
+    if (typeof window !== 'undefined' && window.location.hash !== hash) {
+      window.history.pushState(null, '', hash);
+    }
     window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
   };
 

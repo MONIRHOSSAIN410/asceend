@@ -166,8 +166,12 @@ const [mobileAccordions, setMobileAccordions] = useState<
         <div className="flex items-center justify-between gap-4">
           
           {/* Brand Logo Lockup */}
-          <button 
-            onClick={() => handleNav({ type: 'home' })}
+          <a 
+            href="#home"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNav({ type: 'home' });
+            }}
             className="flex items-center group text-left cursor-pointer transition-transform duration-200 hover:scale-[1.02]"
             aria-label="Aasceend Group"
           >
@@ -184,29 +188,34 @@ const [mobileAccordions, setMobileAccordions] = useState<
                 }}
               />
             </div>
-          </button>
+          </a>
 
           {/* Desktop Navigation Links */}
           <nav ref={dropdownRef} className="hidden lg:flex items-center gap-1 font-medium text-base">
             
             {/* Home */}
-            <button
-              onClick={() => handleNav({ type: 'home' })}
-              className={`px-3 py-2 rounded-md transition-colors ${
+            <a
+              href="#home"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNav({ type: 'home' });
+              }}
+              className={`inline-block px-3 py-2 rounded-md transition-colors cursor-pointer ${
                 currentView.type === 'home'
                   ? 'text-green-700 font-bold'
                   : 'text-neutral-200 hover:text-green-700 font-medium'
               }`}
             >
               Home
-            </button>
+            </a>
 
             {/* About Aasceend Dropdown */}
             <div className="relative group">
               <button
+                type="button"
                 onClick={() => setActiveDropdown(activeDropdown === 'about' ? null : 'about')}
                 onMouseEnter={() => setActiveDropdown('about')}
-                className={`flex items-center gap-1 px-3 py-2 rounded-md transition-colors ${
+                className={`flex items-center gap-1 px-3 py-2 rounded-md transition-colors cursor-pointer ${
                   ['about', 'leader', 'investor', 'accreditations'].includes(currentView.type)
                     ? 'text-green-400 font-bold'
                     : 'text-neutral-200 hover:text-green-400 font-medium'
@@ -221,68 +230,96 @@ const [mobileAccordions, setMobileAccordions] = useState<
                   onMouseLeave={() => setActiveDropdown(null)}
                   className="absolute left-0 top-full w-80 bg-white backdrop-blur-md rounded-xl shadow-2xl border border-neutral-200 py-2.5 z-50 text-neutral-800 text-sm"
                 >
-                  <button
-                    onClick={() => handleNav({ type: 'about' })}
-                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex items-center gap-2.5 transition-colors text-neutral-800"
+                  <a
+                    href="#about"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNav({ type: 'about' });
+                    }}
+                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex items-center gap-2.5 transition-colors text-neutral-800 cursor-pointer"
                   >
                     <Building2 className="w-4 h-4 text-green-700" />
                     <span>About Us</span>
-                  </button>
+                  </a>
                   <div className="h-px bg-neutral-200 my-1" />
                   
                   <div className="px-4 py-1 text-[11px] font-semibold text-neutral-600 uppercase tracking-wider">
                     Leadership Team
                   </div>
 
-                  <button
-                    onClick={() => handleNav({ type: 'leader', leaderId: 'ceo' })}
-                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex flex-col transition-colors"
+                  <a
+                    href="#leader-ceo"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNav({ type: 'leader', leaderId: 'ceo' });
+                    }}
+                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex flex-col transition-colors cursor-pointer"
                   >
                     <span className="font-medium text-xs text-neutral-800">Founder, Senior Chief Advisor, MD & CEO</span>
                     <span className="text-[11px] text-neutral-600">Khondokar Mohibur Rahman</span>
-                  </button>
+                  </a>
 
-                  <button
-                    onClick={() => handleNav({ type: 'leader', leaderId: 'co-chairman' })}
-                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex flex-col transition-colors"
+                  <a
+                    href="#leader-co-chairman"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNav({ type: 'leader', leaderId: 'co-chairman' });
+                    }}
+                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex flex-col transition-colors cursor-pointer"
                   >
                     <span className="font-medium text-xs text-neutral-800">Founder, Chief Advisor, Chairman &amp; COO</span>
                     <span className="text-[11px] text-neutral-600">Khandoker Asadur Rahman</span>
-                  </button>
+                  </a>
 
-                  <button
-                    onClick={() => handleNav({ type: 'leader', leaderId: 'vice-chairman' })}
-                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex flex-col transition-colors"
+                  <a
+                    href="#leader-vice-chairman"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNav({ type: 'leader', leaderId: 'vice-chairman' });
+                    }}
+                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex flex-col transition-colors cursor-pointer"
                   >
                     <span className="font-medium text-xs text-neutral-800">Founder, Vice Chief Advisor, Vice Chairman</span>
                     <span className="text-[11px] text-neutral-600">Md. Mahafuzur Rahaman</span>
-                  </button>
+                  </a>
 
-                  <button
-                    onClick={() => handleNav({ type: 'leader', leaderId: 'deputy-md' })}
-                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex flex-col transition-colors"
+                  <a
+                    href="#leader-deputy-md"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNav({ type: 'leader', leaderId: 'deputy-md' });
+                    }}
+                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex flex-col transition-colors cursor-pointer"
                   >
                     <span className="font-medium text-xs text-neutral-800">Co-Founder &amp; Deputy Managing Director</span>
                     <span className="text-[11px] text-neutral-600">Deputy Managing Director</span>
-                  </button>
+                  </a>
 
                   <div className="h-px bg-neutral-200 my-1" />
 
-                  <button
-                    onClick={() => handleNav({ type: 'investor' })}
-                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex items-center gap-2.5 transition-colors text-neutral-800"
+                  <a
+                    href="#investor"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNav({ type: 'investor' });
+                    }}
+                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex items-center gap-2.5 transition-colors text-neutral-800 cursor-pointer"
                   >
                     <ShieldCheck className="w-4 h-4 text-emerald-700" />
                     <span>Investor Relations</span>
-                  </button>
+                  </a>
 
-                  <button
-                    onClick={() => handleNav({ type: 'accreditations' })}
-                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex items-center gap-2.5 transition-colors text-neutral-800"
+                  <a
+                    href="#accreditations"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNav({ type: 'accreditations' });
+                    }}
+                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex items-center gap-2.5 transition-colors text-neutral-800 cursor-pointer"
                   >
                     <Award className="w-4 h-4 text-green-700" />
                     <span>Accreditations & Awards</span>
-                  </button>
+                  </a>
                 </div>
               )}
             </div>
@@ -290,9 +327,10 @@ const [mobileAccordions, setMobileAccordions] = useState<
             {/* Divisions Dropdown */}
             <div className="relative group">
               <button
+                type="button"
                 onClick={() => setActiveDropdown(activeDropdown === 'divisions' ? null : 'divisions')}
                 onMouseEnter={() => setActiveDropdown('divisions')}
-                className={`flex items-center gap-1 px-3 py-2 rounded-md transition-colors ${
+                className={`flex items-center gap-1 px-3 py-2 rounded-md transition-colors cursor-pointer ${
                   currentView.type === 'division'
                     ? 'text-green-400 font-bold'
                     : 'text-neutral-200 hover:text-green-400 font-medium'
@@ -308,14 +346,18 @@ const [mobileAccordions, setMobileAccordions] = useState<
                   className="absolute left-0 top-full w-72 bg-white backdrop-blur-md rounded-xl shadow-2xl border border-neutral-200 py-2.5 z-50 text-neutral-800 text-sm max-h-96 overflow-y-auto"
                 >
                   {DIVISIONS.map((div) => (
-                    <button
+                    <a
                       key={div.id}
-                      onClick={() => handleNav({ type: 'division', divisionId: div.id })}
-                      className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex items-center justify-between transition-colors text-neutral-800"
+                      href={`#division-${div.id}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNav({ type: 'division', divisionId: div.id });
+                      }}
+                      className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex items-center justify-between transition-colors text-neutral-800 cursor-pointer"
                     >
                       <span className="font-medium text-xs">{div.name}</span>
                       <ChevronRight className="w-3 h-3 text-neutral-500" />
-                    </button>
+                    </a>
                   ))}
                 </div>
               )}
@@ -324,9 +366,10 @@ const [mobileAccordions, setMobileAccordions] = useState<
             {/* Projects Dropdown */}
             <div className="relative group">
               <button
+                type="button"
                 onClick={() => setActiveDropdown(activeDropdown === 'projects' ? null : 'projects')}
                 onMouseEnter={() => setActiveDropdown('projects')}
-                className={`flex items-center gap-1 px-3 py-2 rounded-md transition-colors ${
+                className={`flex items-center gap-1 px-3 py-2 rounded-md transition-colors cursor-pointer ${
                   currentView.type === 'project'
                     ? 'text-emerald-400 font-bold'
                     : 'text-neutral-200 hover:text-green-400 font-medium'
@@ -345,17 +388,21 @@ const [mobileAccordions, setMobileAccordions] = useState<
                     Mega Townships
                   </div>
                   {PROJECTS.filter(p => p.category === 'township').map((proj) => (
-                    <button
+                    <a
                       key={proj.id}
-                      onClick={() => handleNav({ type: 'project', projectId: proj.id })}
-                      className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex items-center justify-between transition-colors text-neutral-800"
+                      href={`#project-${proj.id}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNav({ type: 'project', projectId: proj.id });
+                      }}
+                      className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex items-center justify-between transition-colors text-neutral-800 cursor-pointer"
                     >
                       <div>
                         <div className="font-medium text-xs text-neutral-800">{proj.name}</div>
                         <div className="text-[10px] text-neutral-600">{proj.totalLandArea} · {proj.totalPlots} Plots</div>
                       </div>
                       <ChevronRight className="w-3 h-3 text-neutral-500" />
-                    </button>
+                    </a>
                   ))}
 
                   <div className="h-px bg-neutral-200 my-1" />
@@ -363,17 +410,21 @@ const [mobileAccordions, setMobileAccordions] = useState<
                     Hospitality & Resorts
                   </div>
                   {PROJECTS.filter(p => p.category !== 'township').map((proj) => (
-                    <button
+                    <a
                       key={proj.id}
-                      onClick={() => handleNav({ type: 'project', projectId: proj.id })}
-                      className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex items-center justify-between transition-colors text-neutral-800"
+                      href={`#project-${proj.id}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNav({ type: 'project', projectId: proj.id });
+                      }}
+                      className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 flex items-center justify-between transition-colors text-neutral-800 cursor-pointer"
                     >
                       <div>
                         <div className="font-medium text-xs text-neutral-800">{proj.name}</div>
                         <div className="text-[10px] text-neutral-600">{proj.tagline}</div>
                       </div>
                       <ChevronRight className="w-3 h-3 text-neutral-500" />
-                    </button>
+                    </a>
                   ))}
                 </div>
               )}
@@ -382,9 +433,10 @@ const [mobileAccordions, setMobileAccordions] = useState<
             {/* Media Center Dropdown */}
             <div className="relative group">
               <button
+                type="button"
                 onClick={() => setActiveDropdown(activeDropdown === 'media' ? null : 'media')}
                 onMouseEnter={() => setActiveDropdown('media')}
-                className={`flex items-center gap-1 px-3 py-2 rounded-md transition-colors ${
+                className={`flex items-center gap-1 px-3 py-2 rounded-md transition-colors cursor-pointer ${
                   currentView.type === 'media'
                     ? 'text-green-400 font-bold'
                     : 'text-neutral-200 hover:text-green-400 font-medium'
@@ -399,24 +451,36 @@ const [mobileAccordions, setMobileAccordions] = useState<
                   onMouseLeave={() => setActiveDropdown(null)}
                   className="absolute left-0 top-full w-52 bg-white backdrop-blur-md rounded-xl shadow-2xl border border-neutral-200 py-2 z-50 text-neutral-800 text-sm"
                 >
-                  <button
-                    onClick={() => handleNav({ type: 'media', tab: 'news' })}
-                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 transition-colors text-neutral-800"
+                  <a
+                    href="#media-news"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNav({ type: 'media', tab: 'news' });
+                    }}
+                    className="block w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 transition-colors text-neutral-800 cursor-pointer"
                   >
                     News & Events
-                  </button>
-                  <button
-                    onClick={() => handleNav({ type: 'media', tab: 'photos' })}
-                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 transition-colors text-neutral-800"
+                  </a>
+                  <a
+                    href="#media-photos"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNav({ type: 'media', tab: 'photos' });
+                    }}
+                    className="block w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 transition-colors text-neutral-800 cursor-pointer"
                   >
                     Photo Gallery
-                  </button>
-                  <button
-                    onClick={() => handleNav({ type: 'media', tab: 'videos' })}
-                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 transition-colors text-neutral-800"
+                  </a>
+                  <a
+                    href="#media-videos"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNav({ type: 'media', tab: 'videos' });
+                    }}
+                    className="block w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 transition-colors text-neutral-800 cursor-pointer"
                   >
                     Video Gallery
-                  </button>
+                  </a>
                 </div>
               )}
             </div>
@@ -424,9 +488,10 @@ const [mobileAccordions, setMobileAccordions] = useState<
             {/* Sustainability Dropdown */}
             <div className="relative group">
               <button
+                type="button"
                 onClick={() => setActiveDropdown(activeDropdown === 'sustainability' ? null : 'sustainability')}
                 onMouseEnter={() => setActiveDropdown('sustainability')}
-                className={`flex items-center gap-1 px-3 py-2 rounded-md transition-colors ${
+                className={`flex items-center gap-1 px-3 py-2 rounded-md transition-colors cursor-pointer ${
                   currentView.type === 'sustainability'
                     ? 'text-green-500 font-bold'
                     : 'text-neutral-200 hover:text-green-500 font-medium'
@@ -441,33 +506,45 @@ const [mobileAccordions, setMobileAccordions] = useState<
                   onMouseLeave={() => setActiveDropdown(null)}
                   className="absolute left-0 top-full w-60 bg-white backdrop-blur-md rounded-xl shadow-2xl border border-neutral-200 py-2 z-50 text-neutral-800 text-sm"
                 >
-                  <button
-                    onClick={() => handleNav({ type: 'sustainability', tab: 'environment' })}
-                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 transition-colors text-neutral-800"
+                  <a
+                    href="#sustainability-environment"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNav({ type: 'sustainability', tab: 'environment' });
+                    }}
+                    className="block w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 transition-colors text-neutral-800 cursor-pointer"
                   >
                     Environment & Ecology
-                  </button>
-                  <button
-                    onClick={() => handleNav({ type: 'sustainability', tab: 'csr' })}
-                    className="w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 transition-colors text-neutral-800"
+                  </a>
+                  <a
+                    href="#sustainability-csr"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNav({ type: 'sustainability', tab: 'csr' });
+                    }}
+                    className="block w-full text-left px-4 py-2 hover:bg-neutral-100 hover:text-green-700 transition-colors text-neutral-800 cursor-pointer"
                   >
                     Corporate Social Responsibility (CSR)
-                  </button>
+                  </a>
                 </div>
               )}
             </div>
 
             {/* Contact */}
-            <button
-              onClick={() => handleNav({ type: 'contact' })}
-              className={`px-3 py-2 rounded-md transition-colors ${
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNav({ type: 'contact' });
+              }}
+              className={`inline-block px-3 py-2 rounded-md transition-colors cursor-pointer ${
                 currentView.type === 'contact'
                   ? 'text-green-400 font-bold'
                   : 'text-neutral-200 hover:text-green-400 font-medium'
               }`}
             >
               Contact
-            </button>
+            </a>
           </nav>
 
           {/* Right Action Tools: Call button & Mobile Menu */}
@@ -517,10 +594,14 @@ const [mobileAccordions, setMobileAccordions] = useState<
       <div className="flex items-center justify-between px-5 py-4 border-b border-neutral-100">
 
         {/* Logo */}
-        <button
-          onClick={() => handleNav({ type: 'home' })}
+        <a
+          href="#home"
+          onClick={(e) => {
+            e.preventDefault();
+            handleNav({ type: 'home' });
+          }}
           aria-label="Aasceend Home"
-          className="flex items-center"
+          className="flex items-center cursor-pointer"
         >
           <img
             src="/assets/images/aasceend_logo_official_green.png"
@@ -531,7 +612,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
                 '/assets/aistudio/10._Aasceend_Group_2-01_1444aef8.png';
             }}
           />
-        </button>
+        </a>
 
         {/* Close Button */}
         <div className="flex items-center gap-3">
@@ -564,16 +645,20 @@ const [mobileAccordions, setMobileAccordions] = useState<
         </div>
 
         {/* Home */}
-        <button
-          onClick={() => handleNav({ type: 'home' })}
-          className={`w-full flex items-center py-4 text-left text-sm border-b border-neutral-100 ${
+        <a
+          href="#home"
+          onClick={(e) => {
+            e.preventDefault();
+            handleNav({ type: 'home' });
+          }}
+          className={`w-full flex items-center py-4 text-left text-sm border-b border-neutral-100 cursor-pointer ${
             currentView.type === 'home'
               ? 'text-green-600 font-bold'
               : 'text-neutral-700 hover:text-green-600'
           }`}
         >
           Home
-        </button>
+        </a>
 
         {/* Accordion Component */}
         {[
@@ -583,10 +668,12 @@ const [mobileAccordions, setMobileAccordions] = useState<
             items: [
               {
                 label: 'About Us Overview',
+                href: '#about',
                 action: () => handleNav({ type: 'about' }),
               },
               {
                 label: 'Khondokar Mohibur Rahman (MD & CEO)',
+                href: '#leader-ceo',
                 action: () => handleNav({
                   type: 'leader',
                   leaderId: 'ceo',
@@ -594,6 +681,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
               },
               {
                 label: 'Khandoker Asadur Rahman (Chairman & COO)',
+                href: '#leader-co-chairman',
                 action: () => handleNav({
                   type: 'leader',
                   leaderId: 'co-chairman',
@@ -601,6 +689,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
               },
               {
                 label: 'Md. Mahafuzur Rahaman (Vice Chairman)',
+                href: '#leader-vice-chairman',
                 action: () => handleNav({
                   type: 'leader',
                   leaderId: 'vice-chairman',
@@ -608,6 +697,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
               },
               {
                 label: 'Deputy Managing Director',
+                href: '#leader-deputy-md',
                 action: () => handleNav({
                   type: 'leader',
                   leaderId: 'deputy-md',
@@ -615,10 +705,12 @@ const [mobileAccordions, setMobileAccordions] = useState<
               },
               {
                 label: 'Investor Relations',
+                href: '#investor',
                 action: () => handleNav({ type: 'investor' }),
               },
               {
                 label: 'Accreditations & Awards',
+                href: '#accreditations',
                 action: () => handleNav({ type: 'accreditations' }),
               },
             ],
@@ -629,6 +721,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
             title: 'DIVISIONS',
             items: DIVISIONS.map((div) => ({
               label: div.name,
+              href: `#division-${div.id}`,
               action: () => handleNav({
                 type: 'division',
                 divisionId: div.id,
@@ -642,6 +735,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
             items: PROJECTS
               .map(proj => ({
                 label: proj.name,
+                href: `#project-${proj.id}`,
                 action: () => handleNav({
                   type: 'project',
                   projectId: proj.id,
@@ -655,6 +749,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
             items: [
               {
                 label: 'News & Events',
+                href: '#media-news',
                 action: () => handleNav({
                   type: 'media',
                   tab: 'news',
@@ -662,6 +757,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
               },
               {
                 label: 'Photo Gallery',
+                href: '#media-photos',
                 action: () => handleNav({
                   type: 'media',
                   tab: 'photos',
@@ -669,6 +765,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
               },
               {
                 label: 'Video Gallery',
+                href: '#media-videos',
                 action: () => handleNav({
                   type: 'media',
                   tab: 'videos',
@@ -683,6 +780,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
             items: [
               {
                 label: 'Environment & Ecology',
+                href: '#sustainability-environment',
                 action: () => handleNav({
                   type: 'sustainability',
                   tab: 'environment',
@@ -690,6 +788,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
               },
               {
                 label: 'Corporate Social Responsibility (CSR)',
+                href: '#sustainability-csr',
                 action: () => handleNav({
                   type: 'sustainability',
                   tab: 'csr',
@@ -732,13 +831,17 @@ const [mobileAccordions, setMobileAccordions] = useState<
               <div className="overflow-hidden">
 
                 {section.items.map((item, index) => (
-                  <button
+                  <a
                     key={index}
-                    onClick={item.action}
-                    className="block w-full text-left py-2.5 px-2 text-sm text-neutral-600 hover:text-green-600 transition-colors"
+                    href={item.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      item.action();
+                    }}
+                    className="block w-full text-left py-2.5 px-2 text-sm text-neutral-600 hover:text-green-600 transition-colors cursor-pointer"
                   >
                     {item.label}
-                  </button>
+                  </a>
                 ))}
 
               </div>
@@ -748,12 +851,16 @@ const [mobileAccordions, setMobileAccordions] = useState<
         ))}
 
         {/* Contact Us */}
-        <button
-          onClick={() => handleNav({ type: 'contact' })}
-          className="w-full text-left py-6 text-sm font-semibold text-neutral-700 hover:text-green-600"
+        <a
+          href="#contact"
+          onClick={(e) => {
+            e.preventDefault();
+            handleNav({ type: 'contact' });
+          }}
+          className="block w-full text-left py-6 text-sm font-semibold text-neutral-700 hover:text-green-600 cursor-pointer"
         >
           Contact Us
-        </button>
+        </a>
 
       </div>
 
