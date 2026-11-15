@@ -135,6 +135,39 @@ const BUSINESS_SECTORS = [
   }
 ];
 
+const TRUST_PILLARS = [
+  {
+    icon: Layers,
+    title: 'Planned Development Approach',
+    description: 'Every project is carefully designed with structured planning and long-term development vision to ensure generational longevity.'
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Transparent Land & Project Process',
+    description: 'We emphasize clarity, verified documentation, and responsible development practices at every stage of plot demarcation.'
+  },
+  {
+    icon: Trees,
+    title: 'Future-Focused Communities',
+    description: 'Our developments are planned to support modern living, open breathing landscapes, hospitality, and sustainable lifestyle growth.'
+  },
+  {
+    icon: Users,
+    title: 'Customer-First Philosophy',
+    description: 'We prioritize trust, transparent communication, and long-term relationships with our valued buyers and strategic investors.'
+  },
+  {
+    icon: Building,
+    title: 'Multi-Sector Development Group',
+    description: 'Operating across real estate, resort, IT, media, textiles, and hospitality sectors under a unified corporate roadmap.'
+  },
+  {
+    icon: TrendingUp,
+    title: 'Growing Development Portfolio',
+    description: 'A diversified collection of residential townships, resort retreats, and commercial hospitality shaping future destinations.'
+  }
+];
+
 interface StatCounterProps {
   value: number;
   suffix?: string;
@@ -584,100 +617,56 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
 
 
       {/* 3. BUILDING TRUST THROUGH PLANNING, TRANSPARENCY, AND VISION */}
-       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-green-800 dark:text-white">
-            Building Trust Through Planning, Transparency, And Vision
-          </h2>
-          <div className="w-16 h-1 mx-auto mt-4 rounded-full" />
-        </div> 
+      <section className="relative py-16 sm:py-20 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-[#006838] dark:text-green-400 tracking-tight">
+              Building Trust Through Planning, Transparency, And Vision
+            </h2>
+            <div className="w-20 h-1 mx-auto mt-4 rounded-full bg-[#025c32] dark:bg-green-400" />
+          </div> 
 
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-50px' }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        > 
-          {/* Card 1 */}
-          <motion.div variants={itemVariants} className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow group">
-            <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              <Layers className="w-6 h-6" />
-            </div>
-            <h3 className="text-lg font-bold font-heading text-neutral-900 dark:text-white mb-2">
-              Planned Development Approach
-            </h3>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              Every project is carefully designed with structured planning and long-term development vision to ensure generational longevity.
-            </p>
+          {/* Frosted Green Glass Door Cards Grid */}
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-50px' }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          > 
+            {TRUST_PILLARS.map((pillar) => {
+              const IconComponent = pillar.icon;
+              return (
+                <motion.div 
+                  key={pillar.title}
+                  variants={itemVariants} 
+                  className="group relative p-7 rounded-2xl backdrop-blur-md bg-green-600/[0.04] hover:bg-green-600/[0.09] dark:bg-green-950/20 dark:hover:bg-green-950/40 border border-green-600/25 border-t-green-500/40 hover:border-[#044728] dark:hover:border-green-400 transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+                >
+                  {/* Green Glass Door Shine / Reflection Highlight */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-emerald-500/[0.04] to-transparent pointer-events-none rounded-2xl" />
+
+                  {/* Green Glass Door Handle Accent Line */}
+                  <div className="absolute right-3.5 top-8 bottom-8 w-[3.5px] rounded-full bg-green-600/30 group-hover:bg-[#006838] dark:group-hover:bg-green-400 transition-colors duration-300" />
+
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 rounded-xl bg-green-600/10 border border-green-600/25 backdrop-blur-sm text-[#006838] dark:text-green-400 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-[#035e33] group-hover:text-white group-hover:border-[#084629] transition-all duration-300">
+                      <IconComponent className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-lg font-bold font-heading text-neutral-900 dark:text-white group-hover:text-[#085833] dark:group-hover:text-green-400 transition-colors mb-2.5">
+                      {pillar.title}
+                    </h3>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed pr-3">
+                      {pillar.description}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
           </motion.div> 
-
-          {/* Card 2 */}
-          <motion.div variants={itemVariants} className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow group">
-            <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              <ShieldCheck className="w-6 h-6" />
-            </div>
-            <h3 className="text-lg font-bold font-heading text-neutral-900 dark:text-white mb-2">
-              Transparent Land & Project Process
-            </h3>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              We emphasize clarity, verified documentation, and responsible development practices at every stage of plot demarcation.
-            </p>
-          </motion.div>
-
-          {/* Card 3 */}
-         <motion.div variants={itemVariants} className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow group">
-            <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              <Trees className="w-6 h-6" />
-            </div>
-            <h3 className="text-lg font-bold font-heading text-neutral-900 dark:text-white mb-2">
-              Future-Focused Communities
-            </h3>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              Our developments are planned to support modern living, open breathing landscapes, hospitality, and sustainable lifestyle growth.
-            </p>
-          </motion.div> 
-
-          {/* Card 4 */}
-          <motion.div variants={itemVariants} className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow group">
-            <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              <Users className="w-6 h-6" />
-            </div>
-            <h3 className="text-lg font-bold font-heading text-neutral-900 dark:text-white mb-2">
-              Customer-First Philosophy
-            </h3>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              We prioritize trust, transparent communication, and long-term relationships with our valued buyers and strategic investors.
-            </p>
-          </motion.div> 
-
-          {/* Card 5 */}
-          <motion.div variants={itemVariants} className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow group">
-            <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              <Building className="w-6 h-6" />
-            </div>
-            <h3 className="text-lg font-bold font-heading text-neutral-900 dark:text-white mb-2">
-              Multi-Sector Development Group
-            </h3>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              Operating across real estate, resort, IT, media, textiles, and hospitality sectors under a unified corporate roadmap.
-            </p>
-          </motion.div>
-
-          {/* Card 6 */}
-          <motion.div variants={itemVariants} className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow group">
-            <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              <TrendingUp className="w-6 h-6" />
-            </div>
-            <h3 className="text-lg font-bold font-heading text-neutral-900 dark:text-white mb-2">
-              Growing Development Portfolio
-            </h3>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              A diversified collection of residential townships, resort retreats, and commercial hospitality shaping future destinations.
-            </p>
-          </motion.div>
-        </motion.div> 
-       </section>  
+        </div>
+      </section>
 
       {/* 4. AT A GLANCE BANNER SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
