@@ -38,7 +38,7 @@ export const InvestorView: React.FC<InvestorViewProps> = ({ onNavigate, onReques
           <h1 className="text-3xl sm:text-5xl font-extrabold font-heading text-white">
             Investment Relations
           </h1>
-          <p className="text-lg text-emerald-300 font-light">
+          <p className="text-lg text-green-300 font-light">
             Building Value Through Trust and Transparency
           </p>
         </div>
@@ -56,16 +56,16 @@ export const InvestorView: React.FC<InvestorViewProps> = ({ onNavigate, onReques
       {/* 3. Why Invest with Aasceend? (4 Pillars from video) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-emerald-600 dark:text-white">
+          <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-green-600 dark:text-white">
             Why Invest with Aasceend?
           </h2>
-          <div className="w-16 h-1 bg-emerald-600 mx-auto mt-3 rounded-full" />
+          <div className="w-16 h-1 bg-green-600 mx-auto mt-3 rounded-full" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           
           <div className="bg-white dark:bg-neutral-900 p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm flex items-start gap-4">
-            <div className="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 flex items-center justify-center shrink-0">
+            <div className="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-950/60 text-green-600 flex items-center justify-center shrink-0">
               <ShieldCheck className="w-6 h-6" />
             </div>
             <div>
@@ -79,7 +79,7 @@ export const InvestorView: React.FC<InvestorViewProps> = ({ onNavigate, onReques
           </div>
 
           <div className="bg-white dark:bg-neutral-900 p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm flex items-start gap-4">
-            <div className="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 flex items-center justify-center shrink-0">
+            <div className="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-950/60 text-green-600 flex items-center justify-center shrink-0">
               <Clock className="w-6 h-6" />
             </div>
             <div>
@@ -93,7 +93,7 @@ export const InvestorView: React.FC<InvestorViewProps> = ({ onNavigate, onReques
           </div>
 
           <div className="bg-white dark:bg-neutral-900 p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm flex items-start gap-4">
-            <div className="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 flex items-center justify-center shrink-0">
+            <div className="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-950/60 text-green-600 flex items-center justify-center shrink-0">
               <TrendingUp className="w-6 h-6" />
             </div>
             <div>
@@ -107,7 +107,7 @@ export const InvestorView: React.FC<InvestorViewProps> = ({ onNavigate, onReques
           </div>
 
           <div className="bg-white dark:bg-neutral-900 p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm flex items-start gap-4">
-            <div className="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 flex items-center justify-center shrink-0">
+            <div className="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-950/60 text-green-600 flex items-center justify-center shrink-0">
               <Scale className="w-6 h-6" />
             </div>
             <div>
@@ -126,7 +126,7 @@ export const InvestorView: React.FC<InvestorViewProps> = ({ onNavigate, onReques
       {/* 4. Our Vision for the Future */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6">
         <div className="bg-neutral-100 dark:bg-neutral-800/60 rounded-3xl p-8 sm:p-10 border border-neutral-200 dark:border-neutral-700 text-center space-y-3">
-          <h3 className="text-2xl font-bold font-heading text-emerald-600 dark:text-white">
+          <h3 className="text-2xl font-bold font-heading text-green-600 dark:text-white">
             Our Vision for the Future
           </h3>
           <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed max-w-2xl mx-auto">
@@ -137,33 +137,33 @@ export const InvestorView: React.FC<InvestorViewProps> = ({ onNavigate, onReques
 
       {/* 5. Contact Investor Relations Team Card */}
       <section className="max-w-3xl mx-auto px-4 sm:px-6">
-        <div className="bg-emerald-900 text-white rounded-3xl p-8 sm:p-10 shadow-xl border border-emerald-700 space-y-6">
+        <div className="bg-green-900 text-white rounded-3xl p-8 sm:p-10 shadow-xl border border-green-700 space-y-6">
           <div className="text-center">
             <h3 className="text-2xl font-bold font-heading text-white">
               Contact Our Investor Relations Team
             </h3>
-            <p className="text-xs text-emerald-200 mt-1">
+            <p className="text-xs text-green-200 mt-1">
               For partnership inquiries, joint venture opportunities, or to schedule a visit to our corporate office:
             </p>
           </div>
 
-          <div className="space-y-3 text-sm text-emerald-100 border-t border-emerald-800 pt-6">
+          <div className="space-y-3 text-sm text-green-100 border-t border-green-800 pt-6">
             <div className="flex items-start gap-3">
-              <MapPin className="w-4 h-4 text-emerald-400 shrink-0 mt-1" />
+              <MapPin className="w-4 h-4 text-green-400 shrink-0 mt-1" />
               <span>
                 <strong>Corporate Office:</strong> House 531 (Level 03), Road 11, Baridhara DOHS, Dhaka - 1206, Bangladesh.
               </span>
             </div>
 
             <div className="flex items-center gap-3">
-              <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
+              <Phone className="w-4 h-4 text-green-400 shrink-0" />
               <span>
                 <strong>Direct Inquiries:</strong> <span className="font-mono text-white">+88 01896 006310</span>
               </span>
             </div>
 
             <div className="flex items-center gap-3">
-              <Mail className="w-4 h-4 text-emerald-400 shrink-0" />
+              <Mail className="w-4 h-4 text-green-400 shrink-0" />
               <span>
                 <strong>Email:</strong> <span className="text-white">info@aasceend.com</span>
               </span>
@@ -173,7 +173,7 @@ export const InvestorView: React.FC<InvestorViewProps> = ({ onNavigate, onReques
           <div className="pt-2 text-center">
             <button
               onClick={onRequestCall}
-              className="bg-white hover:bg-emerald-50 text-emerald-950 font-bold px-6 py-3 rounded-xl text-xs transition-colors shadow-lg"
+              className="bg-white hover:bg-emerald-50 text-green-950 font-bold px-6 py-3 rounded-xl text-xs transition-colors shadow-lg"
             >
               Request Institutional Investor Deck
             </button>

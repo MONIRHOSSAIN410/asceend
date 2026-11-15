@@ -708,7 +708,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
             <button
               onClick={() => toggleMobileAccordion(section.id)}
               aria-expanded={mobileAccordions[section.id]}
-              className="w-full flex items-center justify-between py-5 text-left text-xs font-bold tracking-wide text-emerald-700"
+              className="w-full flex items-center justify-between py-5 text-left text-xs font-bold tracking-wide text-green-700"
             >
               <span>{section.title}</span>
 
@@ -735,7 +735,7 @@ const [mobileAccordions, setMobileAccordions] = useState<
                   <button
                     key={index}
                     onClick={item.action}
-                    className="block w-full text-left py-2.5 px-2 text-sm text-neutral-600 hover:text-emerald-600 transition-colors"
+                    className="block w-full text-left py-2.5 px-2 text-sm text-neutral-600 hover:text-green-600 transition-colors"
                   >
                     {item.label}
                   </button>

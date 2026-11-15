@@ -52,7 +52,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onNavigate, onRequestC
           {/* Left Form */}
           <div className="lg:col-span-6 bg-white dark:bg-neutral-900 rounded-3xl p-5 sm:p-8 border border-neutral-200 dark:border-neutral-800 shadow-sm space-y-6">
             <div>
-              <h3 className="text-xl font-bold font-heading text-emerald-600 dark:text-white">
+              <h3 className="text-xl font-bold font-heading text-green-600 dark:text-white">
                 Send Us a Direct Message
               </h3>
               <p className="text-xs text-neutral-500 mt-1">
@@ -62,7 +62,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onNavigate, onRequestC
 
             {submitted ? (
               <div className="py-12 text-center space-y-3">
-                <div className="w-14 h-14 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 flex items-center justify-center mx-auto">
+                <div className="w-14 h-14 rounded-full bg-green-100 dark:bg-green-950/60 text-green-600 flex items-center justify-center mx-auto">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
                 <h4 className="font-bold text-lg text-neutral-900 dark:text-white">Message Sent Successfully!</h4>
@@ -74,7 +74,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onNavigate, onRequestC
                     setSubmitted(false);
                     setMessage('');
                   }}
-                  className="text-xs font-semibold text-emerald-600 underline mt-2"
+                  className="text-xs font-semibold text-green-600 underline mt-2"
                 >
                   Send another inquiry
                 </button>
@@ -105,7 +105,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onNavigate, onRequestC
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Email"
-                    className="w-full px-4 py-2.5 text-sm rounded-xl border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                    className="w-full px-4 py-2.5 text-sm rounded-xl border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-green-500"
                   />
                 </div>
 
@@ -119,7 +119,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onNavigate, onRequestC
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Message"
-                    className="w-full px-4 py-2.5 text-sm rounded-xl border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-none"
+                    className="w-full px-4 py-2.5 text-sm rounded-xl border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-green-500 resize-none"
                   />
                 </div>
 
@@ -132,7 +132,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onNavigate, onRequestC
                     <div
                       className={`w-5 h-5 rounded border flex items-center justify-center transition-colors ${
                         captcha
-                          ? 'bg-emerald-600 border-emerald-600 text-white'
+                          ? 'bg-green-600 border-green-600 text-white'
                           : 'border-neutral-400 bg-white dark:bg-neutral-700'
                       }`}
                     >
@@ -152,7 +152,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onNavigate, onRequestC
                   disabled={!captcha}
                   className={`w-full py-3 rounded-xl text-xs font-bold transition-all shadow-md ${
                     captcha
-                      ? 'bg-emerald-600 hover:bg-emerald-700 text-white cursor-pointer hover:scale-[1.01]'
+                      ? 'bg-green-600 hover:bg-green-700 text-white cursor-pointer hover:scale-[1.01]'
                       : 'bg-neutral-300 dark:bg-neutral-800 text-neutral-500 cursor-not-allowed'
                   }`}
                 >
@@ -167,16 +167,16 @@ export const ContactView: React.FC<ContactViewProps> = ({ onNavigate, onRequestC
             
             {/* Direct Communication */}
             <div className="bg-white dark:bg-neutral-900 rounded-3xl p-6 sm:p-8 border border-neutral-200 dark:border-neutral-800 shadow-sm space-y-4">
-              <h3 className="text-lg font-bold font-heading text-emerald-600 dark:text-white border-b border-neutral-100 dark:border-neutral-800 pb-3">
+              <h3 className="text-lg font-bold font-heading text-green-600 dark:text-white border-b border-neutral-100 dark:border-neutral-800 pb-3">
                 Direct Communication
               </h3>
               
               <div className="space-y-3 text-xs sm:text-sm">
                 <a 
                   href="tel:+88028417084" 
-                  className="flex items-center gap-3 text-neutral-700 dark:text-neutral-300 hover:text-emerald-600 transition-colors"
+                  className="flex items-center gap-3 text-neutral-700 dark:text-neutral-300 hover:text-green-600 transition-colors"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 flex items-center justify-center shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-green-100 dark:bg-emerald-950/60 text-green-600 flex items-center justify-center shrink-0">
                     <Phone className="w-4 h-4" />
                   </div>
                   <span className="font-mono font-bold">+88 02 8417084</span>
@@ -184,19 +184,19 @@ export const ContactView: React.FC<ContactViewProps> = ({ onNavigate, onRequestC
 
                 <a 
                   href="tel:+8801896006310" 
-                  className="flex items-center gap-3 text-neutral-700 dark:text-neutral-300 hover:text-emerald-600 transition-colors"
+                  className="flex items-center gap-3 text-neutral-700 dark:text-neutral-300 hover:text-green-600 transition-colors"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 flex items-center justify-center shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-green-100 dark:bg-green-950/60 text-green-600 flex items-center justify-center shrink-0">
                     <Phone className="w-4 h-4" />
                   </div>
-                  <span className="font-mono font-bold text-emerald-700 dark:text-emerald-400">+88 01896 006310</span>
+                  <span className="font-mono font-bold text-green-700 dark:text-emerald-400">+88 01896 006310</span>
                 </a>
 
                 <a 
                   href="mailto:info@aasceend.com" 
-                  className="flex items-center gap-3 text-neutral-700 dark:text-neutral-300 hover:text-emerald-600 transition-colors"
+                  className="flex items-center gap-3 text-neutral-700 dark:text-neutral-300 hover:text-green-600 transition-colors"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 flex items-center justify-center shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-green-100 dark:bg-emerald-950/60 text-green-600 flex items-center justify-center shrink-0">
                     <Mail className="w-4 h-4" />
                   </div>
                   <span>info@aasceend.com</span>
@@ -219,7 +219,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onNavigate, onRequestC
             {/* Corporate Office */}
             <div className="bg-white dark:bg-neutral-900 rounded-3xl p-6 sm:p-8 border border-neutral-200 dark:border-neutral-800 shadow-sm space-y-3">
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 flex items-center justify-center shrink-0 mt-1">
+                <div className="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-green-950/60 text-green-600 flex items-center justify-center shrink-0 mt-1">
                   <MapPin className="w-4 h-4" />
                 </div>
                 <div>
@@ -275,7 +275,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ onNavigate, onRequestC
               href="https://www.google.com/maps/search/aasceend+group/@23.8140853,90.4135564,17z"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs text-emerald-600 dark:text-emerald-400 font-semibold hover:underline"
+              className="inline-flex items-center gap-1.5 text-xs text-green-600 dark:text-green-400 font-semibold hover:underline"
             >
               <span>Open in Google Maps</span>
               <ExternalLink className="w-3.5 h-3.5" />

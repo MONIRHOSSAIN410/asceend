@@ -58,14 +58,14 @@ export const LeadModal: React.FC<LeadModalProps> = ({
               alt="Aasceend" 
               className="h-7 w-auto object-contain"
             />
-            <div className="h-5 w-px bg-emerald-600 hidden sm:block" />
+            <div className="h-5 w-px bg-green-600 hidden sm:block" />
             <h3 className="font-heading font-bold text-sm sm:text-base">
               {type === 'callback' ? 'Request Immediate Call Back' : 'Download Project Brochure'}
             </h3>
           </div>
           <button 
             onClick={handleReset}
-            className="text-white/80 hover:text-white p-1 rounded-lg hover:bg-emerald-700 transition-colors"
+            className="text-white/80 hover:text-white p-1 rounded-lg hover:bg-green-700 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -75,7 +75,7 @@ export const LeadModal: React.FC<LeadModalProps> = ({
         <div className="p-6">
           {submitted ? (
             <div className="text-center py-8 space-y-4">
-              <div className="w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 flex items-center justify-center mx-auto">
+              <div className="w-16 h-16 rounded-full bg-green-100 dark:bg-emerald-950/60 text-green-600 flex items-center justify-center mx-auto">
                 <CheckCircle2 className="w-10 h-10" />
               </div>
               <h4 className="text-xl font-bold font-heading text-neutral-900 dark:text-white">
@@ -95,7 +95,7 @@ export const LeadModal: React.FC<LeadModalProps> = ({
                       e.preventDefault();
                       alert('Simulated: Downloading Official ' + project + ' Presentation (PDF, 8.4 MB)');
                     }}
-                    className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-4 py-2 rounded-xl text-sm transition-colors shadow-md"
+                    className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-4 py-2 rounded-xl text-sm transition-colors shadow-md"
                   >
                     <Download className="w-4 h-4" />
                     <span>Download PDF Brochure (8.4 MB)</span>
@@ -128,7 +128,7 @@ export const LeadModal: React.FC<LeadModalProps> = ({
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="e.g. Khondokar Rahman"
-                  className="w-full px-3.5 py-2 text-sm rounded-xl border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  className="w-full px-3.5 py-2 text-sm rounded-xl border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-green-500"
                 />
               </div>
 
@@ -143,7 +143,7 @@ export const LeadModal: React.FC<LeadModalProps> = ({
                     value={mobile}
                     onChange={(e) => setMobile(e.target.value)}
                     placeholder="+88 017..."
-                    className="w-full px-3.5 py-2 text-sm rounded-xl border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                    className="w-full px-3.5 py-2 text-sm rounded-xl border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-green-500"
                   />
                 </div>
 
@@ -156,7 +156,7 @@ export const LeadModal: React.FC<LeadModalProps> = ({
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="name@example.com"
-                    className="w-full px-3.5 py-2 text-sm rounded-xl border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                    className="w-full px-3.5 py-2 text-sm rounded-xl border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-green-500"
                   />
                 </div>
               </div>
@@ -168,7 +168,7 @@ export const LeadModal: React.FC<LeadModalProps> = ({
                 <select
                   value={project}
                   onChange={(e) => setProject(e.target.value)}
-                  className="w-full px-3.5 py-2 text-sm rounded-xl border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  className="w-full px-3.5 py-2 text-sm rounded-xl border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-green-500"
                 >
                   {PROJECTS.map((p) => (
                     <option key={p.id} value={p.name}>
@@ -199,7 +199,7 @@ export const LeadModal: React.FC<LeadModalProps> = ({
                 <div className="flex items-center gap-3">
                   <div className={`w-6 h-6 rounded border flex items-center justify-center transition-colors ${
                     captchaVerified 
-                      ? 'bg-emerald-600 border-emerald-600 text-white' 
+                      ? 'bg-emerald-600 border-green-600 text-white' 
                       : 'border-neutral-400 bg-white dark:bg-neutral-700'
                   }`}>
                     {captchaVerified && <CheckCircle2 className="w-4 h-4" />}
@@ -218,7 +218,7 @@ export const LeadModal: React.FC<LeadModalProps> = ({
                 disabled={!captchaVerified}
                 className={`w-full py-2.5 rounded-xl text-sm font-bold flex items-center justify-center gap-2 transition-all shadow-md ${
                   captchaVerified
-                    ? 'bg-emerald-600 hover:bg-emerald-700 text-white cursor-pointer hover:scale-[1.01]'
+                    ? 'bg-green-600 hover:bg-green-700 text-white cursor-pointer hover:scale-[1.01]'
                     : 'bg-neutral-300 dark:bg-neutral-800 text-neutral-500 cursor-not-allowed'
                 }`}
               >

@@ -93,7 +93,7 @@ export const ProjectDetailView: React.FC<ProjectDetailViewProps> = ({
                 {/* Logo Header */}
                 <div className="flex items-center gap-3.5 sm:gap-4 pb-4 mb-4 border-b border-neutral-200 dark:border-neutral-800">
                   {project.projectLogoUrl ? (
-                    <div className="h-14 sm:h-18 max-w-[140px] sm:max-w-[180px] flex items-center justify-center shrink-0">
+                    <div className="h-14 sm:h-18 max-w-35 sm:max-w-45 flex items-center justify-center shrink-0">
                       <img
                         src={project.projectLogoUrl}
                         alt={`${project.name} Logo`}

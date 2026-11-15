@@ -135,6 +135,39 @@ const BUSINESS_SECTORS = [
   }
 ];
 
+const TRUST_PILLARS = [
+  {
+    icon: Layers,
+    title: 'Planned Development Approach',
+    description: 'Every project is carefully designed with structured planning and long-term development vision to ensure generational longevity.'
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Transparent Land & Project Process',
+    description: 'We emphasize clarity, verified documentation, and responsible development practices at every stage of plot demarcation.'
+  },
+  {
+    icon: Trees,
+    title: 'Future-Focused Communities',
+    description: 'Our developments are planned to support modern living, open breathing landscapes, hospitality, and sustainable lifestyle growth.'
+  },
+  {
+    icon: Users,
+    title: 'Customer-First Philosophy',
+    description: 'We prioritize trust, transparent communication, and long-term relationships with our valued buyers and strategic investors.'
+  },
+  {
+    icon: Building,
+    title: 'Multi-Sector Development Group',
+    description: 'Operating across real estate, resort, IT, media, textiles, and hospitality sectors under a unified corporate roadmap.'
+  },
+  {
+    icon: TrendingUp,
+    title: 'Growing Development Portfolio',
+    description: 'A diversified collection of residential townships, resort retreats, and commercial hospitality shaping future destinations.'
+  }
+];
+
 interface StatCounterProps {
   value: number;
   suffix?: string;
@@ -385,7 +418,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
       
 
 
-<section className="bg-neutral-100/80 dark:bg-neutral-900/50 py-16 lg:py-20 border-y border-neutral-200 dark:border-neutral-800">
+<section className="bg-neutral-100/80 dark:bg-neutral-900/50 py-16 lg:py-20 border-y border-neutral-200 dark:border-neutral-800 overflow-hidden">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
     {/* Section Header */}
@@ -395,7 +428,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
           FEATURED PROJECTS
         </h2>
 
-        <p className="text-sm text-emerald-950/80 dark:text-emerald-100/80 mt-2 max-w-2xl leading-relaxed">
+        <p className="text-sm text-green-950/80 dark:text-green-100/80 mt-2 max-w-2xl leading-relaxed">
           Modern master-planned residential townships, scenic riverfront
           communities, and luxury 5-star hotel and resort destinations
           across prime corridors in Bangladesh.
@@ -403,21 +436,21 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
       </div>
 
       {/* Filter Tabs */}
-      <div className="flex flex-wrap items-center p-1 bg-white dark:bg-neutral-800 rounded-xl border border-emerald-200 dark:border-green-800 shadow-sm text-xs shrink-0 self-start md:self-auto gap-1">
+      <div className="flex flex-wrap items-center p-1 bg-white dark:bg-neutral-800 rounded-xl border border-green-200 dark:border-green-800 shadow-sm text-xs shrink-0 self-start md:self-auto gap-1">
 
         <button
           onClick={() => setProjectFilter("all")}
           className={`px-4 py-2 rounded-lg font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
             projectFilter === "all"
-              ? "bg-[#006838] text-white shadow-sm"
-              : "text-green-900 dark:text-green-200 hover:text-[#006838] hover:bg-emerald-50 dark:hover:bg-neutral-700"
+              ? "bg-[#0a502f] text-white shadow-sm"
+              : "text-green-900 dark:text-green-200 hover:text-[#125e3a] hover:bg-emerald-50 dark:hover:bg-neutral-700"
           }`}
         >
           <span>All Projects</span>
           <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-mono font-bold ${
             projectFilter === "all"
               ? "bg-white/20 text-white"
-              : "bg-emerald-100 dark:bg-neutral-700 text-green-800 dark:text-green-300"
+              : "bg-green-100 dark:bg-neutral-700 text-green-800 dark:text-green-300"
           }`}>
             {PROJECTS.length}
           </span>
@@ -428,14 +461,14 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
           className={`px-4 py-2 rounded-lg font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
             projectFilter === "township"
               ? "bg-[#006838] text-white shadow-sm"
-              : "text-emerald-900 dark:text-green-200 hover:text-[#006838] hover:bg-emerald-50 dark:hover:bg-neutral-700"
+              : "text-green-900 dark:text-green-200 hover:text-[#1a412f] hover:bg-green-50 dark:hover:bg-neutral-700"
           }`}
         >
           <span>Townships</span>
           <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-mono font-bold ${
             projectFilter === "township"
               ? "bg-white/20 text-white"
-              : "bg-emerald-100 dark:bg-neutral-700 text-green-800 dark:text-green-300"
+              : "bg-green-100 dark:bg-neutral-700 text-green-800 dark:text-green-300"
           }`}>
             {PROJECTS.filter((p) => p.category === "township").length}
           </span>
@@ -445,8 +478,8 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
           onClick={() => setProjectFilter("hospitality")}
           className={`px-4 py-2 rounded-lg font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
             projectFilter === "hospitality"
-              ? "bg-[#006838] text-white shadow-sm"
-              : "text-green-900 dark:text-green-200 hover:text-[#006838] hover:bg-emerald-50 dark:hover:bg-neutral-700"
+              ? "bg-[#16613e] text-white shadow-sm"
+              : "text-green-900 dark:text-green-200 hover:text-[#115c39] hover:bg-green-50 dark:hover:bg-neutral-700"
           }`}
         >
           <span>Resorts & Hotels</span>
@@ -469,16 +502,30 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
     <AnimatePresence mode="wait">
       <motion.div
         key={projectFilter}
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -16 }}
-        transition={{ duration: 0.3, ease: "easeOut" }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.25 }}
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
       >
-        {filteredProjects.map((proj) => {
+        {filteredProjects.map((proj, idx) => {
+          const mod = idx % 3;
+          // mod 0: left (-70px), mod 1: bottom (70px), mod 2: right (70px)
+          const initialX = mod === 0 ? -70 : mod === 2 ? 70 : 0;
+          const initialY = mod === 1 ? 70 : 0;
+
           return (
-            <div
+            <motion.div
               key={proj.id}
+              initial={{ opacity: 0, x: initialX, y: initialY }}
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{
+                duration: 0.65,
+                ease: [0.22, 1, 0.36, 1],
+                delay: (idx % 3) * 0.1
+              }}
+              whileHover={{ y: -6, transition: { duration: 0.25, ease: "easeOut" } }}
               onClick={() =>
                 onNavigate({ type: "project", projectId: proj.id })
               }
@@ -486,13 +533,12 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
                 bg-white dark:bg-neutral-900
                 rounded-2xl overflow-hidden
                 border border-green-600/30
-                hover:border-[#006838]
+                hover:border-[#0f7043]
                 shadow-sm hover:shadow-xl
                 hover:shadow-emerald-950/10
-                transition-all duration-300
+                transition-colors duration-300
                 cursor-pointer group
                 flex flex-col
-                hover:-translate-y-1.5
               "
             >
 
@@ -553,7 +599,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
                       w-full
                       font-extrabold
                       font-heading
-                      text-[#006838]
+                      text-[#143123]
                       dark:text-green-400
                       tracking-tight
                       text-center
@@ -571,7 +617,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
                 </div>
 
               </div>
-            </div>
+            </motion.div>
           );
         })}
       </motion.div>
@@ -584,100 +630,56 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
 
 
       {/* 3. BUILDING TRUST THROUGH PLANNING, TRANSPARENCY, AND VISION */}
-       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-green-800 dark:text-white">
-            Building Trust Through Planning, Transparency, And Vision
-          </h2>
-          <div className="w-16 h-1 mx-auto mt-4 rounded-full" />
-        </div> 
+      <section className="relative py-16 sm:py-20 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-[#006838] dark:text-green-400 tracking-tight">
+              Building Trust Through Planning, Transparency, And Vision
+            </h2>
+            <div className="w-20 h-1 mx-auto mt-4 rounded-full text-white" />
+          </div> 
 
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-50px' }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        > 
-          {/* Card 1 */}
-          <motion.div variants={itemVariants} className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow group">
-            <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              <Layers className="w-6 h-6" />
-            </div>
-            <h3 className="text-lg font-bold font-heading text-neutral-900 dark:text-white mb-2">
-              Planned Development Approach
-            </h3>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              Every project is carefully designed with structured planning and long-term development vision to ensure generational longevity.
-            </p>
+          {/* Frosted Green Glass Door Cards Grid */}
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-50px' }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          > 
+            {TRUST_PILLARS.map((pillar) => {
+              const IconComponent = pillar.icon;
+              return (
+                <motion.div 
+                  key={pillar.title}
+                  variants={itemVariants} 
+                  className="group relative p-7 rounded-2xl backdrop-blur-md bg-green-600/4 hover:bg-green-600/9 dark:bg-green-950/20 dark:hover:bg-green-950/40 border border-green-600/25 border-t-green-500/40 hover:border-[#044728] dark:hover:border-green-400 transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+                >
+                  {/* Green Glass Door Shine / Reflection Highlight */}
+                  <div className="absolute inset-0 bg-linear-to-br from-white/40 via-green-500/4 to-transparent pointer-events-none rounded-2xl" />
+
+                  {/* Green Glass Door Handle Accent Line */}
+                  <div className="absolute right-3.5 top-8 bottom-8 w-[3.5px] rounded-full bg-green-600/30 group-hover:bg-[#006838] dark:group-hover:bg-green-400 transition-colors duration-300" />
+
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 rounded-xl bg-green-600/10 border border-green-600/25 backdrop-blur-sm text-[#006838] dark:text-green-400 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-[#035e33] group-hover:text-white group-hover:border-[#074629dc] transition-all duration-300">
+                      <IconComponent className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-lg font-bold font-heading text-neutral-900 dark:text-white group-hover:text-[#085833] dark:group-hover:text-green-400 transition-colors mb-2.5">
+                      {pillar.title}
+                    </h3>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed pr-3">
+                      {pillar.description}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
           </motion.div> 
-
-          {/* Card 2 */}
-          <motion.div variants={itemVariants} className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow group">
-            <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              <ShieldCheck className="w-6 h-6" />
-            </div>
-            <h3 className="text-lg font-bold font-heading text-neutral-900 dark:text-white mb-2">
-              Transparent Land & Project Process
-            </h3>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              We emphasize clarity, verified documentation, and responsible development practices at every stage of plot demarcation.
-            </p>
-          </motion.div>
-
-          {/* Card 3 */}
-         <motion.div variants={itemVariants} className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow group">
-            <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              <Trees className="w-6 h-6" />
-            </div>
-            <h3 className="text-lg font-bold font-heading text-neutral-900 dark:text-white mb-2">
-              Future-Focused Communities
-            </h3>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              Our developments are planned to support modern living, open breathing landscapes, hospitality, and sustainable lifestyle growth.
-            </p>
-          </motion.div> 
-
-          {/* Card 4 */}
-          <motion.div variants={itemVariants} className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow group">
-            <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              <Users className="w-6 h-6" />
-            </div>
-            <h3 className="text-lg font-bold font-heading text-neutral-900 dark:text-white mb-2">
-              Customer-First Philosophy
-            </h3>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              We prioritize trust, transparent communication, and long-term relationships with our valued buyers and strategic investors.
-            </p>
-          </motion.div> 
-
-          {/* Card 5 */}
-          <motion.div variants={itemVariants} className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow group">
-            <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              <Building className="w-6 h-6" />
-            </div>
-            <h3 className="text-lg font-bold font-heading text-neutral-900 dark:text-white mb-2">
-              Multi-Sector Development Group
-            </h3>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              Operating across real estate, resort, IT, media, textiles, and hospitality sectors under a unified corporate roadmap.
-            </p>
-          </motion.div>
-
-          {/* Card 6 */}
-          <motion.div variants={itemVariants} className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow group">
-            <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              <TrendingUp className="w-6 h-6" />
-            </div>
-            <h3 className="text-lg font-bold font-heading text-neutral-900 dark:text-white mb-2">
-              Growing Development Portfolio
-            </h3>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              A diversified collection of residential townships, resort retreats, and commercial hospitality shaping future destinations.
-            </p>
-          </motion.div>
-        </motion.div> 
-       </section>  
+        </div>
+      </section>
 
       {/* 4. AT A GLANCE BANNER SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -687,7 +689,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative rounded-3xl overflow-hidden shadow-2xl border border-emerald-900/60 min-h-[380px] md:min-h-[420px] lg:min-h-[450px] flex items-center"
+          className="relative rounded-3xl overflow-hidden shadow-2xl border border-green-900/60 min-h-95 md:min-h-105 lg:min-h-112.5 flex items-center"
         >
           {/* Background Image (Clean Cinematic Banner) */}
           <img 
@@ -834,7 +836,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onRequestCall })
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
         {/* Section Header Matching Other Sections */}
         <div className="text-center mb-8 sm:mb-10">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-[#006838] dark:text-emerald-400 uppercase tracking-wider">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-[#006838] dark:text-green-400 uppercase tracking-wider">
             Our Business Sectors
           </h2>
           <div className="w-12 h-1 bg-[#ffffff] mx-auto mt-2.5 rounded-full" />

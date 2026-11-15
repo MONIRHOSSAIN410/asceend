@@ -129,7 +129,7 @@ export const AccreditationsView: React.FC<AccreditationsViewProps> = ({ onNaviga
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
-            className="text-base sm:text-lg text-emerald-200/90 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]"
+            className="text-base sm:text-lg text-green-200/90 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]"
           >
             Recognized by national housing regulators, land development associations, and civic planning authorities across Bangladesh.
           </motion.p>
@@ -149,7 +149,7 @@ export const AccreditationsView: React.FC<AccreditationsViewProps> = ({ onNaviga
       {/* 2. ACCREDITATIONS CARDS GRID */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
-          <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-emerald-600 dark:text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-green-600 dark:text-white tracking-tight">
             Institutional Certifications
           </h2>
           <p className="text-sm text-neutral-600 dark:text-neutral-400">
@@ -167,13 +167,13 @@ export const AccreditationsView: React.FC<AccreditationsViewProps> = ({ onNaviga
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.08 }}
-                className="bg-white dark:bg-neutral-900 p-8 rounded-3xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md hover:border-emerald-500/40 transition-all flex flex-col justify-between space-y-5 group"
+                className="bg-white dark:bg-neutral-900 p-8 rounded-3xl border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md hover:border-green-500/40 transition-all flex flex-col justify-between space-y-5 group"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 rounded-2xl bg-green-100 dark:bg-green-950/60 text-green-600 dark:text-green-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-lg font-bold font-heading text-neutral-900 dark:text-white mb-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                  <h3 className="text-lg font-bold font-heading text-neutral-900 dark:text-white mb-2 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
@@ -182,7 +182,7 @@ export const AccreditationsView: React.FC<AccreditationsViewProps> = ({ onNaviga
                 </div>
 
                 <div className="pt-4 border-t border-neutral-100 dark:border-neutral-800 flex items-center justify-between text-xs">
-                  <span className="font-semibold text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5">
+                  <span className="font-semibold text-green-600 dark:text-green-400 flex items-center gap-1.5">
                     <CheckCircle2 className="w-4 h-4" />
                     {item.status}
                   </span>
@@ -232,19 +232,19 @@ export const AccreditationsView: React.FC<AccreditationsViewProps> = ({ onNaviga
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 max-w-3xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/15">
-              <div className="text-2xl font-bold font-mono text-emerald-400">BLDA</div>
+              <div className="text-2xl font-bold font-mono text-green-400">BLDA</div>
               <div className="text-xs text-neutral-300 mt-1 font-medium">Certified Member</div>
             </div>
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/15">
-              <div className="text-2xl font-bold font-mono text-emerald-400">RAJUK</div>
+              <div className="text-2xl font-bold font-mono text-green-400">RAJUK</div>
               <div className="text-xs text-neutral-300 mt-1 font-medium">DAP Compliant</div>
             </div>
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/15">
-              <div className="text-2xl font-bold font-mono text-emerald-400">DoE</div>
+              <div className="text-2xl font-bold font-mono text-green-400">DoE</div>
               <div className="text-xs text-neutral-300 mt-1 font-medium">EIA Approved</div>
             </div>
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/15">
-              <div className="text-2xl font-bold font-mono text-emerald-400">NHA</div>
+              <div className="text-2xl font-bold font-mono text-green-400">NHA</div>
               <div className="text-xs text-neutral-300 mt-1 font-medium">Housing Clearance</div>
             </div>
           </div>
@@ -254,7 +254,7 @@ export const AccreditationsView: React.FC<AccreditationsViewProps> = ({ onNaviga
       {/* 4. VERIFICATION CALL TO ACTION */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <div className="bg-white dark:bg-neutral-900 rounded-3xl p-8 sm:p-10 border border-neutral-200 dark:border-neutral-800 shadow-sm space-y-4">
-          <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 rounded-2xl mx-auto flex items-center justify-center">
+          <div className="w-12 h-12 bg-green-100 dark:bg-emerald-950/60 text-green-600 dark:text-green-400 rounded-2xl mx-auto flex items-center justify-center">
             <Scale className="w-6 h-6" />
           </div>
           <h3 className="text-2xl font-bold font-heading text-neutral-900 dark:text-white">
@@ -266,7 +266,7 @@ export const AccreditationsView: React.FC<AccreditationsViewProps> = ({ onNaviga
           <div className="pt-2">
             <button
               onClick={onRequestCall}
-              className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-7 py-3 rounded-xl text-xs sm:text-sm transition-all shadow-md hover:scale-105 active:scale-95 cursor-pointer inline-flex items-center gap-2"
+              className="bg-green-600 hover:bg-green-700 text-white font-bold px-7 py-3 rounded-xl text-xs sm:text-sm transition-all shadow-md hover:scale-105 active:scale-95 cursor-pointer inline-flex items-center gap-2"
             >
               <span>Book In-Office Document Review</span>
               <ArrowRight className="w-4 h-4" />
