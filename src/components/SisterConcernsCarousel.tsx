@@ -196,7 +196,7 @@ export const SisterConcernsCarousel: React.FC<SisterConcernsCarouselProps> = ({
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 lg:pb-28 select-none">
       <div className="text-center mb-8">
-        <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#006838] uppercase tracking-wider">
+        <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#215c41] uppercase tracking-wider">
           SISTER CONCERNS
         </h2>
         <div className="w-12 h-1 bg-[#fdfdfd] mx-auto mt-2 rounded-full" />
@@ -223,7 +223,7 @@ export const SisterConcernsCarousel: React.FC<SisterConcernsCarouselProps> = ({
           type="button"
           onClick={handleNext}
           aria-label="Next slide"
-          className="absolute -right-1 sm:-right-3 top-1/2 -translate-y-1/2 z-30 w-7 sm:w-8 h-10 sm:h-12 bg-[#006838] hover:bg-emerald-700 text-white rounded-md flex items-center justify-center shadow-lg transition-transform active:scale-90 cursor-pointer"
+          className="absolute -right-1 sm:-right-3 top-1/2 -translate-y-1/2 z-30 w-7 sm:w-8 h-10 sm:h-12 bg-[#1a5a3c] hover:bg-green-700 text-white rounded-md flex items-center justify-center shadow-lg transition-transform active:scale-90 cursor-pointer"
         >
           <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" strokeWidth={2.5} />
         </button>
@@ -264,7 +264,7 @@ export const SisterConcernsCarousel: React.FC<SisterConcernsCarouselProps> = ({
                 <div
                   onClick={() => handleCardClick(concern)}
                   title={`${concern.name} · ${concern.sector}`}
-                  className="bg-white rounded-2xl border border-neutral-200/90 shadow-xs hover:shadow-md hover:border-emerald-500/60 transition-all duration-300 h-28 sm:h-32 flex items-center justify-center px-4 py-3 sm:px-5 sm:py-3.5 group hover:-translate-y-1 relative cursor-pointer"
+                  className="bg-white rounded-2xl border border-neutral-200/90 shadow-xs hover:shadow-md hover:border-green-500/60 transition-all duration-300 h-28 sm:h-32 flex items-center justify-center px-4 py-3 sm:px-5 sm:py-3.5 group hover:-translate-y-1 relative cursor-pointer"
                 >
                   <div className="w-full h-full flex items-center justify-center">
                     <img

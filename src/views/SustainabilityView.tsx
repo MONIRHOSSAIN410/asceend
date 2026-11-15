@@ -47,8 +47,8 @@ export const SustainabilityView: React.FC<SustainabilityViewProps> = ({
             onClick={() => setActiveTab('environment')}
             className={`flex-1 py-2.5 rounded-xl text-xs font-bold transition-all ${
               activeTab === 'environment'
-                ? 'bg-emerald-600 text-white shadow-md'
-                : 'text-neutral-600 dark:text-neutral-300 hover:text-emerald-600'
+                ? 'bg-green-600 text-white shadow-md'
+                : 'text-neutral-600 dark:text-neutral-300 hover:text-green-600'
             }`}
           >
             Environment & Ecology
@@ -57,8 +57,8 @@ export const SustainabilityView: React.FC<SustainabilityViewProps> = ({
             onClick={() => setActiveTab('csr')}
             className={`flex-1 py-2.5 rounded-xl text-xs font-bold transition-all ${
               activeTab === 'csr'
-                ? 'bg-emerald-600 text-white shadow-md'
-                : 'text-neutral-600 dark:text-neutral-300 hover:text-emerald-600'
+                ? 'bg-green-600 text-white shadow-md'
+                : 'text-neutral-600 dark:text-neutral-300 hover:text-green-600'
             }`}
           >
             Corporate Social Responsibility (CSR)
@@ -73,10 +73,10 @@ export const SustainabilityView: React.FC<SustainabilityViewProps> = ({
           <section className="max-w-4xl mx-auto px-4 sm:px-6">
             <div className="bg-white dark:bg-neutral-900 rounded-3xl p-8 sm:p-12 border border-neutral-200 dark:border-neutral-800 shadow-sm space-y-6 text-neutral-700 dark:text-neutral-300 text-sm sm:text-base leading-relaxed">
               <div className="text-center pb-2">
-                <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-emerald-600 dark:text-white">
+                <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-green-600 dark:text-white">
                   Our Philosophy: The Balance of Progress
                 </h2>
-                <div className="w-12 h-1 bg-emerald-600 mx-auto mt-3 rounded-full" />
+                <div className="w-12 h-1 bg-green-600 mx-auto mt-3 rounded-full" />
               </div>
 
               <p>
@@ -99,7 +99,7 @@ export const SustainabilityView: React.FC<SustainabilityViewProps> = ({
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent flex items-end p-8">
                 <div className="text-white max-w-xl">
-                  <span className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest">
+                  <span className="text-xs font-mono font-bold text-green-400 uppercase tracking-widest">
                     Green Infrastructure
                   </span>
                   <h3 className="text-xl font-bold font-heading text-white mt-1">
@@ -113,7 +113,7 @@ export const SustainabilityView: React.FC<SustainabilityViewProps> = ({
           {/* Strategic Objectives (From Video) */}
           <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
-              <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-emerald-600 dark:text-white">
+              <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-green-600 dark:text-white">
                 Strategic Objectives
               </h2>
               <p className="text-xs sm:text-sm text-neutral-500 mt-1">
@@ -134,7 +134,7 @@ export const SustainabilityView: React.FC<SustainabilityViewProps> = ({
                   key={idx}
                   className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm space-y-2"
                 >
-                  <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-bold text-sm">
+                  <div className="flex items-center gap-2 text-green-600 dark:text-green-400 font-bold text-sm">
                     <CheckCircle2 className="w-4 h-4 shrink-0" />
                     <span>{obj.title}</span>
                   </div>
@@ -148,7 +148,7 @@ export const SustainabilityView: React.FC<SustainabilityViewProps> = ({
 
           {/* Track Record of Innovation */}
           <section className="max-w-4xl mx-auto px-4 sm:px-6">
-            <div className="bg-emerald-900 text-white rounded-3xl p-8 sm:p-10 shadow-xl border border-emerald-700 text-center space-y-4">
+            <div className="bg-green-900 text-white rounded-3xl p-8 sm:p-10 shadow-xl border border-green-700 text-center space-y-4">
               <h3 className="text-2xl font-bold font-heading text-white">
                 A Track Record of Innovation
               </h3>
@@ -163,7 +163,7 @@ export const SustainabilityView: React.FC<SustainabilityViewProps> = ({
         /* CSR TAB */
         <div className="max-w-5xl mx-auto px-4 sm:px-6 space-y-12">
           <div className="bg-white dark:bg-neutral-900 rounded-3xl p-8 sm:p-12 border border-neutral-200 dark:border-neutral-800 shadow-sm space-y-6 text-neutral-700 dark:text-neutral-300 leading-relaxed">
-            <h2 className="text-2xl font-bold font-heading text-emerald-600 dark:text-white">
+            <h2 className="text-2xl font-bold font-heading text-green-600 dark:text-white">
               Aasceend Foundation: Impacting Lives Across Bangladesh
             </h2>
             <p>
@@ -172,7 +172,7 @@ export const SustainabilityView: React.FC<SustainabilityViewProps> = ({
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
               <div className="p-6 rounded-2xl bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 space-y-2">
-                <HeartHandshake className="w-8 h-8 text-emerald-600 mb-2" />
+                <HeartHandshake className="w-8 h-8 text-green-600 mb-2" />
                 <h4 className="font-bold text-base text-neutral-900 dark:text-white">Education For Every Child</h4>
                 <p className="text-xs text-neutral-500 dark:text-neutral-400">
                   Providing full scholarships, backpacks, and STEM tutoring to children from underserved families in Narayanganj and Munshiganj.
@@ -180,7 +180,7 @@ export const SustainabilityView: React.FC<SustainabilityViewProps> = ({
               </div>
 
               <div className="p-6 rounded-2xl bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 space-y-2">
-                <Sun className="w-8 h-8 text-emerald-600 mb-2" />
+                <Sun className="w-8 h-8 text-green-600 mb-2" />
                 <h4 className="font-bold text-base text-neutral-900 dark:text-white">Healthcare & Emergency Relief</h4>
                 <p className="text-xs text-neutral-500 dark:text-neutral-400">
                   Annual free medical health camps offering basic diagnostic tests, eye surgeries, and essential medicines to over 10,000 residents.

@@ -148,7 +148,7 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate, onRequestCall 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             
             <div className="bg-white dark:bg-neutral-900 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm text-center">
-              <div className="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-green-950/60 text-green-600 flex items-center justify-center mx-auto mb-3">
+              <div className="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-950/60 text-green-600 flex items-center justify-center mx-auto mb-3">
                 <Heart className="w-6 h-6" />
               </div>
               <h3 className="font-bold text-base text-neutral-900 dark:text-white mb-2">

@@ -116,13 +116,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onRequestCall }) => 
 
           {/* Get In Touch - Offices Column */}
           <div className="lg:col-span-8 space-y-6">
-            <h4 className="text-lg font-bold font-heading text-white border-b border-emerald-800 pb-2">
+            <h4 className="text-lg font-bold font-heading text-white border-b border-green-800 pb-2">
               Get In Touch
             </h4>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Corporate Office */}
-              <div className="bg-green-900/40 p-4 rounded-xl border border-emerald-800/60 space-y-2">
+              <div className="bg-green-900/40 p-4 rounded-xl border border-green-800/60 space-y-2">
                 <div className="flex items-start gap-2.5">
                   <MapPin className="w-4 h-4 text-green-400 mt-1 shrink-0" />
                   <div>
@@ -180,7 +180,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onRequestCall }) => 
         </div>
 
         {/* Bottom Legal Notice */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-emerald-300">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-green-300">
           <div>
             © 2026 <span className="font-semibold text-white">Aasceend Group</span> | All rights reserved
           </div>

@@ -59,8 +59,8 @@ export const LeaderView: React.FC<LeaderViewProps> = ({
               onClick={() => onNavigate({ type: 'leader', leaderId: leader.id })}
               className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
                 leader.id === currentLeader.id
-                  ? 'bg-emerald-600 text-white shadow-md'
-                  : 'text-neutral-600 dark:text-neutral-300 hover:text-emerald-600'
+                  ? 'bg-green-600 text-white shadow-md'
+                  : 'text-neutral-600 dark:text-neutral-300 hover:text-green-600'
               }`}
             >
               {leader.id === 'deputy-md' ? 'Khandoker Moinur Rahman' : leader.name}
@@ -115,7 +115,7 @@ export const LeaderView: React.FC<LeaderViewProps> = ({
               <h2 className="text-xl font-extrabold font-heading text-neutral-900 dark:text-white">
                 {currentLeader.id === 'deputy-md' ? 'Khandoker Moinur Rahman' : currentLeader.name}
               </h2>
-              <p className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 leading-snug">
+              <p className="text-xs font-semibold text-green-600 dark:text-green-400 leading-snug">
                 {currentLeader.title}
               </p>
               <p className="text-xs text-neutral-500 font-medium">
@@ -139,7 +139,7 @@ export const LeaderView: React.FC<LeaderViewProps> = ({
                 href="https://x.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-8 h-8 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-emerald-600 hover:text-white flex items-center justify-center text-neutral-600 dark:text-neutral-300 text-xs font-bold transition-colors"
+                className="w-8 h-8 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-green-600 hover:text-white flex items-center justify-center text-neutral-600 dark:text-neutral-300 text-xs font-bold transition-colors"
                 aria-label="X"
               >
                 X
@@ -148,14 +148,14 @@ export const LeaderView: React.FC<LeaderViewProps> = ({
                 href="https://wa.me/8801896006310"
                 target="_blank"
                 rel="noreferrer"
-                className="w-8 h-8 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-emerald-600 hover:text-white flex items-center justify-center text-neutral-600 dark:text-neutral-300 text-xs font-bold transition-colors"
+                className="w-8 h-8 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-green-600 hover:text-white flex items-center justify-center text-neutral-600 dark:text-neutral-300 text-xs font-bold transition-colors"
                 aria-label="WhatsApp"
               >
                 WA
               </a>
               <a
                 href="mailto:info@aasceend.com"
-                className="w-8 h-8 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-emerald-600 hover:text-white flex items-center justify-center text-neutral-600 dark:text-neutral-300 transition-colors"
+                className="w-8 h-8 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-green-600 hover:text-white flex items-center justify-center text-neutral-600 dark:text-neutral-300 transition-colors"
                 aria-label="Email"
               >
                 <Mail className="w-3.5 h-3.5" />
@@ -164,7 +164,7 @@ export const LeaderView: React.FC<LeaderViewProps> = ({
 
             <button
               onClick={onRequestCall}
-              className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2.5 rounded-xl text-xs transition-colors shadow-md"
+              className="w-full bg-green-600 hover:bg-emerald-700 text-white font-semibold py-2.5 rounded-xl text-xs transition-colors shadow-md"
             >
               Schedule Executive Consultation
             </button>
@@ -181,7 +181,7 @@ export const LeaderView: React.FC<LeaderViewProps> = ({
             <div className="pt-6 border-t border-neutral-100 dark:border-neutral-800 flex items-center justify-between">
               <button
                 onClick={() => onNavigate({ type: 'about' })}
-                className="inline-flex items-center gap-2 text-xs font-semibold text-emerald-600 hover:text-emerald-700"
+                className="inline-flex items-center gap-2 text-xs font-semibold text-green-600 hover:text-green-700"
               >
                 <ArrowLeft className="w-4 h-4" />
                 <span>Back to About Us</span>
@@ -189,7 +189,7 @@ export const LeaderView: React.FC<LeaderViewProps> = ({
 
               <button
                 onClick={() => onNavigate({ type: 'investor' })}
-                className="inline-flex items-center gap-2 text-xs font-semibold text-emerald-600 hover:text-emerald-700"
+                className="inline-flex items-center gap-2 text-xs font-semibold text-green-600 hover:text-green-700"
               >
                 <span>Investor Relations</span>
                 <Building2 className="w-4 h-4" />
